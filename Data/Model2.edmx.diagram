@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9cde8be0bcd44da2994ca0d24955dc88" Name="Diagram1">
+        <EntityTypeShape EntityType="AccountingKernelModel.
+                         View" Width="1.5" PointX="8.75" PointY="23.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingArticle" Width="1.5" PointX="7.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingDocument" Width="1.5" PointX="9.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingInterface" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoein" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinCode" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinDetail" Width="1.5" PointX="11" PointY="5" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinStructureDefine" Width="1.5" PointX="13.75" PointY="2.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinTafsilLevel" Width="1.5" PointX="13.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinTafsilRelation" Width="1.5" PointX="13.75" PointY="14.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingTafsilArticle" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingTafsilLevel" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingTafsillevelsDetail" Width="1.5" PointX="8" PointY="4.875" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingTafsilStructureDefine" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Asset" Width="1.5" PointX="7.75" PointY="16.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AssetGood" Width="1.5" PointX="9.75" PointY="16.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.BaseInfo" Width="1.5" PointX="15.75" PointY="2.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Capital" Width="1.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CapitalDetail" Width="1.5" PointX="15.75" PointY="13.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Check" Width="1.5" PointX="7.75" PointY="8.875" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CheckProcess" Width="1.5" PointX="10" PointY="9" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CodeTitle" Width="1.5" PointX="5.75" PointY="5" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Com" Width="1.5" PointX="11.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Company" Width="1.5" PointX="13.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CompanyDetail" Width="1.5" PointX="15.75" PointY="16.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CompanyStructureDefine" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.corporation" Width="1.5" PointX="4.75" PointY="18.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.FinancialMainYear" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Financialyear" Width="1.5" PointX="17.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Fund" Width="1.5" PointX="17.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Goody" Width="1.5" PointX="17.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.GoodiesGroup" Width="1.5" PointX="18.75" PointY="2.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.GoodyConvertCountingUnit" Width="1.5" PointX="6.75" PointY="20.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.GoodyPriceList" Width="1.5" PointX="8.75" PointY="20.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Operative" Width="1.5" PointX="0.75" PointY="13.25" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollContract" Width="1.5" PointX="19.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollImprest" Width="1.5" PointX="19.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollInsuranceCode" Width="1.5" PointX="19.75" PointY="15.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollInsuranceimmunity" Width="1.5" PointX="19.75" PointY="18.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollLoan" Width="1.5" PointX="19.75" PointY="21.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollLoanDetail" Width="1.5" PointX="20.75" PointY="2.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollPerson" Width="1.5" PointX="5" PointY="9.125" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollPersonSentence" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollPersonWorkDone" Width="1.5" PointX="15.75" PointY="22.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollSalaryFactor" Width="1.5" PointX="21.75" PointY="5.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollSentence" Width="1.5" PointX="21.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollTaxCode" Width="1.5" PointX="6.75" PointY="23.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollTaximmunity" Width="1.5" PointX="8.75" PointY="23.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollWorkDoneFactor" Width="1.5" PointX="21.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PersonStructureDefine" Width="1.5" PointX="2.75" PointY="12" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PriceList" Width="1.5" PointX="10.75" PointY="23.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.SOTax" Width="1.5" PointX="12.75" PointY="23.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.StoreOperation" Width="1.5" PointX="21.75" PointY="15.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.StoreOperative" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="AccountingKernelModel.StoreOrder" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="AccountingKernelModel.StoreOrderDetail" Width="1.5" PointX="0.75" PointY="9.25" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Store" Width="1.5" PointX="21.75" PointY="18.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.sysdiagram" Width="1.5" PointX="21.75" PointY="22.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.Treasury" Width="1.5" PointX="23.75" PointY="2.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.TreasuryDetail" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.User" Width="1.5" PointX="23.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingMoeinDetailsView" Width="1.5" PointX="23.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AccountingTafsillevelsDetailView" Width="1.5" PointX="23.75" PointY="13.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.AssetGoodsView" Width="1.5" PointX="14.75" PointY="25.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.CommodityDetailsView" Width="1.5" PointX="23.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.FundView" Width="1.5" PointX="16.75" PointY="25.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.PayrollFunction" Width="1.5" PointX="18.75" PointY="25.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.SOTaxView" Width="1.5" PointX="23.75" PointY="21.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.StoreOrderView" Width="1.5" PointX="20.75" PointY="25.75" />
+        <EntityTypeShape EntityType="AccountingKernelModel.TreasuryDetailsView" Width="1.5" PointX="22.75" PointY="25.75" />
+        <AssociationConnector Association="AccountingKernelModel.FK_AccountingMoeinDetails_AccountingMoein" />
+        <AssociationConnector Association="AccountingKernelModel.FK_AccountingMoeinDetails_CodeTitle" />
+        <AssociationConnector Association="AccountingKernelModel.FK_AccountingTafsillevelDetails_AccountingTafsilLevels" />
+        <AssociationConnector Association="AccountingKernelModel.FK_AccountingTafsillevelDetails_CodeTitle" />
+        <AssociationConnector Association="AccountingKernelModel.FK_CheckProcesses_Check1" />
+        <AssociationConnector Association="AccountingKernelModel.FK_StoreOperative_Operative" />
+        <AssociationConnector Association="AccountingKernelModel.FK_PayrollPerson_PersonStructureDefine" />
+        <AssociationConnector Association="AccountingKernelModel.FK_StoreOperative_StoreOrder" />
+        <AssociationConnector Association="AccountingKernelModel.FK_StoreOperative_StoreOrderDetail" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

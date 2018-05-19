@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AccountingKernel.Forms.Operatives.frmOperative"
+        Title="Document" Style="{DynamicResource WindowStyle}" Height="320" Width="480" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <Label  Content="نام عامل" Style="{StaticResource LabelStyle}"  HorizontalAlignment="Left" Margin="48,31,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="164,39,0,0" TextWrapping="Wrap" x:Name="txtName"  VerticalAlignment="Top" Width="249" PreviewTextInput="txtName_PreviewTextInput"/>
+        <Label  Content="نوع عامل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="48,79,0,0" VerticalAlignment="Top" Width="111"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="164,79,0,0" x:Name="cmbOperativeType"  VerticalAlignment="Top" Width="249" DisplayMemberPath="AssignName" SelectedValuePath="Id"/>
+        <Label  Content="روش محاسبه" Style="{StaticResource LabelStyle}"  HorizontalAlignment="Left" Margin="48,127,0,0" VerticalAlignment="Top" Width="111"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="164,119,0,0" x:Name="cmbCalculationMethod"  VerticalAlignment="Top" Width="249" DisplayMemberPath="AssignName" SelectedValuePath="Id"  SelectionChanged="cmbCalculationMethod_SelectionChanged"/>
+        <Label  Content="موثر/غیر موثر" Style="{StaticResource LabelStyle}"  HorizontalAlignment="Left" Margin="48,176,0,0" VerticalAlignment="Top" Width="111"/>
+        <CheckBox HorizontalAlignment="Left" Height="35" Margin="164,0,0,109" x:Name="chboxIsEffective"  VerticalAlignment="Bottom" Width="249"/>
+        <Label  Content="درصد محاسبه" Style="{StaticResource LabelStyle}"  HorizontalAlignment="Left" Margin="48,217,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="164,216,0,0" TextWrapping="Wrap" x:Name="txtPercent"  VerticalAlignment="Top" Width="249" MaxLength="2"/>
+        <Button Style="{StaticResource ButtonStyleRD}" Content="ثبت" Margin="10,275,10,10" x:Name="btnRegister" Click="btnRegister_Click"/>
+    </Grid>
+</Window>

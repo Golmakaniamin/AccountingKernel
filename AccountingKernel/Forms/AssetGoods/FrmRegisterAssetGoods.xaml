@@ -1,0 +1,18 @@
+﻿<Window x:Class="AccountingKernel.Forms.AssetGoods.FrmRegisterAssetGoods"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" 
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" 
+        Height="480" Width="640" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}"
+        Title="ثبت کالای اموال">
+    <Grid >
+        <Label Content="انتخاب گروه" Style="{StaticResource LabelStyle}" Margin="147,139,395,306"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txtSubsidiaryGroup" Height="35" Margin="250,124,227,291" Width="Auto" LostFocus="txtSubsidiaryGroup_LostFocus"/>
+        <Button Content="..." Style="{StaticResource ButtonStyleRD}" Margin="418,139,154,306" Click="btnSelectGroup_Click" />
+        <Label Content="کد کالای اموال" Style="{StaticResource LabelStyle}" Margin="147,179,395,266" />
+        <TextBox x:Name="txtAssetGroupCode" Style="{StaticResource TextBoxStyle}" Margin="250,164,227,251" PreviewTextInput="txtAssetGroupCode_PreviewTextInput"/>
+        <Label Content="عنوان کالای اموال" Style="{StaticResource LabelStyle}" Margin="147,219,395,226"/>
+        <TextBox x:Name="txtAssetGroupTitle" Style="{StaticResource TextBoxStyle}" Margin="250,204,227,211" />
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,405,10,0" VerticalAlignment="Top" Click="btnRegister_Click"/>
+    </Grid>
+</Window>

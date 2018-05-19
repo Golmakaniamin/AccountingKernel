@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.tankhah.frm_amaliateCheque"
+        Title="frm_amaliateCheque" Style="{DynamicResource WindowStyle}" Height="240" Width="320" Loaded="Window_Loaded_1">
+    <Grid FlowDirection="RightToLeft">
+        <TextBox x:Name="btn_code_bank" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left"  Margin="69,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" PreviewTextInput="btn_code_bank_PreviewTextInput"/>
+        <TextBox x:Name="txt_code_cheque" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="69,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="35" PreviewTextInput="txt_code_cheque_PreviewTextInput"/>
+        <Label Content="کد بانک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label Content="کد چک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label Content="تاریخ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="54"/>
+        <Button Content="ثبت" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="10,191,0,0" VerticalAlignment="Top" Width="300" Click="Button_Click_1"/>
+        <Button x:Name="btn_search1" Content="..." Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="248,50,0,0" VerticalAlignment="Top" Width="57" Click="btn_search1_Click"/>
+        <Button x:Name="btn_search2" Content="..." Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="248,90,0,0" VerticalAlignment="Top" Width="57" Click="btn_search2_Click"/>
+
+        <PersianDateControls:PersianDatePicker x:Name="pic_datePicker" Height="35" HorizontalAlignment="Left" Margin="69,130,0,0" VerticalAlignment="Top" Width="174"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="AccountingKernel.Forms.Goods.frmShowCommodity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Height="768" Width="1024" WindowStartupLocation="CenterScreen" FontFamily="B Nazanin" FontSize="14" FontWeight="Bold" FlowDirection="RightToLeft">
+    <Grid >
+        <TextBox HorizontalAlignment="Left" x:Name="txtSearch" Height="27" Margin="86,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="921" KeyUp="txtSearch_KeyUp"/>
+        <DataGrid x:Name="grdCommodities" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Height="641" Width="998" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=Id}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="گروه اصلی" IsReadOnly="True"  Binding="{Binding Path=MainGroup}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="گروه فرعی" IsReadOnly="True" Binding="{Binding Path=SubsidiaryGroup}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="عنوان کالا" IsReadOnly="True"  Binding="{Binding Path=GoodTitle}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="کد کالا" IsReadOnly="True"  Binding="{Binding Path=GoodCode}" Width="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="انتخاب" HorizontalAlignment="Left" Height="42" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="998" Click="btnSelectCommodity_Click"/>
+        <Label Content="جستجو" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="71"/>
+    </Grid>
+</Window>

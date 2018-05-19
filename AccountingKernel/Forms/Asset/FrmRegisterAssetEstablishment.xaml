@@ -1,0 +1,31 @@
+﻿<Window x:Class="AccountingKernel.Forms.Asset.FrmRegisterAssetEstablishment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" 
+        Height="600" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}">
+    <Grid >
+        <Label Content="کد پرسنل" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="44,146,0,0" VerticalAlignment="Top" Width="70"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txtPerson"  HorizontalAlignment="Left" Height="35" Margin="119,146,0,0" VerticalAlignment="Top" Width="155"/>
+        <Button Content="..." HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="279,146,0,0" VerticalAlignment="Top" Width="60" Click="btnSelectPerson_Click"/>
+        <Label Content="کد کالای اموال" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="430,146,0,0" VerticalAlignment="Top" Width="70"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txtAssetGoods"  HorizontalAlignment="Left" Height="35" Margin="505,146,0,0" VerticalAlignment="Top" Width="155"/>
+        <Button Content="..." HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="665,146,0,0" VerticalAlignment="Top" Width="60" Click="btnSelectAssetGood_Click"/>
+        <Label Content="تاریخ اموال" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="44,186,0,0" VerticalAlignment="Top" Width="70"/>
+        <PersianDateControls:PersianDatePicker x:Name="dtpAsset" HorizontalAlignment="Left" Height="35" Margin="119,186,0,0" VerticalAlignment="Top" Width="154"/>
+        <Label Content="شماره دارایی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="430,186,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAsset_No" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="506,186,0,0" VerticalAlignment="Top" Width="154"/>
+        <Label Content="نرخ استهلاک" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="44,226,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAmortizationRate"  HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="119,226,0,0" VerticalAlignment="Top" Width="154" PreviewTextInput="txtAmortizationRate_PreviewTextInput" TextChanged="txtAmortizationRate_TextChanged"/>
+        <Label Content="روش استهلاک" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="430,226,0,0" VerticalAlignment="Top" Width="70"/>
+        <ComboBox x:Name="cmbAmortizationMethod" HorizontalAlignment="Left" Height="35" Margin="505,226,0,0" VerticalAlignment="Top" Width="154" DisplayMemberPath="AssignName" SelectedValuePath="Id"/>
+        <Label Content="ارزش اسقاط" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="44,266,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtDecay" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="119,266,0,0" VerticalAlignment="Top" Width="154" PreviewTextInput="txtDecay_PreviewTextInput" TextChanged="txtDecay_TextChanged"/>
+        <Label Content="ارزش ريالی" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="430,266,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="505,266,0,0" VerticalAlignment="Top" Width="154" PreviewTextInput="txtPrice_PreviewTextInput" TextChanged="txtPrice_TextChanged"/>
+        <Label Content="شماره اموال" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="44,306,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAsset_number" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="120,306,0,0" VerticalAlignment="Top" Width="154" PreviewTextInput="txtAsset_number_PreviewTextInput"/>
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,525,10,0" VerticalAlignment="Top" Click="btnRegister_Click"/>
+        <Label Content=" استهلاک انباشته" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="430,306,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAccumulative_amortization"  HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="505,306,0,0" VerticalAlignment="Top" Width="154" PreviewTextInput="txtAccumulative_amortization_PreviewTextInput" TextChanged="txtAccumulative_amortization_TextChanged"/>
+    </Grid>
+</Window>

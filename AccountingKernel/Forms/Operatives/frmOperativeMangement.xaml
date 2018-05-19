@@ -1,0 +1,49 @@
+﻿<Window x:Class="AccountingKernel.Forms.Operatives.frmOperativeMangement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Style="{DynamicResource WindowStyle}" Height="600" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <Label Content="جستجو" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="txtSearch" Style="{StaticResource TextBoxStyle}" Margin="65,10,218,0" VerticalAlignment="Top" KeyUp="txtSearch_KeyUp"/>
+        <Button x:Name="BtnPrint" ToolTip="چاپ" Height="35"  Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnPrint_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Print.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnExel" ToolTip="اکسل" Height="35"  Margin="0,10,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnExel_Click" BorderBrush="#FF7A7878" Foreground="Black" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Excel.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnDel" ToolTip="حذف" Height="35"  Margin="0,10,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnDel_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/delete.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEdit" ToolTip="ویرایش" Height="35" Margin="0,10,130,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnEdit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnNew" ToolTip="جدید" Height="35"  Margin="0,10,170,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnNew_Click" Foreground="Black" BorderBrush="#FF7E7E7E" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/New.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="DataGrid" Margin="10,50,10,10" AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="جدید" PreviewMouseDown ="MenuItem_Register"/>
+                        <MenuItem Header="ویرایش" PreviewMouseDown ="MenuItem_Edit"/>
+                        <MenuItem Header="حذف" PreviewMouseDown ="MenuItem_Delete"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="روش محاسبه" IsReadOnly="True" Binding="{Binding Path=CalculationMethod}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="نوع عامل" IsReadOnly="True"  Binding="{Binding Path=OperativeType}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="نام عامل" IsReadOnly="True"  Binding="{Binding Path=OperativeName}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.KazaneDari.frm_cheque_edit"
+        Title="frm_cheque_edit" Height="320" Width="640" Loaded="Window_Loaded_1" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="کد بانک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,65,0,0" Width="70"/>
+        <Label Content="نام بانک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,65,0,0" Width="80"/>
+        <TextBox x:Name="txt_nameBank" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="316,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" />
+        <TextBox x:Name="txt_shomareCheque" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="87,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txt_shomareCheque_PreviewTextInput"/>
+        <Label Content="شماره چک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="12,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="70"/>
+        <Label Content="تاریخ سررسید" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="432,65,0,0"/>
+        <Label Content="سریال چک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="232,102,0,0" Width="79"/>
+        <TextBox x:Name="txt_serialeCheque" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="316,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="txt_serialeCheque_PreviewTextInput"/>
+        <Label Content="مبلغ چک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,145,0,0" Width="70"/>
+        <TextBox x:Name="txt_mablagheCheque" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="87,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txt_mablagheCheque_PreviewTextInput" TextChanged="txt_mablagheCheque_TextChanged" />
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Margin="231,142,0,0" Width="80" Content="نوع چک"/>
+        <ComboBox x:Name="cmb_noeCheque" HorizontalAlignment="Left" Margin="317,145,0,0" VerticalAlignment="Top" Width="111" Height="35" />
+        <Label Content="شرح چک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,185,0,0" Width="70"/>
+        <TextBox x:Name="txt_sharheCheck" Style="{StaticResource TextBoxStyle}" Margin="87,185,13,0" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="txt_sharheCheck_PreviewTextInput"/>
+        <Button x:Name="btn_edit" Content="ویرایش" Style="{StaticResource ButtonStyleRD}" Margin="10,0,10,10" Click="btn_sabt_Click" VerticalAlignment="Bottom"/>
+        <Button x:Name="btn_entekhabeCodeBank" Content="..." Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="176,65,0,0" VerticalAlignment="Top" Width="31" Click="btn_entekhabeCodeBank_Click"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_codeBank" HorizontalAlignment="Left" Height="35" Margin="87,65,0,0" VerticalAlignment="Top" Width="84"/>
+        <PersianDateControls:PersianDatePicker x:Name="pic_datePicker" HorizontalAlignment="Left" Margin="494,65,0,0" VerticalAlignment="Top" Width="133" Height="35"/>
+    </Grid>
+</Window>

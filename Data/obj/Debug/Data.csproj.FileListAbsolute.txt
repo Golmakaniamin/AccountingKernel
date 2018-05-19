@@ -1,0 +1,5 @@
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Data.dll.config
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Data.dll
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Data.pdb
+D:\AccountingKernel\AccountingKernel\Data\obj\Debug\Data.dll
+D:\AccountingKernel\AccountingKernel\Data\obj\Debug\Data.pdb

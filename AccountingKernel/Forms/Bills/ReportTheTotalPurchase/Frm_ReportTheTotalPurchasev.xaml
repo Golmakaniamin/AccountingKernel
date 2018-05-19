@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.Bills.ReportTheTotalPurchase.Frm_ReportTheTotalPurchasev"
+        Title="Frm_ReportTheTotalPurchasev" Height="768" Width="1024" Style="{DynamicResource WindowStyle}" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="چاپ گزارش" Style="{StaticResource ButtonStyleRD}" Margin="618,64,303,669" Click="Button_Click_1"/>
+        <Label Content="گزارش سرجمع در تاریخ" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Margin="10,60,0,0" RenderTransformOrigin="0.989,2.496" HorizontalAlignment="Left" Width="111"/>
+        <PersianDateControls:PersianDatePicker x:Name="PDate1" Margin="136,61,0,0" VerticalAlignment="Top" Width="115" Height="35" HorizontalAlignment="Left" SelectedDateChanged="PDate1_SelectedDateChanged"/>
+        <Label Content="الی" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Margin="283,60,0,0" RenderTransformOrigin="0.989,2.496" HorizontalAlignment="Left" Width="20"/>
+        <PersianDateControls:PersianDatePicker x:Name="PDate2" HorizontalAlignment="Left" Margin="321,59,0,0" VerticalAlignment="Top" Height="35" SelectedDateChanged="PDate2_SelectedDateChanged"/>
+
+        <DataGrid x:Name="DataGrid" Margin="10,127,10,10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="نام انبار" IsReadOnly="True" Binding="{Binding Path=Anbar}"  />
+                <DataGridTextColumn Header="شماره فاکتور خرید" IsReadOnly="True" Binding="{Binding Path=Code}" />
+                <DataGridTextColumn Header="تاریخ فاکتور خرید" IsReadOnly="True" Binding="{Binding Path=Date}"  />
+                <DataGridTextColumn Header="کد طرف حساب" IsReadOnly="True" Binding="{Binding Path=BuyerCode}"/>
+                <DataGridTextColumn Header="نام طرف حساب" IsReadOnly="True" Binding="{Binding Path=Buyer}"/>
+                <DataGridTextColumn Header="مقدار خرید" IsReadOnly="True"  Binding="{Binding Path=Count}"/>
+                <DataGridTextColumn Header="مبلغ کل فاکتور خرید" IsReadOnly="True" Binding="{Binding Path=SumMoney}" />
+                <!--<DataGridTextColumn Header="مبلغ مقادیر فاکتور خرید" IsReadOnly="True"  />-->
+                <!--<DataGridTextColumn Header="مجموع هزینه های خرید" IsReadOnly="True"/>-->
+            </DataGrid.Columns>
+
+        </DataGrid>
+       
+    </Grid>
+</Window>

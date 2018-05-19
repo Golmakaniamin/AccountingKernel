@@ -1,0 +1,7 @@
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Business.dll
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Business.pdb
+D:\AccountingKernel\AccountingKernel\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\AccountingKernel\AccountingKernel\Business\obj\Debug\AccountingKernel.Localize.resources
+D:\AccountingKernel\AccountingKernel\Business\obj\Debug\Business.csproj.GenerateResource.Cache
+D:\AccountingKernel\AccountingKernel\Business\obj\Debug\Business.dll
+D:\AccountingKernel\AccountingKernel\Business\obj\Debug\Business.pdb

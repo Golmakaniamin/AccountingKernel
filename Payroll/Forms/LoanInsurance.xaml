@@ -1,0 +1,17 @@
+﻿<Window x:Class="AccountingKernel.LoanInsurance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoanInsurance" Height="600" Width="800" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="grdLoanInsurance" Margin="10,37,10,10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" IsReadOnly="True" Binding="{Binding ID}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="کد معافیت" IsReadOnly="True" Binding="{Binding kod_moafiat}" />
+                <DataGridTextColumn Header="نام معافیت" IsReadOnly="True" Binding="{Binding name_moafiat}" />
+                <DataGridTextColumn Header="در صد معافیت پرسنل" IsReadOnly="True"   Binding="{Binding personel_dasad}"/>
+                <DataGridTextColumn Header="در صد معافیت بیکاری" IsReadOnly="True"   Binding="{Binding bikari_darsad}"/>
+                <DataGridTextColumn Header="در صد معافیت کارفرما" IsReadOnly="True"   Binding="{Binding karfarma_darsad}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

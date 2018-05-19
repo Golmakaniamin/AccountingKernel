@@ -1,0 +1,15 @@
+﻿<Window x:Class="AccountingKernel.Forms.Interface.frmSaveInterfaces"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Style="{DynamicResource WindowStyle}" Height="480" Width="640" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid Height="470" VerticalAlignment="Top" Margin="10,0">
+        <Label Margin="72,148,305,286" Content="عنوان" Style="{StaticResource LabelStyle}" />
+        <TextBox x:Name="txtAIName" Margin="320,108,64,246" PreviewTextInput="txtAIName_PreviewTextInput" Style="{StaticResource TextBoxStyle}" />
+        <Button x:Name="btnDebtorSelecting" Height="35" Style="{StaticResource ButtonStyleRD}" Click="btnDebtorSelecting_Click" Margin="72,188,305,246" Content="انتخاب کد حسابداری بدهکار"/>
+        <TextBox x:Name="txtDebtorCode" Margin="320,148,64,206" IsReadOnly="True" Style="{StaticResource TextBoxStyle}"/>
+        <Button x:Name="btnCreditorSelecting" Height="35" Click="btnCreditorSelecting_Click" Style="{StaticResource ButtonStyleRD}" Margin="72,228,305,206" Content="انتخاب کد حسابداری بستانکار"/>
+        <TextBox x:Name="txtCreditorCode" Margin="320,188,64,166" IsReadOnly="True" Style="{StaticResource TextBoxStyle}"/>
+        <Button x:Name="btnAccept" Click="btnAccept_Click" Margin="10,425,10,10" Content="تایید" Style="{StaticResource ButtonStyleRD}"/>
+    </Grid>
+
+</Window>

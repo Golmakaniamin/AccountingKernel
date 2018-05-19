@@ -1,0 +1,31 @@
+﻿<Window x:Class="AccountingKernel.Forms.Bill.frmBillOperative"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="768" Width="1024" WindowStartupLocation="CenterScreen" FontFamily="B Nazanin" FontSize="14" FontWeight="Bold" FlowDirection="RightToLeft">
+    <Grid HorizontalAlignment="Left" Width="1014" >
+        <Label Content="عوامل پیش فاکتور" HorizontalAlignment="Left" Height="35" Margin="415,12,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Content="شماره پیش فاکتور" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="553,61,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="673,61,0,0" x:Name="lblBillNum"/>
+        <Label Content="تاریخ پیش فاکتور" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="282,61,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="402,61,0,0" x:Name="lblDate" />
+        <Label Content="نام مشتری" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="19,61,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="139,61,0,0" x:Name="lblCompany"/>
+        <Label Content="نام عامل" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="24,101,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <ComboBox x:Name="cmbOperative" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="144,101,0,0" RenderTransformOrigin="0.989,2.496"
+                  DisplayMemberPath="OName" SelectedValuePath="Id" SelectionChanged="cmbOperative_SelectionChanged"/>
+        <Label Content="مبلغ" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="295,101,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="115" Margin="415,101,0,0" RenderTransformOrigin="0.989,2.496"/>
+
+        <DataGrid x:Name="DataGrid" Margin="9,0,10,60" AutoGenerateColumns="False" RenderTransformOrigin="0.5,0.5" Height="458" VerticalAlignment="Bottom">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=Id}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True" Binding="{Binding Path=Price}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="روش محاسبه" IsReadOnly="True"  Binding="{Binding Path=CalculationMethod}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="نوع عامل" IsReadOnly="True"  Binding="{Binding Path=OperativeType}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="نام عامل" IsReadOnly="True"  Binding="{Binding Path=OperativeName}" Width="100"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="" IsReadOnly="True"  Binding="{Binding Path=Count}" Width="100"></DataGridCheckBoxColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="ثبت" Height="42" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnRegister_Click"/>
+    </Grid>
+</Window>

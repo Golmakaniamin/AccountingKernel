@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.PayrollMPJ"
+        Title="PayrollMPJ" Height="600" Width="800" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="تاریخ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="39"/>
+        <PersianDateControls:PersianDatePicker Name="pdcDate" HorizontalAlignment="Left" Margin="54,54,0,0" VerticalAlignment="Top" Height="35"/>
+        <Label Content="نوع" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="174,54,0,0" VerticalAlignment="Top" Width="35"/>
+        <ComboBox Name="cmbType" HorizontalAlignment="Left" Height="35" Margin="214,54,0,0" VerticalAlignment="Top" Width="120"  DisplayMemberPath="Name" SelectedValuePath="{Binding Id}"/>
+        <Label Content="مبلغ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="339,54,0,0" VerticalAlignment="Top" Width="35"/>
+        <TextBox Name="txtPrice" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="379,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="txtPrice_TextChanged" PreviewTextInput="txtPrice_PreviewTextInput"/>
+        <Button x:Name="btnSubmit" Style="{StaticResource ButtonStyleRD}" Content="تعریف" VerticalAlignment="Top" Margin="10,104,10,0" Click="btnSubmit_Click"/>
+        <DataGrid x:Name="grdMPJ" VerticalAlignment="Top" Height="406" AutoGenerateColumns="False" Margin="10,144,10,0" FlowDirection="RightToLeft">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=ID}"/>
+                <DataGridTextColumn Header="تاریخ" IsReadOnly="True" Binding="{Binding Path=PrIDate}"/>
+                <DataGridComboBoxColumn x:Name="Grid_combo_Type" Header="نوع" DisplayMemberPath="Name" SelectedValuePath="{Binding Id}"/>
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True" Binding="{Binding Path=PrIPrice}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnCommit" Style="{StaticResource ButtonStyleRD}" Content="به روز رسانی" VerticalAlignment="Top" Margin="10,555,10,0" Click="btnCommit_Click" />
+    </Grid>
+</Window>

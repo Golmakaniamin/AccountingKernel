@@ -1,0 +1,25 @@
+﻿<Window x:Class="AccountingKernel.ImportFromExcel.frm_MessageLog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_MessageLog" Height="334.962" Width="528.947">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="320*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="lst_MessageLog" HorizontalAlignment="Right" Height="285" Margin="0,1,6,0" VerticalAlignment="Top" Width="511" Grid.ColumnSpan="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                     
+                        </GridViewColumn> 
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

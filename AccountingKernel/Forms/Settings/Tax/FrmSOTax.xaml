@@ -1,0 +1,21 @@
+﻿<Window x:Class="AccountingKernel.Forms.Settings.Tax.FrmSOTax"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_tarife_toole_code" Height="600" Style="{DynamicResource WindowStyle}" Width="800" WindowStartupLocation="CenterScreen"  FlowDirection="RightToLeft">
+    <Grid>
+        <DataGrid x:Name="grd_SOTax" Style="{StaticResource DataGridStyle}" Margin="10,10,10,54" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="meunitem_register" Header="جدید و ویرایش" Click="meunitem_register_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" Visibility="Hidden" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="عنوان آیتم" Binding="{Binding BaseInfoTitle}"/>
+                <DataGridTextColumn Header="سال مالی" Binding="{Binding FinancialMainYear}"/>
+                <DataGridTextColumn Header="درصد" Binding="{Binding Percent}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="تایید" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left"  Margin="10,551,0,0" VerticalAlignment="Top" Width="780" Click="Button_Click_1"/>
+    </Grid>
+</Window>

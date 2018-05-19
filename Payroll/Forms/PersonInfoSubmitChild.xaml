@@ -1,0 +1,110 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.PersonInfoSubmitChild"
+         Title="PayrollBenefitAndDeductions" Height="790" Width="1024" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" >
+    <Grid >
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="393,58,0,0" x:Name="txtMilitaryTax" Visibility="Hidden" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <GroupBox Header="تعریف مشخصات پرسنل" HorizontalAlignment="Left" Margin="15,41,0,0" Width="994" Height="290" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="گروه پرسنل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <Button x:Name="btnGetGroup" Style="{StaticResource ButtonStyleRD}" Content="..." HorizontalAlignment="Left" Margin="220,7,0,0" VerticalAlignment="Top" Width="80" Click="btnGetGroup_Click"/>
+                <Label x:Name="lblPersonGroup" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Width="110" Height="35"/>
+                <Label Content="کد" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="80" RenderTransformOrigin="0.176,0.171" />
+                <TextBox TabIndex="-1" MaxLength="10" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="105,50,0,0" TextWrapping="Wrap" x:Name="txtCodeS" VerticalAlignment="Top" Width="55"  PreviewTextInput="txtCode_PreviewTextInput"/>
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="160,50,0,0" TextWrapping="Wrap" x:Name="txtCodeF" VerticalAlignment="Top" Width="55" IsEnabled="False"/>
+                <Label Content="نام" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="220,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.7,0.514" Width="80" />
+                <TextBox TabIndex="-1" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="305,50,0,0" TextWrapping="Wrap" x:Name="txtFirstName" VerticalAlignment="Top" PreviewTextInput="txtFirstName_PreviewTextInput"/>
+                <Label Content="نام خانوادگی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="420,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox TabIndex="-1" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="505,50,0,0" TextWrapping="Wrap" x:Name="txtLastName" VerticalAlignment="Top" PreviewTextInput="txtLastName_PreviewTextInput"/>
+                <Label Content="نام پدر" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="620,50,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox TabIndex="-1" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="705,50,0,0" TextWrapping="Wrap" x:Name="txtFather" VerticalAlignment="Top" PreviewTextInput="txtFather_PreviewTextInput"/>
+                <Label Content="تاریخ تولد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Width="80" />
+                <PersianDateControls:PersianDatePicker  TabIndex="-1" x:Name="pdcBirthDay" HorizontalAlignment="Left" Margin="105,90,0,0" VerticalAlignment="Top" Height="35" Width="110" />
+                <Label Content="جنسیت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="220,90,0,0" VerticalAlignment="Top" Width="80" />
+                <ComboBox TabIndex="-1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="110" Margin="305,90,0,0" x:Name="cmbGender" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                <Label Content="وضعیت تاهل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="420,90,0,0" VerticalAlignment="Top" Width="80" />
+                <ComboBox TabIndex="-1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="110" Margin="505,90,0,0" x:Name="cmbMarriageState" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                <Label Content="تعداد فرزند" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="620,90,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="2" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="705,90,0,0" TextWrapping="Wrap" x:Name="txtQTY" VerticalAlignment="Top" PreviewTextInput="txtQTY_PreviewTextInput"/>
+                <Label Content="کد ملی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="10" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="105,131,0,0" TextWrapping="Wrap" x:Name="txtNationalCode" VerticalAlignment="Top" PreviewTextInput="txtNationalCode_PreviewTextInput"/>
+                <Label Content="شماره شناسنامه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="220,130,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="305,130,0,0" TextWrapping="Wrap" x:Name="txtSHSH" VerticalAlignment="Top" PreviewTextInput="txtSHSH_PreviewTextInput"/>
+                <Label Content="موبایل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="420,130,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="11" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="505,130,0,0" TextWrapping="Wrap" x:Name="txtMobile" VerticalAlignment="Top" PreviewTextInput="txtMobile_PreviewTextInput"/>
+                <Label Content="تلفن ثابت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="620,130,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="11" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="705,130,0,0" TextWrapping="Wrap" x:Name="txtTelHome" VerticalAlignment="Top" PreviewTextInput="txtTelHome_PreviewTextInput"/>
+                <Label Content="تلفن محل کار" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="20,172,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="11" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="105,170,0,0" TextWrapping="Wrap" x:Name="txtTelWork" VerticalAlignment="Top" PreviewTextInput="txtTelWork_PreviewTextInput"/>
+                <Label Content="نشانی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="220,170,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Width="510" Style="{StaticResource TextBoxStyle}" Margin="305,170,0,0" TextWrapping="Wrap" x:Name="txtAddress" VerticalAlignment="Top" PreviewTextInput="txtAddress_PreviewTextInput" />
+                <Image Height="155" Margin="846,50,10,0" VerticalAlignment="Top" x:Name="imgPerson"/>
+                <Label Content="کد پستی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="20,210,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" MaxLength="11" HorizontalAlignment="Left" Width="110" Style="{StaticResource TextBoxStyle}" Margin="105,210,0,0" TextWrapping="Wrap" x:Name="txtPostalCode" VerticalAlignment="Top" PreviewTextInput="txtPostalCode_PreviewTextInput"/>
+                <Label Content="توضیحات" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="220,210,0,0" VerticalAlignment="Top" Width="80" />
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Width="510" Style="{StaticResource TextBoxStyle}" Margin="305,210,0,0" TextWrapping="Wrap" x:Name="txtDesc" VerticalAlignment="Top" PreviewTextInput="txtDesc_PreviewTextInput" />
+                <Button  TabIndex="-1" Content="انتخاب تصویر" Style="{StaticResource ButtonStyleRD}" VerticalAlignment="Top" Margin="846,210,10,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="مشخصات مالیات" HorizontalAlignment="Left" Height="206" Margin="15,336,0,0" VerticalAlignment="Top" Width="992">
+            <Grid>
+                <Label Content="مدرک" Width="101" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="38,10,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left"  TabIndex="-1" Style="{StaticResource TextBoxStyle}" Margin="144,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtProofTax" PreviewTextInput="txtProofTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox HorizontalAlignment="Left" Height="35"  TabIndex="-1" Margin="199,10,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbProofTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged" />
+                <Label Content="عنوان شغل" Width="80" Style="{StaticResource LabelStyle}"  TabIndex="-1" HorizontalAlignment="Left" Margin="374,10,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="459,10,0,0"  TabIndex="-1" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtJobTax" PreviewTextInput="txtJobTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox HorizontalAlignment="Left" Height="35" Margin="514,10,0,0" VerticalAlignment="Top" Width="110"  TabIndex="-1" x:Name="cmbJobTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="سری" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="689,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="774,10,0,0" TextWrapping="Wrap"  TabIndex="-1" VerticalAlignment="Top" Width="50" x:Name="txtSeriesTax" PreviewTextInput="txtSeriesTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox HorizontalAlignment="Left" Height="35" Margin="829,10,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbSeriesTax"  TabIndex="-1" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="وضعیت مسکن" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="38,50,0,0" VerticalAlignment="Top" Width="101"/>
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="144,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  TabIndex="-1" Width="50" x:Name="txtHouseStateTax" PreviewTextInput="txtHouseStateTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="199,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbHouseStateTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="ملیت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="374,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="459,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtNationalityTax" PreviewTextInput="txtNationalityTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="514,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbNationalityTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="نام کشور" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="689,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="774,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtCountryTax" PreviewTextInput="txtCountryTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="829,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbCountryTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="وضیعت نظام وظیفه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="38,90,0,0" VerticalAlignment="Top" Width="101"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="199,90,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbMilitaryTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="رسته شغلی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="374,90,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="459,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtJobCategoriesTax" PreviewTextInput="txtJobCategoriesTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="514,90,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbJobCategoriesTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="معافیت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="689,90,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="774,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtExemptionTax" PreviewTextInput="txtExemptionTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="829,90,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbExemptionTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="وضعیت اتومبیل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="38,130,0,0" VerticalAlignment="Top" Width="101"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="144,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtCarStateTax" PreviewTextInput="txtCarStateTax_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="199,130,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbCarStateTax" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="مشخصات بیمه" HorizontalAlignment="Left" Height="149" Margin="17,547,0,0" VerticalAlignment="Top" Width="992">
+            <Grid Margin="0,0,0,-1">
+                <Label Content="معافیت" Style="{StaticResource LabelStyle}" Width="80" HorizontalAlignment="Left" Margin="57,10,0,0" VerticalAlignment="Top"/>
+                <TextBox  TabIndex="-1"  HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="142,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtLoanInsurance" PreviewTextInput="txtLoanInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="197,10,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbLoanInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="کشور" Style="{StaticResource LabelStyle}" Width="80" HorizontalAlignment="Left" Margin="373,11,0,0" VerticalAlignment="Top"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="458,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtCountryInsurance" PreviewTextInput="txtCountryInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="513,10,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbCountryInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="محل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="696,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="781,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtPlaceOfIssue" PreviewTextInput="txtPlaceOfIssue_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="836,10,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbPlaceOfIssue" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="مشاغل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="57,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="142,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtJobsInsurance" PreviewTextInput="txtJobsInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="197,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbJobsInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="تحصیلات" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="373,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="458,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtEducationInsurance" PreviewTextInput="txtEducationInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="513,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbEducationInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="رشته" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="696,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="781,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtFieldOfStudyInsurance" PreviewTextInput="txtFieldOfStudyInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="836,50,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbFieldOfStudyInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Label Content="ملیت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="57,90,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox  TabIndex="-1" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="142,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" x:Name="txtNationalityInsurance" PreviewTextInput="txtNationalityInsurance_PreviewTextInput" LostFocus="TextBox_LostFocus"/>
+                <ComboBox  TabIndex="-1" HorizontalAlignment="Left" Height="35" Margin="197,90,0,0" VerticalAlignment="Top" Width="110" x:Name="cmbNationalityInsurance" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="ComboBox_SelectionChanged"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnSubmit" TabIndex="-1" Style="{StaticResource ButtonStyleRD}" Content="ثبت" Margin="64,6,10,0" VerticalAlignment="Top" Click="btnSubmit_Click"/>
+    </Grid>
+</Window>

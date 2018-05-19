@@ -1,0 +1,9 @@
+﻿<Window x:Class="AccountingKernel.Forms.PayrollFunction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PayrollFunction"  Height="630" Width="800" FlowDirection="RightToLeft" Loaded="Window_Loaded" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <DataGrid x:Name="grdFuntion" Margin="10,10,10,50"   CellEditEnding="grdFuntion_CellEditEnding"  ItemsSource="{Binding}" AutoGenerateColumns="False"/>
+        <Button Content="ثبت" x:Name="btnSubmit" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="10,585,0,0" VerticalAlignment="Top" Width="780" Click="btnSubmit_Click"/>        
+    </Grid>
+</Window>

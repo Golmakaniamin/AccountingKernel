@@ -1,0 +1,12 @@
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\bin\Debug\AccountingKernelNeedsClass.dll
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\bin\Debug\AccountingKernelNeedsClass.pdb
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\AccountingKernelNeedsClass.csprojResolveAssemblyReference.cache
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\Themes\ButtonGlass1.baml
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\Themes\ButtonStealth1.baml
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\Themes\ButtonStyleRD.baml
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\Themes\DataGridHeaderMe.baml
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\Themes\TabControlOutLook.baml
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\AccountingKernelNeedsClass_MarkupCompile.cache
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\AccountingKernelNeedsClass.g.resources
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\AccountingKernelNeedsClass.dll
+D:\AccountingKernel\AccountingKernel\AccountingKernelNeedsClass\obj\Debug\AccountingKernelNeedsClass.pdb

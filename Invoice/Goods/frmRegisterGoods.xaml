@@ -1,0 +1,28 @@
+﻿<Window x:Class="AccountingKernel.Forms.Goods.frmRegisterGoods"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Height="768" Width="1024" WindowStartupLocation="CenterScreen" FontFamily="B Nazanin" FontSize="14" FontWeight="Bold" FlowDirection="RightToLeft">
+    <Grid>
+        <Label Content="گروه اصلی" HorizontalAlignment="Left" Height="35" Margin="904,22,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="txtMainGroup" HorizontalAlignment="Left" Height="35" Margin="799,22,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="گروه فرعی" HorizontalAlignment="Left" Height="35" Margin="726,22,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtSubsidiaryGroup" HorizontalAlignment="Left" Height="35" Margin="606,22,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="عنوان کالا" HorizontalAlignment="Left" Height="35" Margin="509,22,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="txtGoodTitle" HorizontalAlignment="Left" Height="35" Margin="386,22,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="کد کالا" HorizontalAlignment="Left" Height="35" Margin="313,22,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="txtGoodCode" HorizontalAlignment="Left" Height="35" Margin="190,22,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True"/>
+        <Label Content="سقف موجودی" HorizontalAlignment="Left" Height="35" Margin="922,83,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="txtCInventoryMax" HorizontalAlignment="Left" Height="35" Margin="799,83,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="سقف سفارش" HorizontalAlignment="Left" Height="35" Margin="729,83,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="txtCOrderMax" HorizontalAlignment="Left" Height="35" Margin="606,83,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="حداقل سفارش" HorizontalAlignment="Left" Height="35" Margin="509,83,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="txtCOrderMin" HorizontalAlignment="Left" Height="35" Margin="386,83,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="نقطه سفارش" HorizontalAlignment="Left" Height="35" Margin="313,83,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtCOrderPoint" HorizontalAlignment="Left" Height="35" Margin="190,83,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="نقطه بحرانی" HorizontalAlignment="Left" Height="35" Margin="904,140,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="txtCPointCritical" HorizontalAlignment="Left" Height="35" Margin="799,140,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnRegister"   HorizontalAlignment="Left" Height="35" Margin="190,191,0,0" VerticalAlignment="Top" Width="700" Click="btnRegister_Click_1">
+            <TextBlock Text="ثبت"></TextBlock>
+        </Button>
+    </Grid>
+</Window>

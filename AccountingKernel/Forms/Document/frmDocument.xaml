@@ -1,0 +1,63 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.Document.frmDocument"
+        Title="صدور سند" Style="{DynamicResource WindowStyle}" Height="768" Width="1024" WindowStartupLocation="CenterScreen"  FlowDirection="RightToLeft">
+    <Grid>
+        <Label Content="شماره سند" Style="{StaticResource LabelStyle}" Height="35" Margin="10,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.487,-2.866" HorizontalAlignment="Left" Width="70"/>
+        <TextBox x:Name="txtArticleNo" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="85,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" PreviewTextInput="txtArticleNo_PreviewTextInput" HorizontalAlignment="Left" Width="146"/>
+        <Label Content="شماره قدیم" Style="{StaticResource LabelStyle}" Height="35" Margin="236,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.487,-2.866" HorizontalAlignment="Left" Width="59"/>
+        <TextBox x:Name="txtArticleOldNo" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="300,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" PreviewTextInput="txtArticleOldNo_PreviewTextInput" HorizontalAlignment="Left" Width="156"/>
+        <Label Content="نوع سند" Style="{StaticResource LabelStyle}" Height="35" Margin="461,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="12.757,0.635" HorizontalAlignment="Left" Width="67"/>
+        <ComboBox x:Name="cmbDocumentType" Height="35" Margin="533,58,0,0" VerticalAlignment="Top" ItemsSource="{Binding}"
+			DisplayMemberPath="Name"
+			SelectedValuePath="Id" HorizontalAlignment="Left" Width="186"/>
+        <Label Content="تاریخ" Style="{StaticResource LabelStyle}" Margin="724,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="87"/>
+        <PersianDateControls:PersianDatePicker x:Name="dtpDate" Margin="816,58,0,0" VerticalAlignment="Top" Width="162" Height="35" HorizontalAlignment="Left"/>
+
+        <Button x:Name="btnShowFormB" Click="btnShowFormB_Click" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Height="35" Margin="10,116,0,0" VerticalAlignment="Top" Width="131" FlowDirection="LeftToRight">
+            <TextBlock Text="انتخاب کد حسابداری" Width="116" Height="25" FlowDirection="RightToLeft" VerticalAlignment="Top"/>
+        </Button>
+        <TextBox x:Name="txtFormB" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Height="35" Margin="155,118,0,0" VerticalAlignment="Top" Width="122" IsEnabled="False"/>
+        <Label Content="بدهکار" HorizontalAlignment="Left" Height="35" Margin="282,118,0,0" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="txtDebtor" Style="{StaticResource TextBoxStyle}"  HorizontalAlignment="Left" Margin="340,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" TextChanged="txtDebtor_TextChanged" PreviewTextInput="txtDebtor_PreviewTextInput"/>
+        <Label Content="بستانکار" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" Margin="431,118,0,0" VerticalAlignment="Top" Width="43"/>
+        <TextBox x:Name="txtCreditor" HorizontalAlignment="Left" Width="86" Style="{StaticResource TextBoxStyle}" Margin="479,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCreditor_TextChanged" PreviewTextInput="txtCreditor_PreviewTextInput"/>
+        <Label Content="تعداد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" Margin="570,118,0,0" VerticalAlignment="Top" Width="43"/>
+        <TextBox x:Name="txtCount" Style="{StaticResource TextBoxStyle}" Margin="618,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" TextChanged="txtCount_TextChanged" PreviewTextInput="txtCount_PreviewTextInput" HorizontalAlignment="Left" Width="101"/>
+        <Label Content="شرح آرتیکل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" Margin="10,184,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtArticleDescription" Style="{StaticResource TextBoxStyle}" Height="35" Margin="85,184,0,0" VerticalAlignment="Top" PreviewTextInput="txtArticleDescription_PreviewTextInput" HorizontalAlignment="Left" Width="638"/>
+        <Button x:Name="btnRegister" Style="{StaticResource ButtonStyleRD}" FlowDirection="LeftToRight" Click="btnRegister_Click" HorizontalAlignment="Left" Height="35" Margin="834,184,0,0" VerticalAlignment="Top" Width="183">
+            <TextBlock Text="ثبت"/>
+        </Button>
+        <DataGrid x:Name="DataGridTest" Style="{StaticResource DataGridStyle}" Height="121" Margin="10,224,10,0" VerticalAlignment="Top"
+			AutoGenerateColumns="False"  CanUserAddRows="True" ItemsSource="{Binding}" SelectedItem="{Binding AccountingArticle, Mode=TwoWay}" SelectionChanged="DataGridTest_SelectionChanged" >
+            <DataGrid.ContextMenu>
+                <ContextMenu >
+                    <MenuItem Header="حذف" PreviewMouseDown ="MenuItem_DeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="تعداد" IsReadOnly="True" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="بدهکار" IsReadOnly="True"  Binding="{Binding Debtor}" />
+                <DataGridTextColumn Header="بستانکار" IsReadOnly="True"  Binding="{Binding Creditor}" />
+                <DataGridTextColumn Header="شرح" IsReadOnly="True"  Binding="{Binding Description}" />
+                <DataGridTextColumn Header="کدهای حسابداری" IsReadOnly="True"  Binding="{Binding CodehaieHesabdari}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="توضیحات" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" Margin="19,409,0,0" VerticalAlignment="Top" Width="97"/>
+        <TextBox x:Name="txtDocument_Desc" Style="{StaticResource TextBoxStyle}" Height="35" Margin="122,409,18,0" VerticalAlignment="Top" PreviewTextInput="txtDocument_Desc_PreviewTextInput"/>
+        <Label Content="مجموع بدهکار" Style="{StaticResource LabelStyle}" Height="35" Margin="19,362,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"/>
+        <TextBox x:Name="TxtTotalDebtor" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="121,362,0,0" VerticalAlignment="Top" IsReadOnly="True" TextChanged="TxtResults_TextChanged" PreviewTextInput="TxtTotalDebtor_PreviewTextInput" HorizontalAlignment="Left" Width="184"/>
+        <Label Content="مجموع بستانکار" Style="{StaticResource LabelStyle}" Height="35" Margin="381,360,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="93"/>
+        <TextBox x:Name="TxtTotalCreditor" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="479,362,0,0" VerticalAlignment="Top" IsReadOnly="True" TextChanged="TxtResults_TextChanged" PreviewTextInput="TxtTotalCreditor_PreviewTextInput" HorizontalAlignment="Left" Width="184"/>
+        <Label Content="اختلاف" Style="{StaticResource LabelStyle}" Height="35" Margin="720,360,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"/>
+        <TextBox x:Name="TxtDiff" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" Margin="823,360,0,0" VerticalAlignment="Top" IsReadOnly="True" PreviewTextInput="TxtDiff_PreviewTextInput" TextChanged="TxtDiff_TextChanged" HorizontalAlignment="Left" Width="183"/>
+        <Button x:Name="btnRegisterDocument" Style="{StaticResource ButtonStyleRD}" FlowDirection="LeftToRight" Click="btnRegisterDocument_Click" Height="35" Margin="10,449,10,0" VerticalAlignment="Top">
+            <TextBlock Text="ثبت نهایی"/>
+        </Button>
+
+
+    </Grid>
+</Window>

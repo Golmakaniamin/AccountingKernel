@@ -1,0 +1,25 @@
+﻿<Window x:Class="AccountingKernel.Forms.Goods.frmUnitCount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Height="768" Width="1024" WindowStartupLocation="CenterScreen" FontFamily="B Nazanin" FontSize="14" FontWeight="Bold" FlowDirection="RightToLeft">
+    <Grid >
+        <Label Content="کد کالا" HorizontalAlignment="Left" Height="35" Margin="922,22,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="txtCode" HorizontalAlignment="Left" IsReadOnly="True" Height="35" Margin="609,22,0,0" VerticalAlignment="Top" Width="290"/>
+        <Label Content="عنوان کالا" HorizontalAlignment="Left" Height="35" Margin="487,22,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" IsReadOnly="True" Height="35" Margin="201,21,0,0" VerticalAlignment="Top" Width="263"/>
+        <Label Content="جستجو" HorizontalAlignment="Left" Height="35" Margin="922,79,0,0" VerticalAlignment="Top" Width="44"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="35" Margin="201,79,0,0" VerticalAlignment="Top" Width="698"  />
+
+        <DataGrid x:Name="grdUnitCount" HorizontalAlignment="Left" Margin="10,119,0,153" Width="998" AutoGenerateColumns="False"  RowEditEnding="DataGrid_RowEditEnding" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding Path=IsAllocated}"/>
+                <DataGridComboBoxColumn Header="واحد شمارش" x:Name="cmbFirstUnit1"  SelectedValueBinding="{Binding Path=FirstUnitId}"/>
+                <DataGridComboBoxColumn Header="واحد دوم" x:Name="cmbSecondUnit1"  SelectedValueBinding="{Binding Path=SecondUnitId}"/>
+                <DataGridTextColumn Header="مفدار" Binding="{Binding Path=Count2}"/>
+                <DataGridTextColumn ></DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>

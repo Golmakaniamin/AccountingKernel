@@ -1,0 +1,25 @@
+﻿<Window x:Class="AccountingKernel.PayrollSentencesSubmitChild"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="480" Width="640" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="cmbBenefitType" HorizontalAlignment="Left" Margin="180,89,0,0" VerticalAlignment="Top" Width="120" Height="35" AllowDrop="True" DisplayMemberPath="Name" SelectedValuePath="Id" />
+        <Label Content="نوع" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="305,89,0,0" VerticalAlignment="Top" Width="110"/>
+        <ComboBox x:Name="cmbType" HorizontalAlignment="Left" Margin="420,89,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name" SelectedValuePath="Id" Height="35"/>
+        <Label Content="عنوان" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="65,209,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label Content="نوع کسورات و مزایا" Style="{StaticResource LabelStyle}" Margin="65,89,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+        <TextBox x:Name="txtTitle" Style="{StaticResource TextBoxStyle}" Margin="180,209,340,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="مبلغ" Style="{StaticResource LabelStyle}" Margin="65,129,0,0" HorizontalAlignment="Left" Width="110" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrice" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="180,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtPrice_PreviewTextInput" TextChanged="txtPrice_TextChanged"/>
+        <Label Content="کد حسابداری" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="305,129,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="txtAccountingCode" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="420,129,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" AcceptsTab="True" PreviewTextInput="txtAccountingCode_PreviewTextInput"/>
+        <CheckBox x:Name="chbTaxation" FlowDirection="RightToLeft" Content="مالیات" Height="35" HorizontalAlignment="Left" Margin="420,222,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chbInsurance" FlowDirection="RightToLeft" Content="بیمه" Height="35" HorizontalAlignment="Left" Margin="420,257,0,0" VerticalAlignment="Top"/>
+        <Label Content="بیمه کارفرما" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="65,169,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="txtMasterInsurance" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="180,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="بیمه پرسنل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="305,169,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="txtEmployeeInsurance" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="420,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="بیمه بیکاری" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="65,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.545,0.462" Width="110"/>
+        <TextBox x:Name="txtUnemploymentInsurance" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="180,249,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSubmit" Style="{StaticResource ButtonStyleRD}" Content="ثبت" Margin="10,435,10,0" Click="btnSubmit_Click" Height="35" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

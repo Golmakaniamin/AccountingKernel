@@ -1,0 +1,19 @@
+﻿<Application x:Class="AccountingKernel.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   
+             StartupUri="Forms/PersonStructure.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes\DataGridHeaderMe.xaml" />
+                <ResourceDictionary Source="Themes\ThemeButton1.xaml" />
+                <ResourceDictionary Source="Themes\ButtonStealth1.xaml" />
+                <ResourceDictionary Source="Themes\ButtonStyleRD.xaml" />
+                <ResourceDictionary Source="Themes\Style.xaml" />
+                <ResourceDictionary Source="Themes\ThemeTextBox.xaml" />
+                <ResourceDictionary Source="Themes\ThemeLabel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

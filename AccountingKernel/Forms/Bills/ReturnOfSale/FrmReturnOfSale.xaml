@@ -1,0 +1,52 @@
+﻿<Window x:Class="AccountingKernel.Forms.Bills.ReturnOfSale.FrmReturnOfSale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" 
+        Height="768" Width="1024" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Closing="Window_Closing" Title="ثبت فاکتور برگشت از فروش" Style="{DynamicResource WindowStyle}">
+    <Grid Margin="0,0,3.6,4" >
+        <Label HorizontalAlignment="Left" Height="35" Style="{StaticResource LabelStyle}" Margin="458,27,0,0" VerticalAlignment="Top" Width="115" x:Name="lblHeader"/>
+
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" Margin="10,63,0,0" VerticalAlignment="Top" Width="74" Content="نوع حواله"/>
+        <ComboBox x:Name="cmbOrderType"  Height="35" Margin="89,63,816.4,0" VerticalAlignment="Top" Width="115" DisplayMemberPath="AssignName" SelectedValuePath="Id"/>
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" Margin="249,63,0,0" VerticalAlignment="Top" Width="56" Content="مبنا دارد"/>
+        <CheckBox x:Name="chbBase"  Height="13" Margin="235,74,772.4,0" VerticalAlignment="Top" Checked="chbBase_Checked" Unchecked="chbBase_Checked" />
+        <Label Content="نام خریدار" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="75" Margin="10,103,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox HorizontalAlignment="Left" Height="35" Margin="90,103,0,0" VerticalAlignment="Top" Width="114" x:Name="txtCompany" Threshold="1"/>
+
+
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" Margin="349,63,0,0" VerticalAlignment="Top" Width="47" Content="برمبنای"/>
+        <ComboBox x:Name="cmbBase"  Height="35" Margin="401,63,504.4,0" VerticalAlignment="Top" Width="115" DisplayMemberPath="AssignName" SelectedValuePath="Id"
+                  SelectionChanged="cmbBase_SelectionChanged"/>
+        <Button Content="انتخاب مبنا" x:Name="btnSelectBase" HorizontalAlignment="Left" Margin="521,59,0,0" Style="{StaticResource ButtonStyleRD}" 
+                VerticalAlignment="Top" Width="80" Click="btnSelectBase_Click"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txtBase" HorizontalAlignment="Left" Height="35" Margin="606,59,0,0" VerticalAlignment="Top" Width="109"
+                                                    Threshold="1" LostFocus="txtBase_LostFocus"/>
+        <Label Content="کد/ نام کالا" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="67" Margin="209,103,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox HorizontalAlignment="Left" Height="35" Margin="281,103,0,0" VerticalAlignment="Top" Width="115" x:Name="txtCommodity" 
+                                                   LostFocus="txtCommodity_LostFocus" Threshold="1"/>
+        <Label Content="تعداد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="46" Margin="401,103,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,103,0,0" Style="{StaticResource TextBoxStyle}" VerticalAlignment="Top" Width="148" x:Name="txtCount" PreviewTextInput="txtCount_PreviewTextInput" TextChanged="txtCount_TextChanged"/>
+        <Label Content="انتخاب واحد شمارش" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="111" Margin="605,103,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="721,103,0,0" VerticalAlignment="Top" Width="130" x:Name="cmbUnitCount"
+        	DisplayMemberPath="AssignName" SelectedValuePath="Id"/>
+        <Label Content="توضیحات" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="75" Margin="10,143,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Margin="90,143,0,0" Style="{StaticResource TextBoxStyle}" VerticalAlignment="Top" Width="510" x:Name="txtComment"/>
+        <Label Content="تاریخ صدور " Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="110" Margin="605,143,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <PersianDateControls:PersianDatePicker x:Name="dtpIssueDate" HorizontalAlignment="Left" Margin="720,143,0,0" VerticalAlignment="Top" Width="131" Height="35"/>
+        <Button Content="ثبت" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="856,140,0,0" VerticalAlignment="Top" Width="154" x:Name="btnRegisterCommodity" Click="btnRegisterCommodity_Click"/>
+
+        <DataGrid x:Name="DataGrid" Margin="10,183,10.4,50" SelectedCellsChanged="DataGrid_SelectedCellsChanged" Style="{StaticResource DataGridStyle}"
+			AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="قیمت واحد" IsReadOnly="True"  Binding="{Binding UnitPrice}" />
+                <DataGridTextColumn Header="واحد" IsReadOnly="True"  Binding="{Binding Unit}" />
+                <DataGridTextColumn Header="تعداد" IsReadOnly="True"  Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="نام کالا" IsReadOnly="True"  Binding="{Binding CommodityName}" />
+                <DataGridTextColumn Header="کد کالا" IsReadOnly="True"  Binding="{Binding CommodityCode}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="ثبت" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnRegister_Click" Style="{StaticResource ButtonStyleRD}"/>
+
+    </Grid>
+</Window>

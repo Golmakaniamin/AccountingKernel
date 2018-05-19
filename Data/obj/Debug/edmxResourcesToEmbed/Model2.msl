@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccountingKernelModelStoreContainer" CdmEntityContainer="AccountingKernelEntities10">
+    <FunctionImportMapping FunctionImportName="SHOWData" FunctionName="AccountingKernelModel.Store.SHOWData" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="AccountingKernelModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="AccountingKernelModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="AccountingKernelModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="AccountingKernelModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AccountingKernelModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="AccountingKernelModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AccountingKernelModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="GoodiesGroupsViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.GoodiesGroupsView">
+        <MappingFragment StoreEntitySet="GoodiesGroupsView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="CodeTitleId" ColumnName="CodeTitleId" />
+          <ScalarProperty Name="uniquepath" ColumnName="uniquepath" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CNameEn" ColumnName="CNameEn" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingArticles">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingArticle">
+        <MappingFragment StoreEntitySet="AccountingArticle">
+          <ScalarProperty Name="ACount" ColumnName="ACount" />
+          <ScalarProperty Name="ACreditor" ColumnName="ACreditor" />
+          <ScalarProperty Name="ADebtor" ColumnName="ADebtor" />
+          <ScalarProperty Name="ADescriptionEn" ColumnName="ADescriptionEn" />
+          <ScalarProperty Name="ADescription" ColumnName="ADescription" />
+          <ScalarProperty Name="IDAccountingDocument" ColumnName="IDAccountingDocument" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingDocuments">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingDocument">
+        <MappingFragment StoreEntitySet="AccountingDocument">
+          <ScalarProperty Name="ADType" ColumnName="ADType" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="AIdStatus" ColumnName="AIdStatus" />
+          <ScalarProperty Name="AISDeleted" ColumnName="AISDeleted" />
+          <ScalarProperty Name="ADOldCode" ColumnName="ADOldCode" />
+          <ScalarProperty Name="ADCode" ColumnName="ADCode" />
+          <ScalarProperty Name="ADPriority" ColumnName="ADPriority" />
+          <ScalarProperty Name="ADDate" ColumnName="ADDate" />
+          <ScalarProperty Name="ADDescriptionEn" ColumnName="ADDescriptionEn" />
+          <ScalarProperty Name="ADDescription" ColumnName="ADDescription" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingInterfaces">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingInterface">
+        <MappingFragment StoreEntitySet="AccountingInterface">
+          <ScalarProperty Name="AICreditor_IDAccountingMoeinTafsilLevels" ColumnName="AICreditor_IDAccountingMoeinTafsilLevels" />
+          <ScalarProperty Name="AIDebtor_IDAccountingMoeinTafsilLevels" ColumnName="AIDebtor_IDAccountingMoeinTafsilLevels" />
+          <ScalarProperty Name="AICreditor_IDAccountingMoein" ColumnName="AICreditor_IDAccountingMoein" />
+          <ScalarProperty Name="AIDebtor_IDAccountingMoein" ColumnName="AIDebtor_IDAccountingMoein" />
+          <ScalarProperty Name="AIName" ColumnName="AIName" />
+          <ScalarProperty Name="AIGroupName" ColumnName="AIGroupName" />
+          <ScalarProperty Name="AIGroupID" ColumnName="AIGroupID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeins">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoein">
+        <MappingFragment StoreEntitySet="AccountingMoein">
+          <ScalarProperty Name="MMoienType" ColumnName="MMoienType" />
+          <ScalarProperty Name="MMoein" ColumnName="MMoein" />
+          <ScalarProperty Name="MGrouhF" ColumnName="MGrouhF" />
+          <ScalarProperty Name="MFALLName" ColumnName="MFALLName" />
+          <ScalarProperty Name="MFName" ColumnName="MFName" />
+          <ScalarProperty Name="MIdMoein" ColumnName="MIdMoein" />
+          <ScalarProperty Name="MIdAll" ColumnName="MIdAll" />
+          <ScalarProperty Name="MIdGroup" ColumnName="MIdGroup" />
+          <ScalarProperty Name="MName" ColumnName="MName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinCodes">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinCode">
+        <MappingFragment StoreEntitySet="AccountingMoeinCodes">
+          <ScalarProperty Name="MNature" ColumnName="MNature" />
+          <ScalarProperty Name="MType" ColumnName="MType" />
+          <ScalarProperty Name="StructureDefine_ID" ColumnName="StructureDefine_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinDetail">
+        <MappingFragment StoreEntitySet="AccountingMoeinDetails">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="IdIn" ColumnName="IdIn" />
+          <ScalarProperty Name="MDNameEn" ColumnName="MDNameEn" />
+          <ScalarProperty Name="MDName" ColumnName="MDName" />
+          <ScalarProperty Name="IdAccountingMoein" ColumnName="IdAccountingMoein" />
+          <ScalarProperty Name="IdCodeTitle" ColumnName="IdCodeTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinStructureDefines">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinStructureDefine">
+        <MappingFragment StoreEntitySet="AccountingMoeinStructureDefine">
+          <ScalarProperty Name="Latin_Name" ColumnName="Latin_Name" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="Uniq_Path" ColumnName="Uniq_Path" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinTafsilLevels">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinTafsilLevel">
+        <MappingFragment StoreEntitySet="AccountingMoeinTafsilLevels">
+          <ScalarProperty Name="IdTafsilGroup" ColumnName="IdTafsilGroup" />
+          <ScalarProperty Name="IdAccountingTafsilLevels" ColumnName="IdAccountingTafsilLevels" />
+          <ScalarProperty Name="IdAccountingMoein" ColumnName="IdAccountingMoein" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinTafsilRelations">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinTafsilRelation">
+        <MappingFragment StoreEntitySet="AccountingMoeinTafsilRelation">
+          <ScalarProperty Name="AccountingTafsil_ID" ColumnName="AccountingTafsil_ID" />
+          <ScalarProperty Name="AcountingMoein_ID" ColumnName="AcountingMoein_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingTafsilArticles">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingTafsilArticle">
+        <MappingFragment StoreEntitySet="AccountingTafsilArticle">
+          <ScalarProperty Name="IDAccountingTafsilStructureDefine" ColumnName="IDAccountingTafsilStructureDefine" />
+          <ScalarProperty Name="IDAccountingMoein" ColumnName="IDAccountingMoein" />
+          <ScalarProperty Name="IdAccountingArticle" ColumnName="IdAccountingArticle" />
+          <ScalarProperty Name="IdAccountingTafsilLDetails" ColumnName="IdAccountingTafsilLDetails" />
+          <ScalarProperty Name="IDAccountingMoeinTafsilLevels" ColumnName="IDAccountingMoeinTafsilLevels" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingTafsilLevels">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingTafsilLevel">
+        <MappingFragment StoreEntitySet="AccountingTafsilLevels">
+          <ScalarProperty Name="IdIn" ColumnName="IdIn" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingTafsillevelsDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingTafsillevelsDetail">
+        <MappingFragment StoreEntitySet="AccountingTafsillevelsDetails">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="IdRefrence" ColumnName="IdRefrence" />
+          <ScalarProperty Name="IdIn" ColumnName="IdIn" />
+          <ScalarProperty Name="ATLNameEn" ColumnName="ATLNameEn" />
+          <ScalarProperty Name="ATLName" ColumnName="ATLName" />
+          <ScalarProperty Name="IdAccountingTafsilLevels" ColumnName="IdAccountingTafsilLevels" />
+          <ScalarProperty Name="IdCodeTitle" ColumnName="IdCodeTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingTafsilStructureDefines">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingTafsilStructureDefine">
+        <MappingFragment StoreEntitySet="AccountingTafsilStructureDefine">
+          <ScalarProperty Name="IdRefrence" ColumnName="IdRefrence" />
+          <ScalarProperty Name="Latin_Name" ColumnName="Latin_Name" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="Uniq_Path" ColumnName="Uniq_Path" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assets">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Asset">
+        <MappingFragment StoreEntitySet="Asset">
+          <ScalarProperty Name="asset_number" ColumnName="asset_number" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="decay_value" ColumnName="decay_value" />
+          <ScalarProperty Name="Accumulative_amortization" ColumnName="Accumulative_amortization" />
+          <ScalarProperty Name="amortization_Method" ColumnName="amortization_Method" />
+          <ScalarProperty Name="amortization_Rate" ColumnName="amortization_Rate" />
+          <ScalarProperty Name="asset_No" ColumnName="asset_No" />
+          <ScalarProperty Name="assetdate" ColumnName="assetdate" />
+          <ScalarProperty Name="Idassetgoods" ColumnName="Idassetgoods" />
+          <ScalarProperty Name="Idperson" ColumnName="Idperson" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetGoods">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AssetGood">
+        <MappingFragment StoreEntitySet="AssetGoods">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="codetitleId" ColumnName="codetitleId" />
+          <ScalarProperty Name="uniquepath" ColumnName="uniquepath" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseInfoes">
+      <EntityTypeMapping TypeName="AccountingKernelModel.BaseInfo">
+        <MappingFragment StoreEntitySet="BaseInfo">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Explain" ColumnName="Explain" />
+          <ScalarProperty Name="AssignName" ColumnName="AssignName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capitals">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Capital">
+        <MappingFragment StoreEntitySet="Capital">
+          <ScalarProperty Name="CTotalPrice" ColumnName="CTotalPrice" />
+          <ScalarProperty Name="CDescription" ColumnName="CDescription" />
+          <ScalarProperty Name="CPerson" ColumnName="CPerson" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="CNO" ColumnName="CNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapitalDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CapitalDetail">
+        <MappingFragment StoreEntitySet="CapitalDetails">
+          <ScalarProperty Name="CDDescription" ColumnName="CDDescription" />
+          <ScalarProperty Name="CDPrice" ColumnName="CDPrice" />
+          <ScalarProperty Name="CDDate" ColumnName="CDDate" />
+          <ScalarProperty Name="IDCapital" ColumnName="IDCapital" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Checks">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Check">
+        <MappingFragment StoreEntitySet="Check">
+          <ScalarProperty Name="CType" ColumnName="CType" />
+          <ScalarProperty Name="CBank" ColumnName="CBank" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="CDescription" ColumnName="CDescription" />
+          <ScalarProperty Name="CPrice" ColumnName="CPrice" />
+          <ScalarProperty Name="CAccountnumber" ColumnName="CAccountnumber" />
+          <ScalarProperty Name="CNO" ColumnName="CNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckProcesses">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CheckProcess">
+        <MappingFragment StoreEntitySet="CheckProcesses">
+          <ScalarProperty Name="CSerial" ColumnName="CSerial" />
+          <ScalarProperty Name="IDFunds" ColumnName="IDFunds" />
+          <ScalarProperty Name="CPDescription" ColumnName="CPDescription" />
+          <ScalarProperty Name="CPName" ColumnName="CPName" />
+          <ScalarProperty Name="CPDate" ColumnName="CPDate" />
+          <ScalarProperty Name="CPType" ColumnName="CPType" />
+          <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodeTitles">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CodeTitle">
+        <MappingFragment StoreEntitySet="CodeTitle">
+          <ScalarProperty Name="CodeStart" ColumnName="CodeStart" />
+          <ScalarProperty Name="CodePriority" ColumnName="CodePriority" />
+          <ScalarProperty Name="CodeLen" ColumnName="CodeLen" />
+          <ScalarProperty Name="CodeGroup" ColumnName="CodeGroup" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coms">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Com">
+        <MappingFragment StoreEntitySet="Com">
+          <ScalarProperty Name="CompanyStructureDefineId" ColumnName="CompanyStructureDefineId" />
+          <ScalarProperty Name="IdAccountingTafsillevelsDetails" ColumnName="IdAccountingTafsillevelsDetails" />
+          <ScalarProperty Name="IdTafsilLevels" ColumnName="IdTafsilLevels" />
+          <ScalarProperty Name="CType" ColumnName="CType" />
+          <ScalarProperty Name="CPriceType" ColumnName="CPriceType" />
+          <ScalarProperty Name="CWebsite" ColumnName="CWebsite" />
+          <ScalarProperty Name="CEMail" ColumnName="CEMail" />
+          <ScalarProperty Name="CFax" ColumnName="CFax" />
+          <ScalarProperty Name="CMobile" ColumnName="CMobile" />
+          <ScalarProperty Name="CTell" ColumnName="CTell" />
+          <ScalarProperty Name="CAddress" ColumnName="CAddress" />
+          <ScalarProperty Name="CPostalCode" ColumnName="CPostalCode" />
+          <ScalarProperty Name="CEconomyCode" ColumnName="CEconomyCode" />
+          <ScalarProperty Name="CNationalCode" ColumnName="CNationalCode" />
+          <ScalarProperty Name="CRegisterNo" ColumnName="CRegisterNo" />
+          <ScalarProperty Name="CPersonType" ColumnName="CPersonType" />
+          <ScalarProperty Name="CNameEn" ColumnName="CNameEn" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="IdAccountingTafsillevelsDetails" ColumnName="IdAccountingTafsillevelsDetails" />
+          <ScalarProperty Name="IdTafsilLevels" ColumnName="IdTafsilLevels" />
+          <ScalarProperty Name="CType" ColumnName="CType" />
+          <ScalarProperty Name="CPriceType" ColumnName="CPriceType" />
+          <ScalarProperty Name="CWebsite" ColumnName="CWebsite" />
+          <ScalarProperty Name="CEMail" ColumnName="CEMail" />
+          <ScalarProperty Name="CFax" ColumnName="CFax" />
+          <ScalarProperty Name="CMobile" ColumnName="CMobile" />
+          <ScalarProperty Name="CTell" ColumnName="CTell" />
+          <ScalarProperty Name="CAddress" ColumnName="CAddress" />
+          <ScalarProperty Name="CPostalCode" ColumnName="CPostalCode" />
+          <ScalarProperty Name="CEconomyCode" ColumnName="CEconomyCode" />
+          <ScalarProperty Name="CNationalCode" ColumnName="CNationalCode" />
+          <ScalarProperty Name="CRegisterNo" ColumnName="CRegisterNo" />
+          <ScalarProperty Name="CPersonType" ColumnName="CPersonType" />
+          <ScalarProperty Name="CNameEn" ColumnName="CNameEn" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CompanyDetail">
+        <MappingFragment StoreEntitySet="CompanyDetails">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="CDIDIn" ColumnName="CDIDIn" />
+          <ScalarProperty Name="CDNameEn" ColumnName="CDNameEn" />
+          <ScalarProperty Name="CDName" ColumnName="CDName" />
+          <ScalarProperty Name="IDCompany" ColumnName="IDCompany" />
+          <ScalarProperty Name="IDCodeTitle" ColumnName="IDCodeTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyStructureDefines">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CompanyStructureDefine">
+        <MappingFragment StoreEntitySet="CompanyStructureDefine">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="Uniq_Path" ColumnName="Uniq_Path" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="corporations">
+      <EntityTypeMapping TypeName="AccountingKernelModel.corporation">
+        <MappingFragment StoreEntitySet="corporation">
+          <ScalarProperty Name="kod_TIN" ColumnName="kod_TIN" />
+          <ScalarProperty Name="kod_TFN" ColumnName="kod_TFN" />
+          <ScalarProperty Name="emza1_semat" ColumnName="emza1_semat" />
+          <ScalarProperty Name="emza1_codemelli" ColumnName="emza1_codemelli" />
+          <ScalarProperty Name="emza1_family" ColumnName="emza1_family" />
+          <ScalarProperty Name="emza1_name" ColumnName="emza1_name" />
+          <ScalarProperty Name="nahve_pardakht" ColumnName="nahve_pardakht" />
+          <ScalarProperty Name="kod_egtesady" ColumnName="kod_egtesady" />
+          <ScalarProperty Name="pardakht_codemelli" ColumnName="pardakht_codemelli" />
+          <ScalarProperty Name="pardakht_family" ColumnName="pardakht_family" />
+          <ScalarProperty Name="pardakht_name" ColumnName="pardakht_name" />
+          <ScalarProperty Name="nahve_maliyat" ColumnName="nahve_maliyat" />
+          <ScalarProperty Name="name_shobe" ColumnName="name_shobe" />
+          <ScalarProperty Name="noefareiepardakhtkonande" ColumnName="noefareiepardakhtkonande" />
+          <ScalarProperty Name="noeasliepardakhtkonande" ColumnName="noeasliepardakhtkonande" />
+          <ScalarProperty Name="kod_shobe" ColumnName="kod_shobe" />
+          <ScalarProperty Name="sh_parvande" ColumnName="sh_parvande" />
+          <ScalarProperty Name="nerkhe_bime" ColumnName="nerkhe_bime" />
+          <ScalarProperty Name="kod_shemely" ColumnName="kod_shemely" />
+          <ScalarProperty Name="name_kargah" ColumnName="name_kargah" />
+          <ScalarProperty Name="nameshobe_bime" ColumnName="nameshobe_bime" />
+          <ScalarProperty Name="radif_peyman" ColumnName="radif_peyman" />
+          <ScalarProperty Name="kod_kargah" ColumnName="kod_kargah" />
+          <ScalarProperty Name="image_byte" ColumnName="image_byte" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="idposti" ColumnName="idposti" />
+          <ScalarProperty Name="sabt" ColumnName="sabt" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="CorporationType" ColumnName="CorporationType" />
+          <ScalarProperty Name="mahale_sabt" ColumnName="mahale_sabt" />
+          <ScalarProperty Name="CorporationName" ColumnName="CorporationName" />
+          <ScalarProperty Name="Groupname" ColumnName="Groupname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinancialMainYears">
+      <EntityTypeMapping TypeName="AccountingKernelModel.FinancialMainYear">
+        <MappingFragment StoreEntitySet="FinancialMainYear">
+          <ScalarProperty Name="FYear" ColumnName="FYear" />
+          <ScalarProperty Name="IDCorporation" ColumnName="IDCorporation" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Financialyears">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Financialyear">
+        <MappingFragment StoreEntitySet="Financialyear">
+          <ScalarProperty Name="piroity" ColumnName="piroity" />
+          <ScalarProperty Name="FYMonthNumber" ColumnName="FYMonthNumber" />
+          <ScalarProperty Name="FYMonthName" ColumnName="FYMonthName" />
+          <ScalarProperty Name="FYMonthNO" ColumnName="FYMonthNO" />
+          <ScalarProperty Name="FYyear" ColumnName="FYyear" />
+          <ScalarProperty Name="IDCorporation" ColumnName="IDCorporation" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funds">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Fund">
+        <MappingFragment StoreEntitySet="Funds">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="FType" ColumnName="FType" />
+          <ScalarProperty Name="Fprice" ColumnName="Fprice" />
+          <ScalarProperty Name="FAddress" ColumnName="FAddress" />
+          <ScalarProperty Name="FCartNO" ColumnName="FCartNO" />
+          <ScalarProperty Name="FAccountnumber" ColumnName="FAccountnumber" />
+          <ScalarProperty Name="FbranchNO" ColumnName="FbranchNO" />
+          <ScalarProperty Name="Fbranch" ColumnName="Fbranch" />
+          <ScalarProperty Name="FBankNO" ColumnName="FBankNO" />
+          <ScalarProperty Name="FBank" ColumnName="FBank" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goodies">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Goody">
+        <MappingFragment StoreEntitySet="Goodies">
+          <ScalarProperty Name="IdGoodiesGroups" ColumnName="IdGoodiesGroups" />
+          <ScalarProperty Name="IdAccountingTafsillevelsDetails" ColumnName="IdAccountingTafsillevelsDetails" />
+          <ScalarProperty Name="CBaseCountingUnit" ColumnName="CBaseCountingUnit" />
+          <ScalarProperty Name="CType" ColumnName="CType" />
+          <ScalarProperty Name="CInventoryMax" ColumnName="CInventoryMax" />
+          <ScalarProperty Name="CPointCritical" ColumnName="CPointCritical" />
+          <ScalarProperty Name="COrderMin" ColumnName="COrderMin" />
+          <ScalarProperty Name="COrderMax" ColumnName="COrderMax" />
+          <ScalarProperty Name="COrderPoint" ColumnName="COrderPoint" />
+          <ScalarProperty Name="CNameEn" ColumnName="CNameEn" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="CID1" ColumnName="CID1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodiesGroups">
+      <EntityTypeMapping TypeName="AccountingKernelModel.GoodiesGroup">
+        <MappingFragment StoreEntitySet="GoodiesGroups">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="CodeTitleId" ColumnName="CodeTitleId" />
+          <ScalarProperty Name="uniquepath" ColumnName="uniquepath" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CNameEn" ColumnName="CNameEn" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodyConvertCountingUnits">
+      <EntityTypeMapping TypeName="AccountingKernelModel.GoodyConvertCountingUnit">
+        <MappingFragment StoreEntitySet="GoodyConvertCountingUnit">
+          <ScalarProperty Name="CCCUCount2" ColumnName="CCCUCount2" />
+          <ScalarProperty Name="CCCUIDBaseInfo2" ColumnName="CCCUIDBaseInfo2" />
+          <ScalarProperty Name="CCCUCount1" ColumnName="CCCUCount1" />
+          <ScalarProperty Name="CCCUIDBaseInfo1" ColumnName="CCCUIDBaseInfo1" />
+          <ScalarProperty Name="IDCommodity" ColumnName="IDCommodity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodyPriceLists">
+      <EntityTypeMapping TypeName="AccountingKernelModel.GoodyPriceList">
+        <MappingFragment StoreEntitySet="GoodyPriceList">
+          <ScalarProperty Name="PLPrice" ColumnName="PLPrice" />
+          <ScalarProperty Name="IDGoody" ColumnName="IDGoody" />
+          <ScalarProperty Name="IDBaseInfo" ColumnName="IDBaseInfo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operatives">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Operative">
+        <MappingFragment StoreEntitySet="Operative">
+          <ScalarProperty Name="OPercent" ColumnName="OPercent" />
+          <ScalarProperty Name="OCalculationMethod" ColumnName="OCalculationMethod" />
+          <ScalarProperty Name="OType" ColumnName="OType" />
+          <ScalarProperty Name="OName" ColumnName="OName" />
+          <ScalarProperty Name="OISEffective" ColumnName="OISEffective" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollContracts">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollContract">
+        <MappingFragment StoreEntitySet="PayrollContract">
+          <ScalarProperty Name="PrCBranchCartNumber" ColumnName="PrCBranchCartNumber" />
+          <ScalarProperty Name="PrCAccountNumber" ColumnName="PrCAccountNumber" />
+          <ScalarProperty Name="PrCBranchName" ColumnName="PrCBranchName" />
+          <ScalarProperty Name="PrCBankName" ColumnName="PrCBankName" />
+          <ScalarProperty Name="PrcSalary" ColumnName="PrcSalary" />
+          <ScalarProperty Name="PrcSalaryType" ColumnName="PrcSalaryType" />
+          <ScalarProperty Name="PrcInsuranceNumber" ColumnName="PrcInsuranceNumber" />
+          <ScalarProperty Name="PrcInsuranceType" ColumnName="PrcInsuranceType" />
+          <ScalarProperty Name="PrcDateContractExpire" ColumnName="PrcDateContractExpire" />
+          <ScalarProperty Name="PrcDateContractEnd" ColumnName="PrcDateContractEnd" />
+          <ScalarProperty Name="PrcDateContractEmployment" ColumnName="PrcDateContractEmployment" />
+          <ScalarProperty Name="PrcDateContractStart" ColumnName="PrcDateContractStart" />
+          <ScalarProperty Name="PrcDateContractRegister" ColumnName="PrcDateContractRegister" />
+          <ScalarProperty Name="PrcContractType" ColumnName="PrcContractType" />
+          <ScalarProperty Name="PrCContractNumber" ColumnName="PrCContractNumber" />
+          <ScalarProperty Name="IDPayrollPerson" ColumnName="IDPayrollPerson" />
+          <ScalarProperty Name="IDFinancialyear" ColumnName="IDFinancialyear" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollImprests">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollImprest">
+        <MappingFragment StoreEntitySet="PayrollImprest">
+          <ScalarProperty Name="PrIDate" ColumnName="PrIDate" />
+          <ScalarProperty Name="PrIPrice" ColumnName="PrIPrice" />
+          <ScalarProperty Name="IDPayrollSentences" ColumnName="IDPayrollSentences" />
+          <ScalarProperty Name="IDFinancialyear" ColumnName="IDFinancialyear" />
+          <ScalarProperty Name="IDPayrollPerson" ColumnName="IDPayrollPerson" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollInsuranceCodes">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollInsuranceCode">
+        <MappingFragment StoreEntitySet="PayrollInsuranceCode">
+          <ScalarProperty Name="SDesc" ColumnName="SDesc" />
+          <ScalarProperty Name="SCode" ColumnName="SCode" />
+          <ScalarProperty Name="MDesc" ColumnName="MDesc" />
+          <ScalarProperty Name="MCode" ColumnName="MCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollInsuranceimmunities">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollInsuranceimmunity">
+        <MappingFragment StoreEntitySet="PayrollInsuranceimmunity">
+          <ScalarProperty Name="karfarma_darsad" ColumnName="karfarma_darsad" />
+          <ScalarProperty Name="bikari_darsad" ColumnName="bikari_darsad" />
+          <ScalarProperty Name="personel_dasad" ColumnName="personel_dasad" />
+          <ScalarProperty Name="name_moafiat" ColumnName="name_moafiat" />
+          <ScalarProperty Name="kod_moafiat" ColumnName="kod_moafiat" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollLoans">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollLoan">
+        <MappingFragment StoreEntitySet="PayrollLoan">
+          <ScalarProperty Name="PrLPayment" ColumnName="PrLPayment" />
+          <ScalarProperty Name="PrLDDateMiladi" ColumnName="PrLDDateMiladi" />
+          <ScalarProperty Name="PrLDDate" ColumnName="PrLDDate" />
+          <ScalarProperty Name="PrLDPrice" ColumnName="PrLDPrice" />
+          <ScalarProperty Name="PrLID" ColumnName="PrLID" />
+          <ScalarProperty Name="IDPayrollPerson" ColumnName="IDPayrollPerson" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollLoanDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollLoanDetail">
+        <MappingFragment StoreEntitySet="PayrollLoanDetails">
+          <ScalarProperty Name="PrLPayment" ColumnName="PrLPayment" />
+          <ScalarProperty Name="PrLPrice" ColumnName="PrLPrice" />
+          <ScalarProperty Name="PrLDateMiladi" ColumnName="PrLDateMiladi" />
+          <ScalarProperty Name="PrLDate" ColumnName="PrLDate" />
+          <ScalarProperty Name="IDPayrollLoan" ColumnName="IDPayrollLoan" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollPersons">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollPerson">
+        <MappingFragment StoreEntitySet="PayrollPerson">
+          <ScalarProperty Name="PersonStructerID" ColumnName="PersonStructerID" />
+          <ScalarProperty Name="code_moafiat_bimeh" ColumnName="code_moafiat_bimeh" />
+          <ScalarProperty Name="Insurance_meliat" ColumnName="Insurance_meliat" />
+          <ScalarProperty Name="Insurance_reshteh" ColumnName="Insurance_reshteh" />
+          <ScalarProperty Name="Insurance_tahsilat" ColumnName="Insurance_tahsilat" />
+          <ScalarProperty Name="Insurance_mashagel" ColumnName="Insurance_mashagel" />
+          <ScalarProperty Name="Insurance_shahr" ColumnName="Insurance_shahr" />
+          <ScalarProperty Name="Insurance_keshvar" ColumnName="Insurance_keshvar" />
+          <ScalarProperty Name="code_moafiat_maliat" ColumnName="code_moafiat_maliat" />
+          <ScalarProperty Name="Tax_vazmashin" ColumnName="Tax_vazmashin" />
+          <ScalarProperty Name="Tax_rasteshoghli" ColumnName="Tax_rasteshoghli" />
+          <ScalarProperty Name="Tax_nezamvazifeh" ColumnName="Tax_nezamvazifeh" />
+          <ScalarProperty Name="Tax_namekeshvar" ColumnName="Tax_namekeshvar" />
+          <ScalarProperty Name="Tax_meliat" ColumnName="Tax_meliat" />
+          <ScalarProperty Name="Tax_vazmaskan" ColumnName="Tax_vazmaskan" />
+          <ScalarProperty Name="Tax_serishenasnameh" ColumnName="Tax_serishenasnameh" />
+          <ScalarProperty Name="Tax_onvanShoghl" ColumnName="Tax_onvanShoghl" />
+          <ScalarProperty Name="Tax_madrak" ColumnName="Tax_madrak" />
+          <ScalarProperty Name="PImage" ColumnName="PImage" />
+          <ScalarProperty Name="PDescription" ColumnName="PDescription" />
+          <ScalarProperty Name="PAddress" ColumnName="PAddress" />
+          <ScalarProperty Name="PIdPostal" ColumnName="PIdPostal" />
+          <ScalarProperty Name="PMobile" ColumnName="PMobile" />
+          <ScalarProperty Name="PPhoneWork" ColumnName="PPhoneWork" />
+          <ScalarProperty Name="PPhoneHome" ColumnName="PPhoneHome" />
+          <ScalarProperty Name="PNumberChild" ColumnName="PNumberChild" />
+          <ScalarProperty Name="PMarriage" ColumnName="PMarriage" />
+          <ScalarProperty Name="PSex" ColumnName="PSex" />
+          <ScalarProperty Name="PBrithDate" ColumnName="PBrithDate" />
+          <ScalarProperty Name="PSHSH" ColumnName="PSHSH" />
+          <ScalarProperty Name="PIdNational" ColumnName="PIdNational" />
+          <ScalarProperty Name="PFather" ColumnName="PFather" />
+          <ScalarProperty Name="PLastName" ColumnName="PLastName" />
+          <ScalarProperty Name="PFristName" ColumnName="PFristName" />
+          <ScalarProperty Name="PPerson_Code" ColumnName="PPerson_Code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollPersonSentences">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollPersonSentence">
+        <MappingFragment StoreEntitySet="PayrollPersonSentences">
+          <ScalarProperty Name="PrPSMoney" ColumnName="PrPSMoney" />
+          <ScalarProperty Name="IDPayrollSentences" ColumnName="IDPayrollSentences" />
+          <ScalarProperty Name="IDPayrollPerson" ColumnName="IDPayrollPerson" />
+          <ScalarProperty Name="IDFinancialyear" ColumnName="IDFinancialyear" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollPersonWorkDones">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollPersonWorkDone">
+        <MappingFragment StoreEntitySet="PayrollPersonWorkDone">
+          <ScalarProperty Name="PrPWContent" ColumnName="PrPWContent" />
+          <ScalarProperty Name="IDPayrollWorkDoneFactors" ColumnName="IDPayrollWorkDoneFactors" />
+          <ScalarProperty Name="IDPayrollPerson" ColumnName="IDPayrollPerson" />
+          <ScalarProperty Name="IDFinancialyear" ColumnName="IDFinancialyear" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollSalaryFactors">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollSalaryFactor">
+        <MappingFragment StoreEntitySet="PayrollSalaryFactors">
+          <ScalarProperty Name="PrSContent" ColumnName="PrSContent" />
+          <ScalarProperty Name="PrSDescription" ColumnName="PrSDescription" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollSentences">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollSentence">
+        <MappingFragment StoreEntitySet="PayrollSentences">
+          <ScalarProperty Name="PrSInsuranceEmployee" ColumnName="PrSInsuranceEmployee" />
+          <ScalarProperty Name="PrSInsuranceUnemployment" ColumnName="PrSInsuranceUnemployment" />
+          <ScalarProperty Name="PrSInsuranceEmployer" ColumnName="PrSInsuranceEmployer" />
+          <ScalarProperty Name="PrSIsTax" ColumnName="PrSIsTax" />
+          <ScalarProperty Name="PrSIsInsurance" ColumnName="PrSIsInsurance" />
+          <ScalarProperty Name="PrSMoney" ColumnName="PrSMoney" />
+          <ScalarProperty Name="PrSDescription" ColumnName="PrSDescription" />
+          <ScalarProperty Name="PrSOType" ColumnName="PrSOType" />
+          <ScalarProperty Name="PrSType" ColumnName="PrSType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollTaxCodes">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollTaxCode">
+        <MappingFragment StoreEntitySet="PayrollTaxCode">
+          <ScalarProperty Name="SDesc" ColumnName="SDesc" />
+          <ScalarProperty Name="SCode" ColumnName="SCode" />
+          <ScalarProperty Name="MDesc" ColumnName="MDesc" />
+          <ScalarProperty Name="MCode" ColumnName="MCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollTaximmunities">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollTaximmunity">
+        <MappingFragment StoreEntitySet="PayrollTaximmunity">
+          <ScalarProperty Name="darsad1" ColumnName="darsad1" />
+          <ScalarProperty Name="money1" ColumnName="money1" />
+          <ScalarProperty Name="name_moafiat" ColumnName="name_moafiat" />
+          <ScalarProperty Name="kod_moafiat" ColumnName="kod_moafiat" />
+          <ScalarProperty Name="tmpid" ColumnName="tmpid" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollWorkDoneFactors">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollWorkDoneFactor">
+        <MappingFragment StoreEntitySet="PayrollWorkDoneFactors">
+          <ScalarProperty Name="PrWFContent" ColumnName="PrWFContent" />
+          <ScalarProperty Name="PrWFDescription" ColumnName="PrWFDescription" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonStructureDefines">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PersonStructureDefine">
+        <MappingFragment StoreEntitySet="PersonStructureDefine">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="Uniq_Path" ColumnName="Uniq_Path" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceLists">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PriceList">
+        <MappingFragment StoreEntitySet="PriceList">
+          <ScalarProperty Name="PLPrice" ColumnName="PLPrice" />
+          <ScalarProperty Name="IDCommodity" ColumnName="IDCommodity" />
+          <ScalarProperty Name="IDBaseInfo" ColumnName="IDBaseInfo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOTaxes">
+      <EntityTypeMapping TypeName="AccountingKernelModel.SOTax">
+        <MappingFragment StoreEntitySet="SOTax">
+          <ScalarProperty Name="Percent" ColumnName="Percent" />
+          <ScalarProperty Name="IdFinancialMainYear" ColumnName="IdFinancialMainYear" />
+          <ScalarProperty Name="IdBaseinfo" ColumnName="IdBaseinfo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreOperations">
+      <EntityTypeMapping TypeName="AccountingKernelModel.StoreOperation">
+        <MappingFragment StoreEntitySet="StoreOperation">
+          <ScalarProperty Name="OOperation" ColumnName="OOperation" />
+          <ScalarProperty Name="OName" ColumnName="OName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreOperatives">
+      <EntityTypeMapping TypeName="AccountingKernelModel.StoreOperative">
+        <MappingFragment StoreEntitySet="StoreOperative">
+          <ScalarProperty Name="SPrice" ColumnName="SPrice" />
+          <ScalarProperty Name="IdOperative" ColumnName="IdOperative" />
+          <ScalarProperty Name="IdStoreDetail" ColumnName="IdStoreDetail" />
+          <ScalarProperty Name="IdStoreOrder" ColumnName="IdStoreOrder" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreOrders">
+      <EntityTypeMapping TypeName="AccountingKernelModel.StoreOrder">
+        <MappingFragment StoreEntitySet="StoreOrder">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="OIsDeleted" ColumnName="OIsDeleted" />
+          <ScalarProperty Name="IdStoreOperation" ColumnName="IdStoreOperation" />
+          <ScalarProperty Name="OOrderType" ColumnName="OOrderType" />
+          <ScalarProperty Name="OMunicipalTax" ColumnName="OMunicipalTax" />
+          <ScalarProperty Name="OTax" ColumnName="OTax" />
+          <ScalarProperty Name="ODiscount" ColumnName="ODiscount" />
+          <ScalarProperty Name="OSumMoney" ColumnName="OSumMoney" />
+          <ScalarProperty Name="ODelete" ColumnName="ODelete" />
+          <ScalarProperty Name="OReverse" ColumnName="OReverse" />
+          <ScalarProperty Name="ODescription" ColumnName="ODescription" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="ODate" ColumnName="ODate" />
+          <ScalarProperty Name="OOwnerId" ColumnName="OOwnerId" />
+          <ScalarProperty Name="OId" ColumnName="OId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreOrderDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.StoreOrderDetail">
+        <MappingFragment StoreEntitySet="StoreOrderDetails">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="ODDescription" ColumnName="ODDescription" />
+          <ScalarProperty Name="ODDiscount" ColumnName="ODDiscount" />
+          <ScalarProperty Name="ODMoney" ColumnName="ODMoney" />
+          <ScalarProperty Name="ORemained" ColumnName="ORemained" />
+          <ScalarProperty Name="ODCount" ColumnName="ODCount" />
+          <ScalarProperty Name="ODCountingUnit" ColumnName="ODCountingUnit" />
+          <ScalarProperty Name="IdCommodity" ColumnName="IdCommodity" />
+          <ScalarProperty Name="IdStoreS" ColumnName="IdStoreS" />
+          <ScalarProperty Name="IdStoreOrder" ColumnName="IdStoreOrder" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreS">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Store">
+        <MappingFragment StoreEntitySet="StoreS">
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="IdCommodity" ColumnName="IdCommodity" />
+          <ScalarProperty Name="IdStoreOperation" ColumnName="IdStoreOperation" />
+          <ScalarProperty Name="Sname" ColumnName="Sname" />
+          <ScalarProperty Name="SRemained" ColumnName="SRemained" />
+          <ScalarProperty Name="SCount" ColumnName="SCount" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="IdStoreOrderDetail" ColumnName="IdStoreOrderDetail" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="AccountingKernelModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treasuries">
+      <EntityTypeMapping TypeName="AccountingKernelModel.Treasury">
+        <MappingFragment StoreEntitySet="Treasury">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="TPrice" ColumnName="TPrice" />
+          <ScalarProperty Name="TDate" ColumnName="TDate" />
+          <ScalarProperty Name="TDescription" ColumnName="TDescription" />
+          <ScalarProperty Name="TNO" ColumnName="TNO" />
+          <ScalarProperty Name="Ttype" ColumnName="Ttype" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreasuryDetails">
+      <EntityTypeMapping TypeName="AccountingKernelModel.TreasuryDetail">
+        <MappingFragment StoreEntitySet="TreasuryDetails">
+          <ScalarProperty Name="TDDescription" ColumnName="TDDescription" />
+          <ScalarProperty Name="IDFund" ColumnName="IDFund" />
+          <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+          <ScalarProperty Name="TDPrice" ColumnName="TDPrice" />
+          <ScalarProperty Name="TDType" ColumnName="TDType" />
+          <ScalarProperty Name="IDTreasury" ColumnName="IDTreasury" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AccountingKernelModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="perID" ColumnName="perID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingMoeinDetailsViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingMoeinDetailsView">
+        <MappingFragment StoreEntitySet="AccountingMoeinDetailsView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="IdIn" ColumnName="IdIn" />
+          <ScalarProperty Name="MDNameEn" ColumnName="MDNameEn" />
+          <ScalarProperty Name="MDName" ColumnName="MDName" />
+          <ScalarProperty Name="IdAccountingMoein" ColumnName="IdAccountingMoein" />
+          <ScalarProperty Name="IdCodeTitle" ColumnName="IdCodeTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountingTafsillevelsDetailViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AccountingTafsillevelsDetailView">
+        <MappingFragment StoreEntitySet="AccountingTafsillevelsDetailView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="IdRefrence" ColumnName="IdRefrence" />
+          <ScalarProperty Name="IdIn" ColumnName="IdIn" />
+          <ScalarProperty Name="ATLNameEn" ColumnName="ATLNameEn" />
+          <ScalarProperty Name="ATLName" ColumnName="ATLName" />
+          <ScalarProperty Name="IdAccountingTafsilLevels" ColumnName="IdAccountingTafsilLevels" />
+          <ScalarProperty Name="IdCodeTitle" ColumnName="IdCodeTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetGoodsViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.AssetGoodsView">
+        <MappingFragment StoreEntitySet="AssetGoodsView">
+          <ScalarProperty Name="codetitleId" ColumnName="codetitleId" />
+          <ScalarProperty Name="uniquepath" ColumnName="uniquepath" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommodityDetailsViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.CommodityDetailsView">
+        <MappingFragment StoreEntitySet="CommodityDetailsView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="CDIDIn" ColumnName="CDIDIn" />
+          <ScalarProperty Name="CDNameEn" ColumnName="CDNameEn" />
+          <ScalarProperty Name="CDName" ColumnName="CDName" />
+          <ScalarProperty Name="IDCommodity" ColumnName="IDCommodity" />
+          <ScalarProperty Name="IDCodeTitle" ColumnName="IDCodeTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FundViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.FundView">
+        <MappingFragment StoreEntitySet="FundView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="FType" ColumnName="FType" />
+          <ScalarProperty Name="Fprice" ColumnName="Fprice" />
+          <ScalarProperty Name="FAddress" ColumnName="FAddress" />
+          <ScalarProperty Name="FCartNO" ColumnName="FCartNO" />
+          <ScalarProperty Name="FAccountnumber" ColumnName="FAccountnumber" />
+          <ScalarProperty Name="FbranchNO" ColumnName="FbranchNO" />
+          <ScalarProperty Name="Fbranch" ColumnName="Fbranch" />
+          <ScalarProperty Name="FBankNO" ColumnName="FBankNO" />
+          <ScalarProperty Name="FBank" ColumnName="FBank" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollFunctions">
+      <EntityTypeMapping TypeName="AccountingKernelModel.PayrollFunction">
+        <MappingFragment StoreEntitySet="PayrollFunction">
+          <ScalarProperty Name="PersonContent" ColumnName="PersonContent" />
+          <ScalarProperty Name="FactorHeader" ColumnName="FactorHeader" />
+          <ScalarProperty Name="PersonLastName" ColumnName="PersonLastName" />
+          <ScalarProperty Name="PersonFirstName" ColumnName="PersonFirstName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Financialyear" ColumnName="Financialyear" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOTaxViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.SOTaxView">
+        <MappingFragment StoreEntitySet="SOTaxView">
+          <ScalarProperty Name="FYear" ColumnName="FYear" />
+          <ScalarProperty Name="IDCorporation" ColumnName="IDCorporation" />
+          <ScalarProperty Name="AssignName" ColumnName="AssignName" />
+          <ScalarProperty Name="Percent" ColumnName="Percent" />
+          <ScalarProperty Name="IdFinancialMainYear" ColumnName="IdFinancialMainYear" />
+          <ScalarProperty Name="IdBaseinfo" ColumnName="IdBaseinfo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreOrderViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.StoreOrderView">
+        <MappingFragment StoreEntitySet="StoreOrderView">
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="OIsDeleted" ColumnName="OIsDeleted" />
+          <ScalarProperty Name="IdStoreOperation" ColumnName="IdStoreOperation" />
+          <ScalarProperty Name="OOrderType" ColumnName="OOrderType" />
+          <ScalarProperty Name="OMunicipalTax" ColumnName="OMunicipalTax" />
+          <ScalarProperty Name="OTax" ColumnName="OTax" />
+          <ScalarProperty Name="ODiscount" ColumnName="ODiscount" />
+          <ScalarProperty Name="OSumMoney" ColumnName="OSumMoney" />
+          <ScalarProperty Name="ODelete" ColumnName="ODelete" />
+          <ScalarProperty Name="OReverse" ColumnName="OReverse" />
+          <ScalarProperty Name="ODescription" ColumnName="ODescription" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="ODate" ColumnName="ODate" />
+          <ScalarProperty Name="OOwnerId" ColumnName="OOwnerId" />
+          <ScalarProperty Name="OId" ColumnName="OId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreasuryDetailsViews">
+      <EntityTypeMapping TypeName="AccountingKernelModel.TreasuryDetailsView">
+        <MappingFragment StoreEntitySet="TreasuryDetailsView">
+          <ScalarProperty Name="Accountnumber" ColumnName="Accountnumber" />
+          <ScalarProperty Name="TDate" ColumnName="TDate" />
+          <ScalarProperty Name="AssignName" ColumnName="AssignName" />
+          <ScalarProperty Name="TDDescription" ColumnName="TDDescription" />
+          <ScalarProperty Name="IDFund" ColumnName="IDFund" />
+          <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+          <ScalarProperty Name="TDPrice" ColumnName="TDPrice" />
+          <ScalarProperty Name="TDType" ColumnName="TDType" />
+          <ScalarProperty Name="IDTreasury" ColumnName="IDTreasury" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

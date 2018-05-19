@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccountingKernelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountingArticle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDAccountingDocument" Type="uniqueidentifier" />
+    <Property Name="ADescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADescriptionEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADebtor" Type="money" />
+    <Property Name="ACreditor" Type="money" />
+    <Property Name="ACount" Type="int" />
+  </EntityType>
+  <EntityType Name="AccountingDocument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ADDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADDescriptionEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="ADPriority" Type="int" />
+    <Property Name="ADCode" Type="int" />
+    <Property Name="ADOldCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AISDeleted" Type="bit" />
+    <Property Name="AIdStatus" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="ADType" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingInterface">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AIGroupID" Type="int" />
+    <Property Name="AIGroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AIName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AIDebtor_IDAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="AICreditor_IDAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="AIDebtor_IDAccountingMoeinTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="AICreditor_IDAccountingMoeinTafsilLevels" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingMoein">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIdGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIdAll" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIdMoein" Type="nvarchar" MaxLength="50" />
+    <Property Name="MFName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MFALLName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MGrouhF" Type="nvarchar" MaxLength="50" />
+    <Property Name="MMoein" Type="nvarchar" MaxLength="50" />
+    <Property Name="MMoienType" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StructureDefine_ID" Type="uniqueidentifier" />
+    <Property Name="MType" Type="uniqueidentifier" />
+    <Property Name="MNature" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IdAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="MDName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MDNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar(max)" />
+    <Property Name="Type" Type="uniqueidentifier" />
+    <Property Name="Parent_ID" Type="uniqueidentifier" />
+    <Property Name="Uniq_Path" Type="nvarchar(max)" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="Latin_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinTafsilLevels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="IdTafsilGroup" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinTafsilRelation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AcountingMoein_ID" Type="uniqueidentifier" />
+    <Property Name="AccountingTafsil_ID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilArticle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDAccountingMoeinTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsilLDetails" Type="uniqueidentifier" />
+    <Property Name="IdAccountingArticle" Type="uniqueidentifier" />
+    <Property Name="IDAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="IDAccountingTafsilStructureDefine" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilLevels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdIn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AccountingTafsillevelsDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="ATLName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ATLNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="IdRefrence" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="Type" Type="uniqueidentifier" />
+    <Property Name="Parent_ID" Type="uniqueidentifier" />
+    <Property Name="Uniq_Path" Type="varchar(max)" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="Latin_Name" Type="varchar" MaxLength="50" />
+    <Property Name="IdRefrence" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Asset">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Idperson" Type="uniqueidentifier" />
+    <Property Name="Idassetgoods" Type="uniqueidentifier" />
+    <Property Name="assetdate" Type="varchar" MaxLength="10" />
+    <Property Name="asset_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="amortization_Rate" Type="money" />
+    <Property Name="amortization_Method" Type="uniqueidentifier" />
+    <Property Name="Accumulative_amortization" Type="money" />
+    <Property Name="decay_value" Type="money" />
+    <Property Name="Price" Type="money" />
+    <Property Name="asset_number" Type="int" />
+  </EntityType>
+  <EntityType Name="AssetGoods">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" />
+    <Property Name="parentId" Type="uniqueidentifier" />
+    <Property Name="uniquepath" Type="nvarchar(max)" />
+    <Property Name="codetitleId" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BaseInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssignName" Type="nvarchar(max)" />
+    <Property Name="Explain" Type="nvarchar(max)" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="PID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Capital">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="CPerson" Type="uniqueidentifier" />
+    <Property Name="CDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="CTotalPrice" Type="money" />
+  </EntityType>
+  <EntityType Name="CapitalDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCapital" Type="uniqueidentifier" />
+    <Property Name="CDDate" Type="nvarchar" MaxLength="15" />
+    <Property Name="CDPrice" Type="money" />
+    <Property Name="CDDescription" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Check">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CAccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPrice" Type="money" />
+    <Property Name="CDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CBank" Type="uniqueidentifier" />
+    <Property Name="CType" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CheckProcesses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCheck" Type="uniqueidentifier" />
+    <Property Name="CPType" Type="uniqueidentifier" />
+    <Property Name="CPDate" Type="datetime" />
+    <Property Name="CPName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDFunds" Type="uniqueidentifier" />
+    <Property Name="CSerial" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CodeTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CodeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeGroup" Type="int" />
+    <Property Name="CodeLen" Type="int" />
+    <Property Name="CodePriority" Type="int" />
+    <Property Name="CodeStart" Type="int" />
+  </EntityType>
+  <EntityType Name="Com">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPersonType" Type="uniqueidentifier" />
+    <Property Name="CRegisterNo" Type="int" />
+    <Property Name="CNationalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CEconomyCode" Type="nvarchar" MaxLength="25" />
+    <Property Name="CPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CAddress" Type="nvarchar(max)" />
+    <Property Name="CTell" Type="nvarchar" MaxLength="50" />
+    <Property Name="CMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="CFax" Type="nvarchar" MaxLength="50" />
+    <Property Name="CEMail" Type="nvarchar" MaxLength="100" />
+    <Property Name="CWebsite" Type="nvarchar" MaxLength="100" />
+    <Property Name="CPriceType" Type="uniqueidentifier" />
+    <Property Name="CType" Type="uniqueidentifier" />
+    <Property Name="IdTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="uniqueidentifier" />
+    <Property Name="CompanyStructureDefineId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPersonType" Type="uniqueidentifier" />
+    <Property Name="CRegisterNo" Type="int" />
+    <Property Name="CNationalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CEconomyCode" Type="nvarchar" MaxLength="25" />
+    <Property Name="CPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CAddress" Type="nvarchar(max)" />
+    <Property Name="CTell" Type="nvarchar" MaxLength="50" />
+    <Property Name="CMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="CFax" Type="nvarchar" MaxLength="50" />
+    <Property Name="CEMail" Type="nvarchar" MaxLength="100" />
+    <Property Name="CWebsite" Type="nvarchar" MaxLength="100" />
+    <Property Name="CPriceType" Type="uniqueidentifier" />
+    <Property Name="CType" Type="uniqueidentifier" />
+    <Property Name="IdTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CompanyDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IDCompany" Type="uniqueidentifier" />
+    <Property Name="CDName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDIDIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CompanyStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar(max)" />
+    <Property Name="Type" Type="uniqueidentifier" />
+    <Property Name="Parent_ID" Type="uniqueidentifier" />
+    <Property Name="Uniq_Path" Type="nvarchar(max)" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="corporation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Groupname" Type="nvarchar" MaxLength="255" />
+    <Property Name="CorporationName" Type="nvarchar" MaxLength="255" />
+    <Property Name="mahale_sabt" Type="nvarchar" MaxLength="255" />
+    <Property Name="CorporationType" Type="nvarchar" MaxLength="255" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="sabt" Type="nvarchar" MaxLength="50" />
+    <Property Name="idposti" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_byte" Type="image" />
+    <Property Name="kod_kargah" Type="nvarchar" MaxLength="255" />
+    <Property Name="radif_peyman" Type="nvarchar" MaxLength="50" />
+    <Property Name="nameshobe_bime" Type="nvarchar" MaxLength="50" />
+    <Property Name="name_kargah" Type="nvarchar" MaxLength="50" />
+    <Property Name="kod_shemely" Type="nvarchar" MaxLength="255" />
+    <Property Name="nerkhe_bime" Type="nvarchar" MaxLength="50" />
+    <Property Name="sh_parvande" Type="nvarchar" MaxLength="50" />
+    <Property Name="kod_shobe" Type="nvarchar" MaxLength="50" />
+    <Property Name="noeasliepardakhtkonande" Type="nvarchar" MaxLength="50" />
+    <Property Name="noefareiepardakhtkonande" Type="nvarchar" MaxLength="50" />
+    <Property Name="name_shobe" Type="nvarchar" MaxLength="50" />
+    <Property Name="nahve_maliyat" Type="nvarchar" MaxLength="50" />
+    <Property Name="pardakht_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="pardakht_family" Type="nvarchar" MaxLength="50" />
+    <Property Name="pardakht_codemelli" Type="nvarchar" MaxLength="50" />
+    <Property Name="kod_egtesady" Type="nvarchar" MaxLength="50" />
+    <Property Name="nahve_pardakht" Type="nvarchar" MaxLength="255" />
+    <Property Name="emza1_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="emza1_family" Type="nvarchar" MaxLength="50" />
+    <Property Name="emza1_codemelli" Type="nvarchar" MaxLength="50" />
+    <Property Name="emza1_semat" Type="nvarchar" MaxLength="50" />
+    <Property Name="kod_TFN" Type="nvarchar" MaxLength="255" />
+    <Property Name="kod_TIN" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FinancialMainYear">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCorporation" Type="uniqueidentifier" />
+    <Property Name="FYear" Type="int" />
+  </EntityType>
+  <EntityType Name="Financialyear">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCorporation" Type="uniqueidentifier" />
+    <Property Name="FYyear" Type="int" />
+    <Property Name="FYMonthNO" Type="int" />
+    <Property Name="FYMonthName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FYMonthNumber" Type="int" />
+    <Property Name="piroity" Type="int" />
+  </EntityType>
+  <EntityType Name="Funds">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBank" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBankNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fbranch" Type="nvarchar" MaxLength="50" />
+    <Property Name="FbranchNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="FCartNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fprice" Type="money" />
+    <Property Name="FType" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Goodies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CID1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="COrderPoint" Type="int" />
+    <Property Name="COrderMax" Type="int" />
+    <Property Name="COrderMin" Type="int" />
+    <Property Name="CPointCritical" Type="int" />
+    <Property Name="CInventoryMax" Type="int" />
+    <Property Name="CType" Type="uniqueidentifier" />
+    <Property Name="CBaseCountingUnit" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="uniqueidentifier" />
+    <Property Name="IdGoodiesGroups" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="GoodiesGroups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentId" Type="uniqueidentifier" />
+    <Property Name="uniquepath" Type="nvarchar(max)" />
+    <Property Name="CodeTitleId" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GoodyConvertCountingUnit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCommodity" Type="uniqueidentifier" />
+    <Property Name="CCCUIDBaseInfo1" Type="uniqueidentifier" />
+    <Property Name="CCCUCount1" Type="int" />
+    <Property Name="CCCUIDBaseInfo2" Type="uniqueidentifier" />
+    <Property Name="CCCUCount2" Type="int" />
+  </EntityType>
+  <EntityType Name="GoodyPriceList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDBaseInfo" Type="uniqueidentifier" />
+    <Property Name="IDGoody" Type="uniqueidentifier" />
+    <Property Name="PLPrice" Type="money" />
+  </EntityType>
+  <EntityType Name="Operative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OISEffective" Type="bit" />
+    <Property Name="OName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OType" Type="uniqueidentifier" />
+    <Property Name="OCalculationMethod" Type="uniqueidentifier" />
+    <Property Name="OPercent" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="PayrollContract">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="uniqueidentifier" />
+    <Property Name="IDPayrollPerson" Type="uniqueidentifier" />
+    <Property Name="PrCContractNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrcContractType" Type="int" />
+    <Property Name="PrcDateContractRegister" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrcDateContractStart" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrcDateContractEmployment" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrcDateContractEnd" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrcDateContractExpire" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrcInsuranceType" Type="int" />
+    <Property Name="PrcInsuranceNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrcSalaryType" Type="uniqueidentifier" />
+    <Property Name="PrcSalary" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrCBankName" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrCBranchName" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrCAccountNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrCBranchCartNumber" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PayrollImprest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDPayrollPerson" Type="uniqueidentifier" />
+    <Property Name="IDFinancialyear" Type="uniqueidentifier" />
+    <Property Name="IDPayrollSentences" Type="uniqueidentifier" />
+    <Property Name="PrIPrice" Type="money" />
+    <Property Name="PrIDate" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PayrollInsuranceCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MCode" Type="int" />
+    <Property Name="MDesc" Type="nvarchar" MaxLength="30" />
+    <Property Name="SCode" Type="int" />
+    <Property Name="SDesc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayrollInsuranceimmunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="kod_moafiat" Type="int" />
+    <Property Name="name_moafiat" Type="nvarchar" MaxLength="255" />
+    <Property Name="personel_dasad" Type="float" />
+    <Property Name="bikari_darsad" Type="float" />
+    <Property Name="karfarma_darsad" Type="float" />
+  </EntityType>
+  <EntityType Name="PayrollLoan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDPayrollPerson" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrLID" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrLDPrice" Type="money" />
+    <Property Name="PrLDDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrLDDateMiladi" Type="datetime" Nullable="false" />
+    <Property Name="PrLPayment" Type="bit" />
+  </EntityType>
+  <EntityType Name="PayrollLoanDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDPayrollLoan" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrLDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrLDateMiladi" Type="datetime" Nullable="false" />
+    <Property Name="PrLPrice" Type="money" Nullable="false" />
+    <Property Name="PrLPayment" Type="bit" />
+  </EntityType>
+  <EntityType Name="PayrollPerson">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PPerson_Code" Type="nvarchar" MaxLength="100" />
+    <Property Name="PFristName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="PIdNational" Type="nvarchar" MaxLength="10" />
+    <Property Name="PSHSH" Type="nvarchar" MaxLength="10" />
+    <Property Name="PBrithDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="PSex" Type="uniqueidentifier" />
+    <Property Name="PMarriage" Type="uniqueidentifier" />
+    <Property Name="PNumberChild" Type="int" />
+    <Property Name="PPhoneHome" Type="nvarchar" MaxLength="50" />
+    <Property Name="PPhoneWork" Type="nvarchar" MaxLength="50" />
+    <Property Name="PMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="PIdPostal" Type="nvarchar" MaxLength="50" />
+    <Property Name="PAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="PDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="PImage" Type="image" />
+    <Property Name="Tax_madrak" Type="int" />
+    <Property Name="Tax_onvanShoghl" Type="int" />
+    <Property Name="Tax_serishenasnameh" Type="int" />
+    <Property Name="Tax_vazmaskan" Type="int" />
+    <Property Name="Tax_meliat" Type="int" />
+    <Property Name="Tax_namekeshvar" Type="int" />
+    <Property Name="Tax_nezamvazifeh" Type="uniqueidentifier" />
+    <Property Name="Tax_rasteshoghli" Type="int" />
+    <Property Name="Tax_vazmashin" Type="int" />
+    <Property Name="code_moafiat_maliat" Type="int" />
+    <Property Name="Insurance_keshvar" Type="int" />
+    <Property Name="Insurance_shahr" Type="int" />
+    <Property Name="Insurance_mashagel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Insurance_tahsilat" Type="int" />
+    <Property Name="Insurance_reshteh" Type="int" />
+    <Property Name="Insurance_meliat" Type="nvarchar" MaxLength="50" />
+    <Property Name="code_moafiat_bimeh" Type="int" />
+    <Property Name="PersonStructerID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="PayrollPersonSentences">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="uniqueidentifier" />
+    <Property Name="IDPayrollPerson" Type="uniqueidentifier" />
+    <Property Name="IDPayrollSentences" Type="uniqueidentifier" />
+    <Property Name="PrPSMoney" Type="money" />
+  </EntityType>
+  <EntityType Name="PayrollPersonWorkDone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="uniqueidentifier" />
+    <Property Name="IDPayrollPerson" Type="uniqueidentifier" />
+    <Property Name="IDPayrollWorkDoneFactors" Type="uniqueidentifier" />
+    <Property Name="PrPWContent" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayrollSalaryFactors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrSDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrSContent" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayrollSentences">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrSType" Type="uniqueidentifier" />
+    <Property Name="PrSOType" Type="uniqueidentifier" />
+    <Property Name="PrSDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrSMoney" Type="money" />
+    <Property Name="PrSIsInsurance" Type="bit" />
+    <Property Name="PrSIsTax" Type="bit" />
+    <Property Name="PrSInsuranceEmployer" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrSInsuranceUnemployment" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrSInsuranceEmployee" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PayrollTaxCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MCode" Type="int" />
+    <Property Name="MDesc" Type="nvarchar" MaxLength="30" />
+    <Property Name="SCode" Type="int" />
+    <Property Name="SDesc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayrollTaximmunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="tmpid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kod_moafiat" Type="int" />
+    <Property Name="name_moafiat" Type="nvarchar" MaxLength="255" />
+    <Property Name="money1" Type="money" />
+    <Property Name="darsad1" Type="float" />
+  </EntityType>
+  <EntityType Name="PayrollWorkDoneFactors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrWFDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrWFContent" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PersonStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar(max)" />
+    <Property Name="Type" Type="uniqueidentifier" />
+    <Property Name="Parent_ID" Type="uniqueidentifier" />
+    <Property Name="Uniq_Path" Type="nvarchar(max)" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDBaseInfo" Type="uniqueidentifier" />
+    <Property Name="IDCommodity" Type="uniqueidentifier" />
+    <Property Name="PLPrice" Type="money" />
+  </EntityType>
+  <EntityType Name="SOTax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdBaseinfo" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdFinancialMainYear" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Percent" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StoreOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OOperation" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="StoreOperative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdStoreOrder" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdStoreDetail" Type="uniqueidentifier" />
+    <Property Name="IdOperative" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SPrice" Type="money" />
+  </EntityType>
+  <EntityType Name="StoreOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OId" Type="nvarchar" MaxLength="50" />
+    <Property Name="OOwnerId" Type="int" />
+    <Property Name="ODate" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdCompany" Type="uniqueidentifier" />
+    <Property Name="ODescription" Type="nvarchar(max)" />
+    <Property Name="OReverse" Type="bit" />
+    <Property Name="ODelete" Type="bit" />
+    <Property Name="OSumMoney" Type="money" />
+    <Property Name="ODiscount" Type="money" />
+    <Property Name="OTax" Type="money" />
+    <Property Name="OMunicipalTax" Type="money" />
+    <Property Name="OOrderType" Type="uniqueidentifier" />
+    <Property Name="IdStoreOperation" Type="uniqueidentifier" />
+    <Property Name="OIsDeleted" Type="bit" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StoreOrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdStoreOrder" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdStoreS" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdCommodity" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ODCountingUnit" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ODCount" Type="int" />
+    <Property Name="ORemained" Type="int" />
+    <Property Name="ODMoney" Type="money" />
+    <Property Name="ODDiscount" Type="money" />
+    <Property Name="ODDescription" Type="nvarchar(max)" />
+    <Property Name="PId" Type="int" />
+  </EntityType>
+  <EntityType Name="StoreS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdStoreOrderDetail" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="SCount" Type="int" />
+    <Property Name="SRemained" Type="int" />
+    <Property Name="Sname" Type="uniqueidentifier" />
+    <Property Name="IdStoreOperation" Type="uniqueidentifier" />
+    <Property Name="IdCommodity" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Treasury">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Ttype" Type="uniqueidentifier" />
+    <Property Name="TNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="TDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="TDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="TPrice" Type="money" />
+    <Property Name="LastEdit" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TreasuryDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDTreasury" Type="uniqueidentifier" />
+    <Property Name="TDType" Type="uniqueidentifier" />
+    <Property Name="TDPrice" Type="money" />
+    <Property Name="IDCheck" Type="uniqueidentifier" />
+    <Property Name="IDFund" Type="uniqueidentifier" />
+    <Property Name="TDDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="perID" Type="uniqueidentifier" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.AccountingMoeinDetailsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AccountingMoeinDetailsView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IdAccountingMoein" Type="uniqueidentifier" />
+    <Property Name="MDName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MDNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.AccountingTafsillevelsDetailView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AccountingTafsillevelsDetailView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="LastEdit" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IdAccountingTafsilLevels" Type="uniqueidentifier" />
+    <Property Name="ATLName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ATLNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="IdRefrence" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.AssetGoodsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AssetGoodsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" />
+    <Property Name="parentId" Type="uniqueidentifier" />
+    <Property Name="uniquepath" Type="nvarchar(max)" />
+    <Property Name="codetitleId" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.CommodityDetailsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CommodityDetailsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDCodeTitle" Type="uniqueidentifier" />
+    <Property Name="IDCommodity" Type="uniqueidentifier" />
+    <Property Name="CDName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDIDIn" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.FundView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FundView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LastEdit" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBank" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBankNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fbranch" Type="nvarchar" MaxLength="50" />
+    <Property Name="FbranchNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="FCartNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fprice" Type="money" />
+    <Property Name="FType" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.GoodiesGroupsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GoodiesGroupsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="CName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentId" Type="uniqueidentifier" />
+    <Property Name="uniquepath" Type="nvarchar(max)" />
+    <Property Name="CodeTitleId" Type="uniqueidentifier" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.PayrollFunction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PayrollFunction">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Financialyear" Type="uniqueidentifier" />
+    <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FactorHeader" Type="nvarchar" MaxLength="255" />
+    <Property Name="PersonContent" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.SOTaxView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SOTaxView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdBaseinfo" />
+      <PropertyRef Name="IdFinancialMainYear" />
+      <PropertyRef Name="Percent" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdBaseinfo" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdFinancialMainYear" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Percent" Type="money" Nullable="false" />
+    <Property Name="AssignName" Type="nvarchar(max)" />
+    <Property Name="IDCorporation" Type="uniqueidentifier" />
+    <Property Name="FYear" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.StoreOrderView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StoreOrderView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OId" Type="nvarchar" MaxLength="50" />
+    <Property Name="OOwnerId" Type="int" />
+    <Property Name="ODate" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdCompany" Type="uniqueidentifier" />
+    <Property Name="ODescription" Type="nvarchar(max)" />
+    <Property Name="OReverse" Type="bit" />
+    <Property Name="ODelete" Type="bit" />
+    <Property Name="OSumMoney" Type="money" />
+    <Property Name="ODiscount" Type="money" />
+    <Property Name="OTax" Type="money" />
+    <Property Name="OMunicipalTax" Type="money" />
+    <Property Name="OOrderType" Type="uniqueidentifier" />
+    <Property Name="IdStoreOperation" Type="uniqueidentifier" />
+    <Property Name="OIsDeleted" Type="bit" />
+    <Property Name="LastEdit" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AccountingKernel.dbo.TreasuryDetailsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TreasuryDetailsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDTreasury" Type="uniqueidentifier" />
+    <Property Name="TDType" Type="uniqueidentifier" />
+    <Property Name="TDPrice" Type="money" />
+    <Property Name="IDCheck" Type="uniqueidentifier" />
+    <Property Name="IDFund" Type="uniqueidentifier" />
+    <Property Name="TDDescription" Type="nvarchar(max)" />
+    <Property Name="AssignName" Type="nvarchar(max)" />
+    <Property Name="TDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Accountnumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AccountingMoeinDetails_AccountingMoein">
+    <End Role="AccountingMoein" Type="Self.AccountingMoein" Multiplicity="0..1" />
+    <End Role="AccountingMoeinDetails" Type="Self.AccountingMoeinDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountingMoein">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingMoeinDetails">
+        <PropertyRef Name="IdAccountingMoein" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingMoeinDetails_CodeTitle">
+    <End Role="CodeTitle" Type="Self.CodeTitle" Multiplicity="0..1" />
+    <End Role="AccountingMoeinDetails" Type="Self.AccountingMoeinDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingMoeinDetails">
+        <PropertyRef Name="IdCodeTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingTafsillevelDetails_AccountingTafsilLevels">
+    <End Role="AccountingTafsilLevels" Type="Self.AccountingTafsilLevels" Multiplicity="0..1" />
+    <End Role="AccountingTafsillevelsDetails" Type="Self.AccountingTafsillevelsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountingTafsilLevels">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingTafsillevelsDetails">
+        <PropertyRef Name="IdAccountingTafsilLevels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingTafsillevelDetails_CodeTitle">
+    <End Role="CodeTitle" Type="Self.CodeTitle" Multiplicity="0..1" />
+    <End Role="AccountingTafsillevelsDetails" Type="Self.AccountingTafsillevelsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingTafsillevelsDetails">
+        <PropertyRef Name="IdCodeTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CheckProcesses_Check1">
+    <End Role="Check" Type="Self.Check" Multiplicity="0..1" />
+    <End Role="CheckProcesses" Type="Self.CheckProcesses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Check">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CheckProcesses">
+        <PropertyRef Name="IDCheck" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollPerson_PersonStructureDefine">
+    <End Role="PersonStructureDefine" Type="Self.PersonStructureDefine" Multiplicity="0..1" />
+    <End Role="PayrollPerson" Type="Self.PayrollPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonStructureDefine">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PayrollPerson">
+        <PropertyRef Name="PersonStructerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_Operative">
+    <End Role="Operative" Type="Self.Operative" Multiplicity="1" />
+    <End Role="StoreOperative" Type="Self.StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operative">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdOperative" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_StoreOrder">
+    <End Role="StoreOrder" Type="Self.StoreOrder" Multiplicity="1" />
+    <End Role="StoreOperative" Type="Self.StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdStoreOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_StoreOrderDetail">
+    <End Role="StoreOrderDetails" Type="Self.StoreOrderDetails" Multiplicity="0..1" />
+    <End Role="StoreOperative" Type="Self.StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreOrderDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdStoreDetail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="SHOWData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="AccountingKernelModelStoreContainer">
+    <EntitySet Name="AccountingArticle" EntityType="Self.AccountingArticle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingDocument" EntityType="Self.AccountingDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingInterface" EntityType="Self.AccountingInterface" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoein" EntityType="Self.AccountingMoein" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinCodes" EntityType="Self.AccountingMoeinCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinDetails" EntityType="Self.AccountingMoeinDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinStructureDefine" EntityType="Self.AccountingMoeinStructureDefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinTafsilLevels" EntityType="Self.AccountingMoeinTafsilLevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinTafsilRelation" EntityType="Self.AccountingMoeinTafsilRelation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingTafsilArticle" EntityType="Self.AccountingTafsilArticle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingTafsilLevels" EntityType="Self.AccountingTafsilLevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingTafsillevelsDetails" EntityType="Self.AccountingTafsillevelsDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingTafsilStructureDefine" EntityType="Self.AccountingTafsilStructureDefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asset" EntityType="Self.Asset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssetGoods" EntityType="Self.AssetGoods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaseInfo" EntityType="Self.BaseInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Capital" EntityType="Self.Capital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapitalDetails" EntityType="Self.CapitalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Check" EntityType="Self.Check" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CheckProcesses" EntityType="Self.CheckProcesses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodeTitle" EntityType="Self.CodeTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Com" EntityType="Self.Com" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyDetails" EntityType="Self.CompanyDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyStructureDefine" EntityType="Self.CompanyStructureDefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="corporation" EntityType="Self.corporation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinancialMainYear" EntityType="Self.FinancialMainYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Financialyear" EntityType="Self.Financialyear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funds" EntityType="Self.Funds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Goodies" EntityType="Self.Goodies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodiesGroups" EntityType="Self.GoodiesGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodyConvertCountingUnit" EntityType="Self.GoodyConvertCountingUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodyPriceList" EntityType="Self.GoodyPriceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operative" EntityType="Self.Operative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollContract" EntityType="Self.PayrollContract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollImprest" EntityType="Self.PayrollImprest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollInsuranceCode" EntityType="Self.PayrollInsuranceCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollInsuranceimmunity" EntityType="Self.PayrollInsuranceimmunity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollLoan" EntityType="Self.PayrollLoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollLoanDetails" EntityType="Self.PayrollLoanDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollPerson" EntityType="Self.PayrollPerson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollPersonSentences" EntityType="Self.PayrollPersonSentences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollPersonWorkDone" EntityType="Self.PayrollPersonWorkDone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollSalaryFactors" EntityType="Self.PayrollSalaryFactors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollSentences" EntityType="Self.PayrollSentences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollTaxCode" EntityType="Self.PayrollTaxCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollTaximmunity" EntityType="Self.PayrollTaximmunity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollWorkDoneFactors" EntityType="Self.PayrollWorkDoneFactors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonStructureDefine" EntityType="Self.PersonStructureDefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PriceList" EntityType="Self.PriceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOTax" EntityType="Self.SOTax" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreOperation" EntityType="Self.StoreOperation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreOperative" EntityType="Self.StoreOperative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreOrder" EntityType="Self.StoreOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreOrderDetails" EntityType="Self.StoreOrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreS" EntityType="Self.StoreS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treasury" EntityType="Self.Treasury" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TreasuryDetails" EntityType="Self.TreasuryDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountingMoeinDetailsView" EntityType="Self.AccountingMoeinDetailsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AccountingMoeinDetailsView].[Id] AS [Id], 
+[AccountingMoeinDetailsView].[IdCodeTitle] AS [IdCodeTitle], 
+[AccountingMoeinDetailsView].[IdAccountingMoein] AS [IdAccountingMoein], 
+[AccountingMoeinDetailsView].[MDName] AS [MDName], 
+[AccountingMoeinDetailsView].[MDNameEn] AS [MDNameEn], 
+[AccountingMoeinDetailsView].[IdIn] AS [IdIn], 
+[AccountingMoeinDetailsView].[LastEdit] AS [LastEdit]
+FROM [dbo].[AccountingMoeinDetailsView] AS [AccountingMoeinDetailsView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AccountingTafsillevelsDetailView" EntityType="Self.AccountingTafsillevelsDetailView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AccountingTafsillevelsDetailView].[Id] AS [Id], 
+[AccountingTafsillevelsDetailView].[IdCodeTitle] AS [IdCodeTitle], 
+[AccountingTafsillevelsDetailView].[IdAccountingTafsilLevels] AS [IdAccountingTafsilLevels], 
+[AccountingTafsillevelsDetailView].[ATLName] AS [ATLName], 
+[AccountingTafsillevelsDetailView].[ATLNameEn] AS [ATLNameEn], 
+[AccountingTafsillevelsDetailView].[IdIn] AS [IdIn], 
+[AccountingTafsillevelsDetailView].[IdRefrence] AS [IdRefrence], 
+[AccountingTafsillevelsDetailView].[LastEdit] AS [LastEdit]
+FROM [dbo].[AccountingTafsillevelsDetailView] AS [AccountingTafsillevelsDetailView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AssetGoodsView" EntityType="Self.AssetGoodsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AssetGoodsView].[ID] AS [ID], 
+[AssetGoodsView].[name] AS [name], 
+[AssetGoodsView].[code] AS [code], 
+[AssetGoodsView].[parentId] AS [parentId], 
+[AssetGoodsView].[uniquepath] AS [uniquepath], 
+[AssetGoodsView].[codetitleId] AS [codetitleId]
+FROM [dbo].[AssetGoodsView] AS [AssetGoodsView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CommodityDetailsView" EntityType="Self.CommodityDetailsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CommodityDetailsView].[ID] AS [ID], 
+[CommodityDetailsView].[IDCodeTitle] AS [IDCodeTitle], 
+[CommodityDetailsView].[IDCommodity] AS [IDCommodity], 
+[CommodityDetailsView].[CDName] AS [CDName], 
+[CommodityDetailsView].[CDNameEn] AS [CDNameEn], 
+[CommodityDetailsView].[CDIDIn] AS [CDIDIn], 
+[CommodityDetailsView].[LastEdit] AS [LastEdit]
+FROM [dbo].[CommodityDetailsView] AS [CommodityDetailsView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FundView" EntityType="Self.FundView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[FundView].[ID] AS [ID], 
+[FundView].[FName] AS [FName], 
+[FundView].[FBank] AS [FBank], 
+[FundView].[FBankNO] AS [FBankNO], 
+[FundView].[Fbranch] AS [Fbranch], 
+[FundView].[FbranchNO] AS [FbranchNO], 
+[FundView].[FAccountnumber] AS [FAccountnumber], 
+[FundView].[FCartNO] AS [FCartNO], 
+[FundView].[FAddress] AS [FAddress], 
+[FundView].[Fprice] AS [Fprice], 
+[FundView].[FType] AS [FType], 
+[FundView].[LastEdit] AS [LastEdit]
+FROM [dbo].[FundView] AS [FundView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GoodiesGroupsView" EntityType="Self.GoodiesGroupsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[GoodiesGroupsView].[ID] AS [ID], 
+[GoodiesGroupsView].[Code] AS [Code], 
+[GoodiesGroupsView].[CName] AS [CName], 
+[GoodiesGroupsView].[CNameEn] AS [CNameEn], 
+[GoodiesGroupsView].[ParentId] AS [ParentId], 
+[GoodiesGroupsView].[uniquepath] AS [uniquepath], 
+[GoodiesGroupsView].[CodeTitleId] AS [CodeTitleId], 
+[GoodiesGroupsView].[LastEdit] AS [LastEdit]
+FROM [dbo].[GoodiesGroupsView] AS [GoodiesGroupsView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PayrollFunction" EntityType="Self.PayrollFunction" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PayrollFunction].[ID] AS [ID], 
+[PayrollFunction].[Financialyear] AS [Financialyear], 
+[PayrollFunction].[PersonID] AS [PersonID], 
+[PayrollFunction].[PersonFirstName] AS [PersonFirstName], 
+[PayrollFunction].[PersonLastName] AS [PersonLastName], 
+[PayrollFunction].[FactorHeader] AS [FactorHeader], 
+[PayrollFunction].[PersonContent] AS [PersonContent]
+FROM [dbo].[PayrollFunction] AS [PayrollFunction]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SOTaxView" EntityType="Self.SOTaxView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[SOTaxView].[Id] AS [Id], 
+[SOTaxView].[IdBaseinfo] AS [IdBaseinfo], 
+[SOTaxView].[IdFinancialMainYear] AS [IdFinancialMainYear], 
+[SOTaxView].[Percent] AS [Percent], 
+[SOTaxView].[AssignName] AS [AssignName], 
+[SOTaxView].[IDCorporation] AS [IDCorporation], 
+[SOTaxView].[FYear] AS [FYear]
+FROM [dbo].[SOTaxView] AS [SOTaxView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="StoreOrderView" EntityType="Self.StoreOrderView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[StoreOrderView].[Id] AS [Id], 
+[StoreOrderView].[OId] AS [OId], 
+[StoreOrderView].[OOwnerId] AS [OOwnerId], 
+[StoreOrderView].[ODate] AS [ODate], 
+[StoreOrderView].[IdCompany] AS [IdCompany], 
+[StoreOrderView].[ODescription] AS [ODescription], 
+[StoreOrderView].[OReverse] AS [OReverse], 
+[StoreOrderView].[ODelete] AS [ODelete], 
+[StoreOrderView].[OSumMoney] AS [OSumMoney], 
+[StoreOrderView].[ODiscount] AS [ODiscount], 
+[StoreOrderView].[OTax] AS [OTax], 
+[StoreOrderView].[OMunicipalTax] AS [OMunicipalTax], 
+[StoreOrderView].[OOrderType] AS [OOrderType], 
+[StoreOrderView].[IdStoreOperation] AS [IdStoreOperation], 
+[StoreOrderView].[OIsDeleted] AS [OIsDeleted], 
+[StoreOrderView].[LastEdit] AS [LastEdit]
+FROM [dbo].[StoreOrderView] AS [StoreOrderView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TreasuryDetailsView" EntityType="Self.TreasuryDetailsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TreasuryDetailsView].[ID] AS [ID], 
+[TreasuryDetailsView].[IDTreasury] AS [IDTreasury], 
+[TreasuryDetailsView].[TDType] AS [TDType], 
+[TreasuryDetailsView].[TDPrice] AS [TDPrice], 
+[TreasuryDetailsView].[IDCheck] AS [IDCheck], 
+[TreasuryDetailsView].[IDFund] AS [IDFund], 
+[TreasuryDetailsView].[TDDescription] AS [TDDescription], 
+[TreasuryDetailsView].[AssignName] AS [AssignName], 
+[TreasuryDetailsView].[TDate] AS [TDate], 
+[TreasuryDetailsView].[Accountnumber] AS [Accountnumber]
+FROM [dbo].[TreasuryDetailsView] AS [TreasuryDetailsView]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AccountingMoeinDetails_AccountingMoein" Association="Self.FK_AccountingMoeinDetails_AccountingMoein">
+      <End Role="AccountingMoein" EntitySet="AccountingMoein" />
+      <End Role="AccountingMoeinDetails" EntitySet="AccountingMoeinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingMoeinDetails_CodeTitle" Association="Self.FK_AccountingMoeinDetails_CodeTitle">
+      <End Role="CodeTitle" EntitySet="CodeTitle" />
+      <End Role="AccountingMoeinDetails" EntitySet="AccountingMoeinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingTafsillevelDetails_AccountingTafsilLevels" Association="Self.FK_AccountingTafsillevelDetails_AccountingTafsilLevels">
+      <End Role="AccountingTafsilLevels" EntitySet="AccountingTafsilLevels" />
+      <End Role="AccountingTafsillevelsDetails" EntitySet="AccountingTafsillevelsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingTafsillevelDetails_CodeTitle" Association="Self.FK_AccountingTafsillevelDetails_CodeTitle">
+      <End Role="CodeTitle" EntitySet="CodeTitle" />
+      <End Role="AccountingTafsillevelsDetails" EntitySet="AccountingTafsillevelsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckProcesses_Check1" Association="Self.FK_CheckProcesses_Check1">
+      <End Role="Check" EntitySet="Check" />
+      <End Role="CheckProcesses" EntitySet="CheckProcesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollPerson_PersonStructureDefine" Association="Self.FK_PayrollPerson_PersonStructureDefine">
+      <End Role="PersonStructureDefine" EntitySet="PersonStructureDefine" />
+      <End Role="PayrollPerson" EntitySet="PayrollPerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_Operative" Association="Self.FK_StoreOperative_Operative">
+      <End Role="Operative" EntitySet="Operative" />
+      <End Role="StoreOperative" EntitySet="StoreOperative" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_StoreOrder" Association="Self.FK_StoreOperative_StoreOrder">
+      <End Role="StoreOrder" EntitySet="StoreOrder" />
+      <End Role="StoreOperative" EntitySet="StoreOperative" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_StoreOrderDetail" Association="Self.FK_StoreOperative_StoreOrderDetail">
+      <End Role="StoreOrderDetails" EntitySet="StoreOrderDetails" />
+      <End Role="StoreOperative" EntitySet="StoreOperative" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

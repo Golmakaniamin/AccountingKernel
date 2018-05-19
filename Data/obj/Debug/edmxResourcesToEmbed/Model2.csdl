@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccountingKernelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AccountingKernelEntities10" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SHOWData" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="GoodiesGroupsViews" EntityType="AccountingKernelModel.GoodiesGroupsView" />
+    <EntitySet Name="AccountingArticles" EntityType="AccountingKernelModel.AccountingArticle" />
+    <EntitySet Name="AccountingDocuments" EntityType="AccountingKernelModel.AccountingDocument" />
+    <EntitySet Name="AccountingInterfaces" EntityType="AccountingKernelModel.AccountingInterface" />
+    <EntitySet Name="AccountingMoeins" EntityType="AccountingKernelModel.AccountingMoein" />
+    <EntitySet Name="AccountingMoeinCodes" EntityType="AccountingKernelModel.AccountingMoeinCode" />
+    <EntitySet Name="AccountingMoeinDetails" EntityType="AccountingKernelModel.AccountingMoeinDetail" />
+    <EntitySet Name="AccountingMoeinStructureDefines" EntityType="AccountingKernelModel.AccountingMoeinStructureDefine" />
+    <EntitySet Name="AccountingMoeinTafsilLevels" EntityType="AccountingKernelModel.AccountingMoeinTafsilLevel" />
+    <EntitySet Name="AccountingMoeinTafsilRelations" EntityType="AccountingKernelModel.AccountingMoeinTafsilRelation" />
+    <EntitySet Name="AccountingTafsilArticles" EntityType="AccountingKernelModel.AccountingTafsilArticle" />
+    <EntitySet Name="AccountingTafsilLevels" EntityType="AccountingKernelModel.AccountingTafsilLevel" />
+    <EntitySet Name="AccountingTafsillevelsDetails" EntityType="AccountingKernelModel.AccountingTafsillevelsDetail" />
+    <EntitySet Name="AccountingTafsilStructureDefines" EntityType="AccountingKernelModel.AccountingTafsilStructureDefine" />
+    <EntitySet Name="Assets" EntityType="AccountingKernelModel.Asset" />
+    <EntitySet Name="AssetGoods" EntityType="AccountingKernelModel.AssetGood" />
+    <EntitySet Name="BaseInfoes" EntityType="AccountingKernelModel.BaseInfo" />
+    <EntitySet Name="Capitals" EntityType="AccountingKernelModel.Capital" />
+    <EntitySet Name="CapitalDetails" EntityType="AccountingKernelModel.CapitalDetail" />
+    <EntitySet Name="Checks" EntityType="AccountingKernelModel.Check" />
+    <EntitySet Name="CheckProcesses" EntityType="AccountingKernelModel.CheckProcess" />
+    <EntitySet Name="CodeTitles" EntityType="AccountingKernelModel.CodeTitle" />
+    <EntitySet Name="Coms" EntityType="AccountingKernelModel.Com" />
+    <EntitySet Name="Companies" EntityType="AccountingKernelModel.Company" />
+    <EntitySet Name="CompanyDetails" EntityType="AccountingKernelModel.CompanyDetail" />
+    <EntitySet Name="CompanyStructureDefines" EntityType="AccountingKernelModel.CompanyStructureDefine" />
+    <EntitySet Name="corporations" EntityType="AccountingKernelModel.corporation" />
+    <EntitySet Name="FinancialMainYears" EntityType="AccountingKernelModel.FinancialMainYear" />
+    <EntitySet Name="Financialyears" EntityType="AccountingKernelModel.Financialyear" />
+    <EntitySet Name="Funds" EntityType="AccountingKernelModel.Fund" />
+    <EntitySet Name="Goodies" EntityType="AccountingKernelModel.Goody" />
+    <EntitySet Name="GoodiesGroups" EntityType="AccountingKernelModel.GoodiesGroup" />
+    <EntitySet Name="GoodyConvertCountingUnits" EntityType="AccountingKernelModel.GoodyConvertCountingUnit" />
+    <EntitySet Name="GoodyPriceLists" EntityType="AccountingKernelModel.GoodyPriceList" />
+    <EntitySet Name="Operatives" EntityType="AccountingKernelModel.Operative" />
+    <EntitySet Name="PayrollContracts" EntityType="AccountingKernelModel.PayrollContract" />
+    <EntitySet Name="PayrollImprests" EntityType="AccountingKernelModel.PayrollImprest" />
+    <EntitySet Name="PayrollInsuranceCodes" EntityType="AccountingKernelModel.PayrollInsuranceCode" />
+    <EntitySet Name="PayrollInsuranceimmunities" EntityType="AccountingKernelModel.PayrollInsuranceimmunity" />
+    <EntitySet Name="PayrollLoans" EntityType="AccountingKernelModel.PayrollLoan" />
+    <EntitySet Name="PayrollLoanDetails" EntityType="AccountingKernelModel.PayrollLoanDetail" />
+    <EntitySet Name="PayrollPersons" EntityType="AccountingKernelModel.PayrollPerson" />
+    <EntitySet Name="PayrollPersonSentences" EntityType="AccountingKernelModel.PayrollPersonSentence" />
+    <EntitySet Name="PayrollPersonWorkDones" EntityType="AccountingKernelModel.PayrollPersonWorkDone" />
+    <EntitySet Name="PayrollSalaryFactors" EntityType="AccountingKernelModel.PayrollSalaryFactor" />
+    <EntitySet Name="PayrollSentences" EntityType="AccountingKernelModel.PayrollSentence" />
+    <EntitySet Name="PayrollTaxCodes" EntityType="AccountingKernelModel.PayrollTaxCode" />
+    <EntitySet Name="PayrollTaximmunities" EntityType="AccountingKernelModel.PayrollTaximmunity" />
+    <EntitySet Name="PayrollWorkDoneFactors" EntityType="AccountingKernelModel.PayrollWorkDoneFactor" />
+    <EntitySet Name="PersonStructureDefines" EntityType="AccountingKernelModel.PersonStructureDefine" />
+    <EntitySet Name="PriceLists" EntityType="AccountingKernelModel.PriceList" />
+    <EntitySet Name="SOTaxes" EntityType="AccountingKernelModel.SOTax" />
+    <EntitySet Name="StoreOperations" EntityType="AccountingKernelModel.StoreOperation" />
+    <EntitySet Name="StoreOperatives" EntityType="AccountingKernelModel.StoreOperative" />
+    <EntitySet Name="StoreOrders" EntityType="AccountingKernelModel.StoreOrder" />
+    <EntitySet Name="StoreOrderDetails" EntityType="AccountingKernelModel.StoreOrderDetail" />
+    <EntitySet Name="StoreS" EntityType="AccountingKernelModel.Store" />
+    <EntitySet Name="sysdiagrams" EntityType="AccountingKernelModel.sysdiagram" />
+    <EntitySet Name="Treasuries" EntityType="AccountingKernelModel.Treasury" />
+    <EntitySet Name="TreasuryDetails" EntityType="AccountingKernelModel.TreasuryDetail" />
+    <EntitySet Name="Users" EntityType="AccountingKernelModel.User" />
+    <EntitySet Name="AccountingMoeinDetailsViews" EntityType="AccountingKernelModel.AccountingMoeinDetailsView" />
+    <EntitySet Name="AccountingTafsillevelsDetailViews" EntityType="AccountingKernelModel.AccountingTafsillevelsDetailView" />
+    <EntitySet Name="AssetGoodsViews" EntityType="AccountingKernelModel.AssetGoodsView" />
+    <EntitySet Name="CommodityDetailsViews" EntityType="AccountingKernelModel.CommodityDetailsView" />
+    <EntitySet Name="FundViews" EntityType="AccountingKernelModel.FundView" />
+    <EntitySet Name="PayrollFunctions" EntityType="AccountingKernelModel.PayrollFunction" />
+    <EntitySet Name="SOTaxViews" EntityType="AccountingKernelModel.SOTaxView" />
+    <EntitySet Name="StoreOrderViews" EntityType="AccountingKernelModel.StoreOrderView" />
+    <EntitySet Name="TreasuryDetailsViews" EntityType="AccountingKernelModel.TreasuryDetailsView" />
+    <AssociationSet Name="FK_AccountingMoeinDetails_AccountingMoein" Association="AccountingKernelModel.FK_AccountingMoeinDetails_AccountingMoein">
+      <End Role="AccountingMoein" EntitySet="AccountingMoeins" />
+      <End Role="AccountingMoeinDetail" EntitySet="AccountingMoeinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingMoeinDetails_CodeTitle" Association="AccountingKernelModel.FK_AccountingMoeinDetails_CodeTitle">
+      <End Role="CodeTitle" EntitySet="CodeTitles" />
+      <End Role="AccountingMoeinDetail" EntitySet="AccountingMoeinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingTafsillevelDetails_AccountingTafsilLevels" Association="AccountingKernelModel.FK_AccountingTafsillevelDetails_AccountingTafsilLevels">
+      <End Role="AccountingTafsilLevel" EntitySet="AccountingTafsilLevels" />
+      <End Role="AccountingTafsillevelsDetail" EntitySet="AccountingTafsillevelsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountingTafsillevelDetails_CodeTitle" Association="AccountingKernelModel.FK_AccountingTafsillevelDetails_CodeTitle">
+      <End Role="CodeTitle" EntitySet="CodeTitles" />
+      <End Role="AccountingTafsillevelsDetail" EntitySet="AccountingTafsillevelsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckProcesses_Check1" Association="AccountingKernelModel.FK_CheckProcesses_Check1">
+      <End Role="Check" EntitySet="Checks" />
+      <End Role="CheckProcess" EntitySet="CheckProcesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_Operative" Association="AccountingKernelModel.FK_StoreOperative_Operative">
+      <End Role="Operative" EntitySet="Operatives" />
+      <End Role="StoreOperative" EntitySet="StoreOperatives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollPerson_PersonStructureDefine" Association="AccountingKernelModel.FK_PayrollPerson_PersonStructureDefine">
+      <End Role="PersonStructureDefine" EntitySet="PersonStructureDefines" />
+      <End Role="PayrollPerson" EntitySet="PayrollPersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_StoreOrder" Association="AccountingKernelModel.FK_StoreOperative_StoreOrder">
+      <End Role="StoreOrder" EntitySet="StoreOrders" />
+      <End Role="StoreOperative" EntitySet="StoreOperatives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreOperative_StoreOrderDetail" Association="AccountingKernelModel.FK_StoreOperative_StoreOrderDetail">
+      <End Role="StoreOrderDetail" EntitySet="StoreOrderDetails" />
+      <End Role="StoreOperative" EntitySet="StoreOperatives" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GoodiesGroupsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Guid" />
+    <Property Name="uniquepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTitleId" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AccountingArticle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDAccountingDocument" Type="Guid" />
+    <Property Name="ADescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADescriptionEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADebtor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACreditor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AccountingDocument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ADDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDescriptionEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ADPriority" Type="Int32" />
+    <Property Name="ADCode" Type="Int32" />
+    <Property Name="ADOldCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AISDeleted" Type="Boolean" />
+    <Property Name="AIdStatus" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="ADType" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingInterface">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AIGroupID" Type="Int32" />
+    <Property Name="AIGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AIName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AIDebtor_IDAccountingMoein" Type="Guid" />
+    <Property Name="AICreditor_IDAccountingMoein" Type="Guid" />
+    <Property Name="AIDebtor_IDAccountingMoeinTafsilLevels" Type="Guid" />
+    <Property Name="AICreditor_IDAccountingMoeinTafsilLevels" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingMoein">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="MName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIdGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIdAll" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIdMoein" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MFALLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MGrouhF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MMoein" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MMoienType" Type="Guid" />
+    <NavigationProperty Name="AccountingMoeinDetails" Relationship="AccountingKernelModel.FK_AccountingMoeinDetails_AccountingMoein" FromRole="AccountingMoein" ToRole="AccountingMoeinDetail" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="StructureDefine_ID" Type="Guid" />
+    <Property Name="MType" Type="Guid" />
+    <Property Name="MNature" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="Guid" />
+    <Property Name="IdAccountingMoein" Type="Guid" />
+    <Property Name="MDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MDNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AccountingMoein" Relationship="AccountingKernelModel.FK_AccountingMoeinDetails_AccountingMoein" FromRole="AccountingMoeinDetail" ToRole="AccountingMoein" />
+    <NavigationProperty Name="CodeTitle" Relationship="AccountingKernelModel.FK_AccountingMoeinDetails_CodeTitle" FromRole="AccountingMoeinDetail" ToRole="CodeTitle" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Guid" />
+    <Property Name="Parent_ID" Type="Guid" />
+    <Property Name="Uniq_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="Latin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinTafsilLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IdAccountingMoein" Type="Guid" />
+    <Property Name="IdAccountingTafsilLevels" Type="Guid" />
+    <Property Name="IdTafsilGroup" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinTafsilRelation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="AcountingMoein_ID" Type="Guid" />
+    <Property Name="AccountingTafsil_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilArticle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IDAccountingMoeinTafsilLevels" Type="Guid" />
+    <Property Name="IdAccountingTafsilLDetails" Type="Guid" />
+    <Property Name="IdAccountingArticle" Type="Guid" />
+    <Property Name="IDAccountingMoein" Type="Guid" />
+    <Property Name="IDAccountingTafsilStructureDefine" Type="Guid" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountingTafsillevelsDetails" Relationship="AccountingKernelModel.FK_AccountingTafsillevelDetails_AccountingTafsilLevels" FromRole="AccountingTafsilLevel" ToRole="AccountingTafsillevelsDetail" />
+  </EntityType>
+  <EntityType Name="AccountingTafsillevelsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="Guid" />
+    <Property Name="IdAccountingTafsilLevels" Type="Guid" />
+    <Property Name="ATLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ATLNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IdRefrence" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AccountingTafsilLevel" Relationship="AccountingKernelModel.FK_AccountingTafsillevelDetails_AccountingTafsilLevels" FromRole="AccountingTafsillevelsDetail" ToRole="AccountingTafsilLevel" />
+    <NavigationProperty Name="CodeTitle" Relationship="AccountingKernelModel.FK_AccountingTafsillevelDetails_CodeTitle" FromRole="AccountingTafsillevelsDetail" ToRole="CodeTitle" />
+  </EntityType>
+  <EntityType Name="AccountingTafsilStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Guid" />
+    <Property Name="Parent_ID" Type="Guid" />
+    <Property Name="Uniq_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="Latin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdRefrence" Type="Guid" />
+  </EntityType>
+  <EntityType Name="Asset">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Idperson" Type="Guid" />
+    <Property Name="Idassetgoods" Type="Guid" />
+    <Property Name="assetdate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="asset_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amortization_Rate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amortization_Method" Type="Guid" />
+    <Property Name="Accumulative_amortization" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="decay_value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="asset_number" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AssetGood">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parentId" Type="Guid" />
+    <Property Name="uniquepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="codetitleId" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BaseInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AssignName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Explain" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="PID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="Capital">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="CNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CPerson" Type="Guid" />
+    <Property Name="CDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CTotalPrice" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="CapitalDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCapital" Type="Guid" />
+    <Property Name="CDDate" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CDPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CDDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Check">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="CNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CAccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CBank" Type="Guid" />
+    <Property Name="CType" Type="Guid" />
+    <NavigationProperty Name="CheckProcesses" Relationship="AccountingKernelModel.FK_CheckProcesses_Check1" FromRole="Check" ToRole="CheckProcess" />
+  </EntityType>
+  <EntityType Name="CheckProcess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCheck" Type="Guid" />
+    <Property Name="CPType" Type="Guid" />
+    <Property Name="CPDate" Type="DateTime" Precision="3" />
+    <Property Name="CPName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CPDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDFunds" Type="Guid" />
+    <Property Name="CSerial" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Check" Relationship="AccountingKernelModel.FK_CheckProcesses_Check1" FromRole="CheckProcess" ToRole="Check" />
+  </EntityType>
+  <EntityType Name="CodeTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeGroup" Type="Int32" />
+    <Property Name="CodeLen" Type="Int32" />
+    <Property Name="CodePriority" Type="Int32" />
+    <Property Name="CodeStart" Type="Int32" />
+    <NavigationProperty Name="AccountingMoeinDetails" Relationship="AccountingKernelModel.FK_AccountingMoeinDetails_CodeTitle" FromRole="CodeTitle" ToRole="AccountingMoeinDetail" />
+    <NavigationProperty Name="AccountingTafsillevelsDetails" Relationship="AccountingKernelModel.FK_AccountingTafsillevelDetails_CodeTitle" FromRole="CodeTitle" ToRole="AccountingTafsillevelsDetail" />
+  </EntityType>
+  <EntityType Name="Com">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CPersonType" Type="Guid" />
+    <Property Name="CRegisterNo" Type="Int32" />
+    <Property Name="CNationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CEconomyCode" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CTell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CEMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CWebsite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CPriceType" Type="Guid" />
+    <Property Name="CType" Type="Guid" />
+    <Property Name="IdTafsilLevels" Type="Guid" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="Guid" />
+    <Property Name="CompanyStructureDefineId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CPersonType" Type="Guid" />
+    <Property Name="CRegisterNo" Type="Int32" />
+    <Property Name="CNationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CEconomyCode" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CTell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CEMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CWebsite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CPriceType" Type="Guid" />
+    <Property Name="CType" Type="Guid" />
+    <Property Name="IdTafsilLevels" Type="Guid" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="Guid" />
+  </EntityType>
+  <EntityType Name="CompanyDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IDCodeTitle" Type="Guid" />
+    <Property Name="IDCompany" Type="Guid" />
+    <Property Name="CDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDIDIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CompanyStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Guid" />
+    <Property Name="Parent_ID" Type="Guid" />
+    <Property Name="Uniq_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="corporation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Groupname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CorporationName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mahale_sabt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CorporationType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sabt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idposti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_byte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="kod_kargah" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="radif_peyman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nameshobe_bime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name_kargah" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kod_shemely" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="nerkhe_bime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sh_parvande" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kod_shobe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="noeasliepardakhtkonande" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="noefareiepardakhtkonande" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name_shobe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nahve_maliyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pardakht_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pardakht_family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pardakht_codemelli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kod_egtesady" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nahve_pardakht" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="emza1_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emza1_family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emza1_codemelli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emza1_semat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kod_TFN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="kod_TIN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FinancialMainYear">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCorporation" Type="Guid" />
+    <Property Name="FYear" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Financialyear">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCorporation" Type="Guid" />
+    <Property Name="FYyear" Type="Int32" />
+    <Property Name="FYMonthNO" Type="Int32" />
+    <Property Name="FYMonthName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FYMonthNumber" Type="Int32" />
+    <Property Name="piroity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Fund">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FBankNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fbranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FbranchNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FCartNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FType" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Goody">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="CID1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COrderPoint" Type="Int32" />
+    <Property Name="COrderMax" Type="Int32" />
+    <Property Name="COrderMin" Type="Int32" />
+    <Property Name="CPointCritical" Type="Int32" />
+    <Property Name="CInventoryMax" Type="Int32" />
+    <Property Name="CType" Type="Guid" />
+    <Property Name="CBaseCountingUnit" Type="Guid" />
+    <Property Name="IdAccountingTafsillevelsDetails" Type="Guid" />
+    <Property Name="IdGoodiesGroups" Type="Guid" />
+  </EntityType>
+  <EntityType Name="GoodiesGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Guid" />
+    <Property Name="uniquepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTitleId" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="GoodyConvertCountingUnit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCommodity" Type="Guid" />
+    <Property Name="CCCUIDBaseInfo1" Type="Guid" />
+    <Property Name="CCCUCount1" Type="Int32" />
+    <Property Name="CCCUIDBaseInfo2" Type="Guid" />
+    <Property Name="CCCUCount2" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GoodyPriceList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IDBaseInfo" Type="Guid" />
+    <Property Name="IDGoody" Type="Guid" />
+    <Property Name="PLPrice" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Operative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="OISEffective" Type="Boolean" />
+    <Property Name="OName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OType" Type="Guid" />
+    <Property Name="OCalculationMethod" Type="Guid" />
+    <Property Name="OPercent" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="StoreOperatives" Relationship="AccountingKernelModel.FK_StoreOperative_Operative" FromRole="Operative" ToRole="StoreOperative" />
+  </EntityType>
+  <EntityType Name="PayrollContract">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="Guid" />
+    <Property Name="IDPayrollPerson" Type="Guid" />
+    <Property Name="PrCContractNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrcContractType" Type="Int32" />
+    <Property Name="PrcDateContractRegister" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrcDateContractStart" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrcDateContractEmployment" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrcDateContractEnd" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrcDateContractExpire" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrcInsuranceType" Type="Int32" />
+    <Property Name="PrcInsuranceNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrcSalaryType" Type="Guid" />
+    <Property Name="PrcSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrCBankName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrCBranchName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrCAccountNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrCBranchCartNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollImprest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDPayrollPerson" Type="Guid" />
+    <Property Name="IDFinancialyear" Type="Guid" />
+    <Property Name="IDPayrollSentences" Type="Guid" />
+    <Property Name="PrIPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PrIDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollInsuranceCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="MCode" Type="Int32" />
+    <Property Name="MDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SCode" Type="Int32" />
+    <Property Name="SDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollInsuranceimmunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="kod_moafiat" Type="Int32" />
+    <Property Name="name_moafiat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="personel_dasad" Type="Double" />
+    <Property Name="bikari_darsad" Type="Double" />
+    <Property Name="karfarma_darsad" Type="Double" />
+  </EntityType>
+  <EntityType Name="PayrollLoan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDPayrollPerson" Type="Guid" Nullable="false" />
+    <Property Name="PrLID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrLDPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PrLDDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrLDDateMiladi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrLPayment" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PayrollLoanDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDPayrollLoan" Type="Guid" Nullable="false" />
+    <Property Name="PrLDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrLDateMiladi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrLPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PrLPayment" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PayrollPerson">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="PPerson_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PFristName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PFather" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PIdNational" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PSHSH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PBrithDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PSex" Type="Guid" />
+    <Property Name="PMarriage" Type="Guid" />
+    <Property Name="PNumberChild" Type="Int32" />
+    <Property Name="PPhoneHome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PPhoneWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PIdPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Tax_madrak" Type="Int32" />
+    <Property Name="Tax_onvanShoghl" Type="Int32" />
+    <Property Name="Tax_serishenasnameh" Type="Int32" />
+    <Property Name="Tax_vazmaskan" Type="Int32" />
+    <Property Name="Tax_meliat" Type="Int32" />
+    <Property Name="Tax_namekeshvar" Type="Int32" />
+    <Property Name="Tax_nezamvazifeh" Type="Guid" />
+    <Property Name="Tax_rasteshoghli" Type="Int32" />
+    <Property Name="Tax_vazmashin" Type="Int32" />
+    <Property Name="code_moafiat_maliat" Type="Int32" />
+    <Property Name="Insurance_keshvar" Type="Int32" />
+    <Property Name="Insurance_shahr" Type="Int32" />
+    <Property Name="Insurance_mashagel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Insurance_tahsilat" Type="Int32" />
+    <Property Name="Insurance_reshteh" Type="Int32" />
+    <Property Name="Insurance_meliat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="code_moafiat_bimeh" Type="Int32" />
+    <Property Name="PersonStructerID" Type="Guid" />
+    <NavigationProperty Name="PersonStructureDefine" Relationship="AccountingKernelModel.FK_PayrollPerson_PersonStructureDefine" FromRole="PayrollPerson" ToRole="PersonStructureDefine" />
+  </EntityType>
+  <EntityType Name="PayrollPersonSentence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="Guid" />
+    <Property Name="IDPayrollPerson" Type="Guid" />
+    <Property Name="IDPayrollSentences" Type="Guid" />
+    <Property Name="PrPSMoney" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="PayrollPersonWorkDone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDFinancialyear" Type="Guid" />
+    <Property Name="IDPayrollPerson" Type="Guid" />
+    <Property Name="IDPayrollWorkDoneFactors" Type="Guid" />
+    <Property Name="PrPWContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollSalaryFactor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PrSDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrSContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollSentence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PrSType" Type="Guid" />
+    <Property Name="PrSOType" Type="Guid" />
+    <Property Name="PrSDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrSMoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PrSIsInsurance" Type="Boolean" />
+    <Property Name="PrSIsTax" Type="Boolean" />
+    <Property Name="PrSInsuranceEmployer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrSInsuranceUnemployment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrSInsuranceEmployee" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollTaxCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="MCode" Type="Int32" />
+    <Property Name="MDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SCode" Type="Int32" />
+    <Property Name="SDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PayrollTaximmunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="tmpid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kod_moafiat" Type="Int32" />
+    <Property Name="name_moafiat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="money1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="darsad1" Type="Double" />
+  </EntityType>
+  <EntityType Name="PayrollWorkDoneFactor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PrWFDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrWFContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PersonStructureDefine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Guid" />
+    <Property Name="Parent_ID" Type="Guid" />
+    <Property Name="Uniq_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PayrollPersons" Relationship="AccountingKernelModel.FK_PayrollPerson_PersonStructureDefine" FromRole="PersonStructureDefine" ToRole="PayrollPerson" />
+  </EntityType>
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IDBaseInfo" Type="Guid" />
+    <Property Name="IDCommodity" Type="Guid" />
+    <Property Name="PLPrice" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="SOTax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdBaseinfo" Type="Guid" Nullable="false" />
+    <Property Name="IdFinancialMainYear" Type="Guid" Nullable="false" />
+    <Property Name="Percent" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="StoreOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="OName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OOperation" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StoreOperative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdStoreOrder" Type="Guid" Nullable="false" />
+    <Property Name="IdStoreDetail" Type="Guid" />
+    <Property Name="IdOperative" Type="Guid" Nullable="false" />
+    <Property Name="SPrice" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Operative" Relationship="AccountingKernelModel.FK_StoreOperative_Operative" FromRole="StoreOperative" ToRole="Operative" />
+    <NavigationProperty Name="StoreOrder" Relationship="AccountingKernelModel.FK_StoreOperative_StoreOrder" FromRole="StoreOperative" ToRole="StoreOrder" />
+    <NavigationProperty Name="StoreOrderDetail" Relationship="AccountingKernelModel.FK_StoreOperative_StoreOrderDetail" FromRole="StoreOperative" ToRole="StoreOrderDetail" />
+  </EntityType>
+  <EntityType Name="StoreOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="OId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OOwnerId" Type="Int32" />
+    <Property Name="ODate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdCompany" Type="Guid" />
+    <Property Name="ODescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OReverse" Type="Boolean" />
+    <Property Name="ODelete" Type="Boolean" />
+    <Property Name="OSumMoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ODiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OMunicipalTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OOrderType" Type="Guid" />
+    <Property Name="IdStoreOperation" Type="Guid" />
+    <Property Name="OIsDeleted" Type="Boolean" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="StoreOperatives" Relationship="AccountingKernelModel.FK_StoreOperative_StoreOrder" FromRole="StoreOrder" ToRole="StoreOperative" />
+  </EntityType>
+  <EntityType Name="StoreOrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdStoreOrder" Type="Guid" Nullable="false" />
+    <Property Name="IdStoreS" Type="Guid" Nullable="false" />
+    <Property Name="IdCommodity" Type="Guid" Nullable="false" />
+    <Property Name="ODCountingUnit" Type="Guid" Nullable="false" />
+    <Property Name="ODCount" Type="Int32" />
+    <Property Name="ORemained" Type="Int32" />
+    <Property Name="ODMoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ODDiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ODDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PId" Type="Int32" />
+    <NavigationProperty Name="StoreOperatives" Relationship="AccountingKernelModel.FK_StoreOperative_StoreOrderDetail" FromRole="StoreOrderDetail" ToRole="StoreOperative" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdStoreOrderDetail" Type="Guid" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="3" />
+    <Property Name="SCount" Type="Int32" />
+    <Property Name="SRemained" Type="Int32" />
+    <Property Name="Sname" Type="Guid" />
+    <Property Name="IdStoreOperation" Type="Guid" />
+    <Property Name="IdCommodity" Type="Guid" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Treasury">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Ttype" Type="Guid" />
+    <Property Name="TNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LastEdit" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="TreasuryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDTreasury" Type="Guid" />
+    <Property Name="TDType" Type="Guid" />
+    <Property Name="TDPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IDCheck" Type="Guid" />
+    <Property Name="IDFund" Type="Guid" />
+    <Property Name="TDDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="perID" Type="Guid" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AccountingMoeinDetailsView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="Guid" />
+    <Property Name="IdAccountingMoein" Type="Guid" />
+    <Property Name="MDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MDNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AccountingTafsillevelsDetailView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="LastEdit" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdCodeTitle" Type="Guid" />
+    <Property Name="IdAccountingTafsilLevels" Type="Guid" />
+    <Property Name="ATLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ATLNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IdRefrence" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="AssetGoodsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parentId" Type="Guid" />
+    <Property Name="uniquepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="codetitleId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="CommodityDetailsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDCodeTitle" Type="Guid" />
+    <Property Name="IDCommodity" Type="Guid" />
+    <Property Name="CDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDIDIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FundView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LastEdit" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FBankNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fbranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FbranchNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FCartNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FType" Type="Guid" />
+    <Property Name="LastEdit" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PayrollFunction">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Financialyear" Type="Guid" />
+    <Property Name="PersonID" Type="Guid" Nullable="false" />
+    <Property Name="PersonFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FactorHeader" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PersonContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SOTaxView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdBaseinfo" />
+      <PropertyRef Name="IdFinancialMainYear" />
+      <PropertyRef Name="Percent" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IdBaseinfo" Type="Guid" Nullable="false" />
+    <Property Name="IdFinancialMainYear" Type="Guid" Nullable="false" />
+    <Property Name="Percent" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AssignName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDCorporation" Type="Guid" />
+    <Property Name="FYear" Type="Int32" />
+  </EntityType>
+  <EntityType Name="StoreOrderView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="OId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OOwnerId" Type="Int32" />
+    <Property Name="ODate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdCompany" Type="Guid" />
+    <Property Name="ODescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OReverse" Type="Boolean" />
+    <Property Name="ODelete" Type="Boolean" />
+    <Property Name="OSumMoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ODiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OMunicipalTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OOrderType" Type="Guid" />
+    <Property Name="IdStoreOperation" Type="Guid" />
+    <Property Name="OIsDeleted" Type="Boolean" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TreasuryDetailsView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="IDTreasury" Type="Guid" />
+    <Property Name="TDType" Type="Guid" />
+    <Property Name="TDPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IDCheck" Type="Guid" />
+    <Property Name="IDFund" Type="Guid" />
+    <Property Name="TDDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssignName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Accountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_AccountingMoeinDetails_AccountingMoein">
+    <End Type="AccountingKernelModel.AccountingMoein" Role="AccountingMoein" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.AccountingMoeinDetail" Role="AccountingMoeinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountingMoein">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingMoeinDetail">
+        <PropertyRef Name="IdAccountingMoein" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingMoeinDetails_CodeTitle">
+    <End Type="AccountingKernelModel.CodeTitle" Role="CodeTitle" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.AccountingMoeinDetail" Role="AccountingMoeinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingMoeinDetail">
+        <PropertyRef Name="IdCodeTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingTafsillevelDetails_AccountingTafsilLevels">
+    <End Type="AccountingKernelModel.AccountingTafsilLevel" Role="AccountingTafsilLevel" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.AccountingTafsillevelsDetail" Role="AccountingTafsillevelsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountingTafsilLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingTafsillevelsDetail">
+        <PropertyRef Name="IdAccountingTafsilLevels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountingTafsillevelDetails_CodeTitle">
+    <End Type="AccountingKernelModel.CodeTitle" Role="CodeTitle" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.AccountingTafsillevelsDetail" Role="AccountingTafsillevelsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountingTafsillevelsDetail">
+        <PropertyRef Name="IdCodeTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CheckProcesses_Check1">
+    <End Type="AccountingKernelModel.Check" Role="Check" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.CheckProcess" Role="CheckProcess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Check">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CheckProcess">
+        <PropertyRef Name="IDCheck" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_Operative">
+    <End Type="AccountingKernelModel.Operative" Role="Operative" Multiplicity="1" />
+    <End Type="AccountingKernelModel.StoreOperative" Role="StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operative">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdOperative" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollPerson_PersonStructureDefine">
+    <End Type="AccountingKernelModel.PersonStructureDefine" Role="PersonStructureDefine" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.PayrollPerson" Role="PayrollPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonStructureDefine">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PayrollPerson">
+        <PropertyRef Name="PersonStructerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_StoreOrder">
+    <End Type="AccountingKernelModel.StoreOrder" Role="StoreOrder" Multiplicity="1" />
+    <End Type="AccountingKernelModel.StoreOperative" Role="StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdStoreOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreOperative_StoreOrderDetail">
+    <End Type="AccountingKernelModel.StoreOrderDetail" Role="StoreOrderDetail" Multiplicity="0..1" />
+    <End Type="AccountingKernelModel.StoreOperative" Role="StoreOperative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreOrderDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreOperative">
+        <PropertyRef Name="IdStoreDetail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,86 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="AccountingKernel.Forms.saleMaly.frm_tarifeGrouh"
+        Title="frm_tarifeGrouh" Height="768" Width="1024" Style="{DynamicResource WindowStyle}" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <Grid>
+        
+        <Button x:Name="btnAccept" Content="ثبت" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="10,723,0,0" VerticalAlignment="Top" Width="1004" Click="btnAccept_Click"/>
+        <GroupBox Header="مشخصات ثبتی شرکت" HorizontalAlignment="Left" Margin="29,41,0,0" VerticalAlignment="Top" Height="235" Width="961">
+            <Grid>
+                <Label Content="نام" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtCorporationName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+                <Label Content="نام گروه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtGroupName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="محل ثبت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtMahaleSabt" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="840,50,-74,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="نوع شرکت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtCorporationType" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="شماره تلفن" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtPhone" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtPhone_PreviewTextInput"/>
+                <Label Content="شماره ثبت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,90,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtSabt" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" PreviewTextInput="txtSabt_PreviewTextInput"/>
+                <Label Content="کد پستی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,90,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtIdPosti" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtIdPosti_PreviewTextInput"/>
+                <Label Content="آدرس" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,130,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtAddress" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,130,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="399" PreviewTextInput="txtAddress_PreviewTextInput"/>
+                <Button x:Name="btnLogo" Content="انتخاب لوگو" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="713,155,0,0" VerticalAlignment="Top" Width="150"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="بیمه" HorizontalAlignment="Left" Margin="29,291,0,0" VerticalAlignment="Top" Height="129" Width="961">
+            <Grid>
+                <Label Content="کد کارگاه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtKodKargah" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" PreviewTextInput="txtKodKargah_PreviewTextInput"/>
+                <Label Content="ردیف پیمان" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtRadifPeyman" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="نام شعبه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtNameShobeBime" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="713,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtNameShobeBime_PreviewTextInput"/>
+                <Label Content="نام کارگاه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left"  Margin="118,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtNameKargah" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" PreviewTextInput="txtNameKargah_PreviewTextInput"/>
+                <Label Content="کد شناسه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtKodShemely" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtKodShemely_PreviewTextInput"/>
+                <Label Content="نرخ حق بیمه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtNerkhBime" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="txtNerkhBime_TextChanged" PreviewTextInput="txtNerkhBime_PreviewTextInput"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="مالیات" HorizontalAlignment="Left" Margin="29,432,0,0" VerticalAlignment="Top" Height="278" Width="961">
+            <Grid>
+                <Label Content="شماره پرونده" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtShParvande" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" PreviewTextInput="txtShParvande_PreviewTextInput"/>
+                <Label Content="نام پرداخت کننده" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtpardakht_name" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtpardakht_name_PreviewTextInput"/>
+                <Label Content="نام امضاء کننده اول" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,10,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtemza1_name" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtemza1_name_PreviewTextInput"/>
+                <Label Content="کد شعبه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtkodshobe" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" PreviewTextInput="txtkodshobe_PreviewTextInput"/>
+                <Label Content="نام خانوادگی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtpardakht_family" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtpardakht_family_PreviewTextInput"/>
+                <Label Content="نام خانوادگی امضا" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,50,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtemza1_family" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtemza1_family_PreviewTextInput"/>
+                <Label Content="نوع اصلی پرداخت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,90,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtnoeasliepardakhtkonande" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="کد ملی پرداخت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,90,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtpardakht_codemelli" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtpardakht_codemelli_PreviewTextInput"/>
+                <Label Content="شماره ملی امضا" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,90,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtemza1_codemelli" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtemza1_codemelli_PreviewTextInput"/>
+                <Label Content="نوع فرعی پرداخت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,130,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtnoefareiepardakhtkonande" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="کد اقتصادی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,130,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtkod_egtesady" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtkod_egtesady_PreviewTextInput"/>
+                <Label Content="سمت امضا کننده" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,130,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtemza1_semat" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtemza1_semat_PreviewTextInput"/>
+                <Label Content="نام شعبه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,170,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtname_shobe" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="213,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PreviewTextInput="txtname_shobe_PreviewTextInput"/>
+                <Label Content="کد TFN" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,170,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtkod_TFN" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="463,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="کد TIN" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="618,170,0,0" VerticalAlignment="Top" Width="90"/>
+                <TextBox x:Name="txtkod_TIN" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="713,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                <Label Content="نحوه محاسبه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="118,210,0,0" VerticalAlignment="Top" Width="90"/>
+                <ComboBox x:Name="cmbCalculationType" HorizontalAlignment="Left" Height="35" Margin="213,210,0,0" VerticalAlignment="Top" Width="150" DisplayMemberPath="SDesc" SelectedValuePath="Id"/>
+                <Label Content="نحوه پرداخت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="368,210,0,0" VerticalAlignment="Top" Width="90"/>
+                <ComboBox x:Name="cmbPaymentType" HorizontalAlignment="Left" Height="35" Margin="463,210,0,0" VerticalAlignment="Top" Width="150" DisplayMemberPath="SDesc" SelectedValuePath="Id"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

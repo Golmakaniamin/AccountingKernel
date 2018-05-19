@@ -1,0 +1,60 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.KazaneDari.frm_tarife_pardakht"
+        Title="frm_tarife_pardakht" Style="{DynamicResource WindowStyle}" Height="768" Width="1024" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <GroupBox Header="اطلاعات پرداخت" VerticalAlignment="Top" Height="116" Margin="10,39,10,0">
+            <Grid>
+                <Label Content="شماره" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="49"/>
+                <TextBox x:Name="txtNo" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtNo_PreviewTextInput" IsEnabled="False"/>
+                <Label Content="تاریخ" HorizontalAlignment="Left" Margin="189,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="49"/>
+                <PersianDateControls:PersianDatePicker x:Name="dtpDate" HorizontalAlignment="Left" Margin="243,9,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
+                <Label Content="کد دریافت کننده" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="72"/>
+                <WPFAutoCompleteTextbox:AutoCompleteTextBox HorizontalAlignment="Left" Height="35" Margin="445,10,0,0" VerticalAlignment="Top" Width="141" PreviewTextInput="txtRecivePlace_PreviewTextInput"/>
+                <Label Content="نوع پرداخت" HorizontalAlignment="Left" Margin="751,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="76"/>
+                <ComboBox x:Name="cmb_noe_daryaft" Margin="832,10,10,0" VerticalAlignment="Top" DisplayMemberPath="AssignName" SelectedValuePath="Id" SelectionChanged="cmb_noe_daryaft_SelectionChanged" Height="35"/>
+                <Button x:Name="btnPaymentFrom" Content="انتخاب کد" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleRD}" Margin="591,10,0,0" VerticalAlignment="Top" Width="83"/>
+                <Label Content="مبلغ" HorizontalAlignment="Left" Margin="277,49,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="35"/>
+                <TextBox x:Name="txtPrice" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="317,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtPrice_PreviewTextInput" TextChanged="txtPrice_TextChanged"/>
+                <Label Content="شرح" HorizontalAlignment="Left" Margin="442,50,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="45"/>
+                <TextBox x:Name="txtDetailDescrition" Style="{StaticResource TextBoxStyle}" Height="35" Margin="492,50,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Label Content="پرداخت از" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="49"/>
+                <TextBox x:Name="txtPaymentFrom" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="64,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBox_PreviewTextInput_1"/>
+                <Button x:Name="btnRecivePlace" Content="انتخاب کد" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="189,50,0,0" VerticalAlignment="Top" Width="83" Click="btnRecivePlace_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="اطلاعات چک" VerticalAlignment="Top" Height="77" Margin="10,160,10,0">
+            <Grid Margin="0,0,0,-12">
+                <Label Content="شماره چک" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="50"/>
+                <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txtCheque" HorizontalAlignment="Left" Height="35" Margin="65,10,0,0" VerticalAlignment="Top" Width="120" LostFocus="txtCheque_LostFocus" PreviewTextInput="txtCheque_PreviewTextInput"/>
+                <Button x:Name="btnSelectCheque" Content="انتخاب چک" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="btnSelectCheque_Click"/>
+                <Label Content="تاریخ سررسید" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="75"/>
+                <PersianDateControls:PersianDatePicker x:Name="dtpChequeDate" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
+                <Label Content="مبلغ" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="30"/>
+                <TextBox x:Name="txtChequePrice" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="525,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtPrice_PreviewTextInput" TextChanged="txtChequePrice_TextChanged"/>
+                <Label Content="شرح" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="38"/>
+                <TextBox x:Name="txtChequeDetailDescrition" Style="{StaticResource TextBoxStyle}" Height="35" Margin="693,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnRegDetail" Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,242,10,0" VerticalAlignment="Top" Click="btnRegDetail_Click"/>
+        <DataGrid x:Name="grdTreasuryDetails" Style="{StaticResource DataGridStyle}" Margin="10,282,10,94" AutoGenerateColumns="False" SelectedCellsChanged="grdTreasuryDetails_SelectedCellsChanged">
+            <DataGrid.ContextMenu>
+                <ContextMenu >
+                    <MenuItem Header="حذف" PreviewMouseDown ="MenuItem_PreviewMouseDown"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}" Visibility="Hidden" IsReadOnly="True"/>
+                <DataGridTextColumn Header="نوع" Binding="{Binding AssignName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="شرح" Binding="{Binding TDDescription}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="شماره حساب" Binding="{Binding Accountnumber}"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="تاریخ سررسید" Binding="{Binding TDate}"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="مبلغ" Binding="{Binding TDPrice}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+         <Label Content="شرح " HorizontalAlignment="Left" Margin="12,679,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="txtTreasuryDescription" Style="{StaticResource TextBoxStyle}" Margin="40,679,10,0" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="txtTreasuryDescription_PreviewTextInput"/>
+        <Button x:Name="btnRegTreasury" Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnRegTreasury_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,5 @@
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Common.dll
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\Common.pdb
+D:\AccountingKernel\AccountingKernel\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\AccountingKernel\AccountingKernel\Common\obj\Debug\Common.dll
+D:\AccountingKernel\AccountingKernel\Common\obj\Debug\Common.pdb

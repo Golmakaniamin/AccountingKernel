@@ -1,0 +1,14 @@
+﻿<Window x:Class="AccountingKernel.Forms.baseInfo.FrmRegisterBaseInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="240" Width="320" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <Label Content="عنوان" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtAssignName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Margin="105,45,0,0"/>
+        <Label Content="نام لاتین" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtExplain" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Margin="105,125,0,0" PreviewTextInput="txtExplain_PreviewTextInput"/>
+        <Button Content="تایید" Style="{StaticResource ButtonStyleRD}" Margin="10,195,10,0" VerticalAlignment="Top" Click="btnSave_click"/>
+        <Label Content="اولویت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtPriority" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Margin="105,85,0,0"/>
+    </Grid>
+</Window>

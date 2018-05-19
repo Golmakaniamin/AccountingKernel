@@ -1,0 +1,25 @@
+﻿<Window x:Class="AccountingKernel.Forms.MmoienCode.MoeinAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MoeinAdd" Height="320" Width="350" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="انتخاب گروه" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+        <Label  Name="lblMoeinGroup" HorizontalAlignment="Left" Margin="77,32,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource LabelStyle}"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="77,72,0,0" TextWrapping="Wrap" Name="txtMoeinCode"  VerticalAlignment="Top" Width="120" PreviewTextInput="CheckIsNumeric"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="202,72,0,0" TextWrapping="Wrap" x:Name="txtGurohKol" IsEnabled="False"  VerticalAlignment="Top" Width="85"/>
+        <!--<Label  Name="txtGurohKol" HorizontalAlignment="Left" Margin="197,72,0,0" VerticalAlignment="Top" Width="93" Style="{StaticResource LabelStyle}"/>-->
+        <Label Content="نام معین" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="77,112,0,0" TextWrapping="Wrap" Name="txtMoeinName"  VerticalAlignment="Top" Width="120" PreviewTextInput="JustPersian"/>
+        <Label Content="نام لاتین معین" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="77,152,0,0" TextWrapping="Wrap"  Name="txtMoeinLatinName" VerticalAlignment="Top" Width="120" PreviewTextInput="JustEnglish"/>
+        <Label Content="نوع معین" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="77,192,0,0" VerticalAlignment="Top" Width="120" Name="cmbMoeinType" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+        <Label Content="ماهیت معین" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="77,232,0,0" VerticalAlignment="Top" Width="120" Name="cmbMoeinNature" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+        <Button Content="..." Style="{StaticResource ButtonStyleRD}" Name="btnAddParent_" HorizontalAlignment="Left" Margin="202,32,0,0" VerticalAlignment="Top" Width="88" Click="btnAddParent_Click"/>
+        <Label Content="کد معین" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="62"/>
+
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,275,10,0" VerticalAlignment="Top" Name="btnSubmit" Click="btnSubmit_Click"/>
+
+    </Grid>
+</Window>

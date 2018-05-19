@@ -1,0 +1,76 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.PayrollContract"
+ Title="ContractStaff" Height="640" Width="800" FlowDirection="RightToLeft" Loaded="Window_Loaded" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Button x:Name="btnSubmit" Style="{StaticResource ButtonStyleRD}" Content="ثبت" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnSubmit_Click"/>
+        <Button x:Name="btnSentenceList" Style="{StaticResource ButtonStyleRD}" Content="لیست احکام" VerticalAlignment="Bottom" Click="btnSentenceList_Click" Margin="10,0,10,50"/>
+        <GroupBox Header="اطلاعات حکم" Margin="10,56,10,0" VerticalAlignment="Top" Height="132">
+            <Grid>
+                <Label Content="شماره حکم" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtSentenceNumber" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="95,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="txtIsNumeric_PreviewTextInput"/>
+                <Label Content="تاریخ ثبت حکم" Style="{StaticResource LabelStyle}" Width="80" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top"/>
+                <PersianDateControls:PersianDatePicker Name="pdcSentenceRegisterTime" HorizontalAlignment="Left" Height="35" Margin="285,10,0,0" VerticalAlignment="Top"   Width="99"/>
+                <Label Content="تاریخ اجرای حکم" Style="{StaticResource LabelStyle}" Width="80" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top"/>
+                <PersianDateControls:PersianDatePicker x:Name="pdcSentenceStartTime" Height="35" HorizontalAlignment="Left" Margin="476,10,0,0" VerticalAlignment="Top"  Width="104"/>
+                <Label Content="تاریخ استخدام" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="587,10,0,0" VerticalAlignment="Top" Width="73"/>
+                <PersianDateControls:PersianDatePicker x:Name="pdcEmploymentTime" Height="35" HorizontalAlignment="Left" Margin="665,10,0,0" VerticalAlignment="Top"   Width="101"/>
+                <Label Content="تاریخ پایان حکم" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <PersianDateControls:PersianDatePicker x:Name="pdcSentenceEndTime" Height="35" HorizontalAlignment="Left" Margin="95,50,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="تاریخ انقضا حکم" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <PersianDateControls:PersianDatePicker x:Name="pdcSentenceExpireTime" Height="35" HorizontalAlignment="Left" Margin="285,50,0,0" VerticalAlignment="Top"  Width="100"/>
+                <Label Content="نوع حکم" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="390,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <ComboBox x:Name="cmbSentenceType" HorizontalAlignment="Left" Margin="475,50,0,0" VerticalAlignment="Top" Height="35" Width="105" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="UnName" Height="128" Margin="10,193,10,0" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="نام بانک" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtBankName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="95,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                <Label Content="نام شعبه" Width="80" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBankBranch" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="285,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                <Label Content="شماره کارت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtCardNumber" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="475,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="txtIsNumeric_PreviewTextInput"/>
+                <Label Content="شماره حساب" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="580,10,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtAccountNumber" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="665,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="txtIsNumeric_PreviewTextInput"/>
+                <Label Content="نوع بیمه" Width="80" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbInsuranceType" HorizontalAlignment="Left" Margin="95,50,0,0" VerticalAlignment="Top" Width="100" Height="35" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                <Label Content="شماره بیمه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtInsuranceNumber" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="285,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" PreviewTextInput="txtIsNumeric_PreviewTextInput"/>
+                <Label Content="نوع دریافت حقوق" HorizontalAlignment="Left" Margin="390,50,0,0" VerticalAlignment="Top" Width="81" Height="35"/>
+                <ComboBox x:Name="cmbReceiveSalaryType" HorizontalAlignment="Left" Margin="476,50,0,0" VerticalAlignment="Top" Width="100" Height="35" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                <Label Content="مبلغ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="581,50,0,0" VerticalAlignment="Top" Width="80"/>
+                <TextBox x:Name="txtAmount" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="666,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100"  PreviewTextInput="txtAmount_PreviewTextInput"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid Name="grdSentenceList" AutoGenerateColumns="False" Margin="10,329,10,91"  FlowDirection="RightToLeft" CellEditEnding="grdSentenceList_CellEditEnding">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="عملیات">
+                        <MenuItem Header="لیست احکام" Click="btnSentenceList_Click"/>
+                        <MenuItem Header="حذف" Click="MenuItem_Click"/>
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=ID}" />
+                <DataGridTextColumn IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=PayrollSentencesID}" />
+                <DataGridTextColumn Header="کسورات و مزایا" IsReadOnly="True" Binding="{Binding Path=PrSTypeDesc}" />
+                <DataGridTextColumn Header="نوع" IsReadOnly="True" Binding="{Binding Path=PrSOTypeDesc}"/>
+                <DataGridTextColumn Header="کسورات و مزایا" Visibility="Hidden" IsReadOnly="True" Binding="{Binding Path=PrSType}" />
+                <DataGridTextColumn Header="نوع" Visibility="Hidden" IsReadOnly="True" Binding="{Binding Path=PrSOType}"/>
+                <DataGridTextColumn Header="عنوان" IsReadOnly="True" Binding="{Binding Path=PrSDescription}"/>
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True" Binding="{Binding Path=PrSMoney}"/>
+                <DataGridTextColumn Header="بیمه" IsReadOnly="True" Binding="{Binding Path=PrSIsInsurance}"/>
+                <DataGridTextColumn Header="مالیات" IsReadOnly="True" Binding="{Binding Path=PrSIsTax}"/>
+                <DataGridTextColumn Header="در صد بیمه کارفرما" IsReadOnly="True" Binding="{Binding Path=PrSInsuranceEmployer}"/>
+                <DataGridTextColumn Header="در صد بیمه بیکاری" IsReadOnly="True" Binding="{Binding Path=PrSInsuranceUnemployment}"/>
+                <DataGridTextColumn Header="در صد بیمه پرسنل" IsReadOnly="True" Binding="{Binding  Path=PrSInsuranceEmployee}"/>
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="False" Binding="{Binding Money}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="AccountingKernel.Forms.SotoheTafsili.fehreste_grouhe_tafsili"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="fehreste_grouhe_tafsili" Style="{DynamicResource WindowStyle}" Height="600" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" >
+    <Grid>
+        <Label Content="جستجو" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="txt_search" Style="{StaticResource TextBoxStyle}" Margin="65,10,215,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <Button x:Name="BtnPrint" ToolTip="چاپ" Height="35"  Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Print.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnExel" ToolTip="اکسل" Height="35"  Margin="0,10,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35"  BorderBrush="#FF7A7878" Foreground="Black" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Excel.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnDel" ToolTip="حذف" Height="35"  Margin="0,10,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnDel_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/delete.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEdit" ToolTip="ویرایش" Height="35" Margin="0,10,130,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnEdit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnNew" ToolTip="جدید" Height="35"  Margin="0,10,170,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Foreground="Black" BorderBrush="#FF7E7E7E" Click="BtnNew_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/New.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="grd_tafsil" Style="{StaticResource DataGridStyle}" Margin="10,50,10,0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Name="chbOk"  Click="CheckBox_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Path=Id}" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Path=TafsilName}" Header="عنوان تفصیل" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=TafsilCode}" Header="کد تفصیلی" IsReadOnly="True"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="btn_sabteTafsili" Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btn_sabteTafsili_Click" />
+    </Grid>
+</Window>

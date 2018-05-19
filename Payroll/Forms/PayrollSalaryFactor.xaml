@@ -1,0 +1,20 @@
+﻿<Window x:Class="AccountingKernel.PayrollSalaryFactor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PayrollSalaryFactor"  Height="630" Width="800" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="نام" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="204,46,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="فرمول" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="374,46,0,0" VerticalAlignment="Top" Width="40"/>
+        <TextBox Name="txtName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="249,46,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtFurmol" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="419,46,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="btnSubmit" Style="{StaticResource ButtonStyleRD}" Content="تعریف"  VerticalAlignment="Top" Margin="10,104,10,0" Click="btnSubmit_Click"/>
+        <DataGrid x:Name="grdSalary" VerticalAlignment="Top" Height="436" AutoGenerateColumns="False" Margin="10,144,10,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path= ID}"/>
+                <DataGridTextColumn Header="نام" IsReadOnly="True" Binding="{Binding Path=PrIDate}" />
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True" Binding="{Binding Path=PrIPrice}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnCommit" Style="{StaticResource ButtonStyleRD}" Content="به روز رسانی" VerticalAlignment="Top" Margin="10,585,10,0" Click="btnCommit_Click" />
+    </Grid>
+</Window>

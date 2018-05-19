@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AccountingKernel.Forms.Goodies.FrmPriceList"
+        Title="Document" Style="{DynamicResource WindowStyle}" Height="600" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <Label x:Name="lblHeaderCommodityCode" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="508,64,0,0" VerticalAlignment="Top" Width="71" Content="کد کالا" PreviewTextInput="lblHeaderCommodityCode_PreviewTextInput"/>
+        <Label x:Name="lblHeaderCommodityCodeValue" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="584,64,0,0" VerticalAlignment="Top" Width="119" PreviewTextInput="lblHeaderCommodityCodeValue_PreviewTextInput"/>
+        <Label x:Name="lblHeaderCommodityTitle" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="75,64,0,0" VerticalAlignment="Top" Width="74" Content="عنوان کالا"/>
+        <Label x:Name="lblHeaderCommodityTitleValue" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="154,64,0,0" VerticalAlignment="Top" Width="120" Content=""/>
+        <DataGrid x:Name="grdPriceLists" Margin="10,115,10,54" AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}"  >
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="حذف" PreviewMouseDown ="MenuItem_DeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Id}" />
+                <DataGridCheckBoxColumn Header="" Binding="{Binding IsAllocated}" Visibility="Hidden"/>
+                <DataGridComboBoxColumn Header="نوع مشتری" x:Name="cmbCustomerType"  DisplayMemberPath="{Binding CustomerTypeName}" SelectedValueBinding="{Binding CustomerTypeId}"/>
+                <DataGridTextColumn Header="مبلغ"  Binding="{Binding Value}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Content="تایید"  Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="10,551,0,0" VerticalAlignment="Top" Width="780" Click="Button_Click"/>
+
+
+    </Grid>
+</Window>

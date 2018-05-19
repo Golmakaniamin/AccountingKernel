@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CompanyManagement" xml:space="preserve">
+    <value>طرف حساب</value>
+  </data>
+  <data name="DocumentManagement" xml:space="preserve">
+    <value>سند</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="ex_commodity_not_found" xml:space="preserve">
+    <value>کالا پیدا نشد.</value>
+  </data>
+  <data name="ex_company_not_found" xml:space="preserve">
+    <value>فروشنده پیدا نشد.</value>
+  </data>
+  <data name="ex_tafsillevel_not_found" xml:space="preserve">
+    <value>گروه تفصیل پیدا نشد.</value>
+  </data>
+  <data name="GoodsManagement" xml:space="preserve">
+    <value>کالا</value>
+  </data>
+  <data name="HesabTafsil" xml:space="preserve">
+    <value>حساب تفصیلی</value>
+  </data>
+  <data name="Moein" xml:space="preserve">
+    <value>معین</value>
+  </data>
+  <data name="OperativeManagement" xml:space="preserve">
+    <value>عوامل فاکتور</value>
+  </data>
+  <data name="PreInvoiceManagment" xml:space="preserve">
+    <value>پیش فاکتور</value>
+  </data>
+  <data name="RegisterBill" xml:space="preserve">
+    <value>ثبت فاکتور خرید</value>
+  </data>
+  <data name="Seperator" xml:space="preserve">
+    <value> | </value>
+  </data>
+  <data name="Tafsil1" xml:space="preserve">
+    <value>تفصیل 1</value>
+  </data>
+  <data name="Tafsil2" xml:space="preserve">
+    <value>تفصیل 2</value>
+  </data>
+  <data name="Tafsil3" xml:space="preserve">
+    <value>تفصیل 3</value>
+  </data>
+  <data name="ex_calculationtype_not_seletced" xml:space="preserve">
+    <value>روش محاسبه انتخاب نشده است.</value>
+  </data>
+  <data name="ex_empty_operativename" xml:space="preserve">
+    <value>عنوان عامل وارد نشده است.</value>
+  </data>
+  <data name="ex_empty_percent_value" xml:space="preserve">
+    <value>درصد  وارد نشده است.</value>
+  </data>
+  <data name="ex_operativetype_not_selected" xml:space="preserve">
+    <value>نوع عامل انتخاب نشده است.</value>
+  </data>
+  <data name="ex_operative_not_selected" xml:space="preserve">
+    <value>عامل انتخاب نشده است.</value>
+  </data>
+  <data name="ex_no_record_selected" xml:space="preserve">
+    <value>هیچ سطری انتخاب نشده است.</value>
+  </data>
+  <data name="DeleteRecordCaption" xml:space="preserve">
+    <value>حذف رکورد</value>
+  </data>
+  <data name="DeleteRecordMessage" xml:space="preserve">
+    <value>آیا مایل به حذف رکورد میباشید?</value>
+  </data>
+  <data name="StoreDetailEffectiveOperative" xml:space="preserve">
+    <value>عوامل موثر سطر پیش فاکتور</value>
+  </data>
+  <data name="StoreDetailInEffectiveOperative" xml:space="preserve">
+    <value>عوامل غیر موثر سطر پیش فاکتور</value>
+  </data>
+  <data name="StoreOrderEffectiveOperative" xml:space="preserve">
+    <value>عوامل موثر پیش فاکتور</value>
+  </data>
+  <data name="StoreOrderInEffectiveOperative" xml:space="preserve">
+    <value>عوامل غیر موثر پیش فاکتور</value>
+  </data>
+  <data name="SaleInvoice" xml:space="preserve">
+    <value>فاکتور فروش</value>
+  </data>
+  <data name="InvoiceManagement" xml:space="preserve">
+    <value>فاکتور فروش</value>
+  </data>
+  <data name="RegisterPreInvoice" xml:space="preserve">
+    <value>ثبت پیش فاکتور فروش</value>
+  </data>
+  <data name="RegisterSaleInvoice" xml:space="preserve">
+    <value>ثبت فاکتور خرید</value>
+  </data>
+  <data name="RegisterSalePreInvoice" xml:space="preserve">
+    <value>ثبت پیش فاکتور خرید</value>
+  </data>
+  <data name="btn_manageBank_11111" xml:space="preserve">
+    <value>مدیریت فایییییییید</value>
+  </data>
+  <data name="RegisterInvoice" xml:space="preserve">
+    <value>ثبت فاکتور فروش</value>
+  </data>
+  <data name="ex_invalid_commodity_count" xml:space="preserve">
+    <value>تعداد تعیین نشده است.</value>
+  </data>
+  <data name="ex_no_bill_num" xml:space="preserve">
+    <value>شماره فاکتور نا مشخص است.</value>
+  </data>
+  <data name="ex_no_commodity_seletced" xml:space="preserve">
+    <value>کالا انتخاب نشده است.</value>
+  </data>
+  <data name="ex_no_company_seletced" xml:space="preserve">
+    <value>شرکت انتخاب نشده است.</value>
+  </data>
+  <data name="ex_no_price" xml:space="preserve">
+    <value>قیمت وارد نشده است.</value>
+  </data>
+  <data name="ex_no_unitcount_seletced" xml:space="preserve">
+    <value>واحد شمارش تعیین نشده است.</value>
+  </data>
+  <data name="ex_no_base_count_unit" xml:space="preserve">
+    <value>واحد شمارش پایه انتخاب نشده است.</value>
+  </data>
+  <data name="ex_no_stroes_selected" xml:space="preserve">
+    <value>انبار تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_count" xml:space="preserve">
+    <value>تعداد نادرست است.</value>
+  </data>
+  <data name="ex_invalid_data" xml:space="preserve">
+    <value>خطای منطقی سامانه</value>
+  </data>
+  <data name="ex_no_commodity_inserted" xml:space="preserve">
+    <value>هیچ کالایی ثبت نشده است.</value>
+  </data>
+  <data name="ex_no_repository_selected" xml:space="preserve">
+    <value>انبار انتخاب نشده است.</value>
+  </data>
+  <data name="ReturnOfSale" xml:space="preserve">
+    <value>برگشت از فروش</value>
+  </data>
+  <data name="PurchaseInvoice" xml:space="preserve">
+    <value>فاکتور خرید</value>
+  </data>
+  <data name="ReturnOfBuying" xml:space="preserve">
+    <value>فاکتور برگشت از خرید</value>
+  </data>
+  <data name="ReceiptManagement" xml:space="preserve">
+    <value>رسید خرید</value>
+  </data>
+  <data name="ex_critical_greater_than_order_point" xml:space="preserve">
+    <value>نقطه بحرانی باید از نقطه سفارش کم تر باشد.</value>
+  </data>
+  <data name="ex_invalid_max_Inventory" xml:space="preserve">
+    <value>سقف موجودی نادرست است.</value>
+  </data>
+  <data name="ex_invalid_unit_count_value" xml:space="preserve">
+    <value>عدد وارد شده برای تبدیل نادرست است.</value>
+  </data>
+  <data name="ex_unit_count_is_mandatory" xml:space="preserve">
+    <value>لطفا واحد شمارش را انتخاب نمایید.</value>
+  </data>
+  <data name="DoubleMaskType" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="ex_duplicated_code" xml:space="preserve">
+    <value>کد وارد شده تکراری است.</value>
+  </data>
+  <data name="DocumentForm" xml:space="preserve">
+    <value>فرم اسناد</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>حواله</value>
+  </data>
+  <data name="ex_empty_price_value" xml:space="preserve">
+    <value>مبلغ وارد نشده است.</value>
+  </data>
+  <data name="Cheque_Fund_Seperator" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="ex_enter_code" xml:space="preserve">
+    <value>کد وارد نشده است.</value>
+  </data>
+  <data name="ex_enter_date" xml:space="preserve">
+    <value>تاریخ وارد نشده است.</value>
+  </data>
+  <data name="ex_enter_price" xml:space="preserve">
+    <value>مبلغ وارد نشده است.</value>
+  </data>
+  <data name="ex_invalid_price" xml:space="preserve">
+    <value>مبلغ نادرست است.</value>
+  </data>
+  <data name="ex_reciveplace_not_found" xml:space="preserve">
+    <value>کد محل دریافت پیدا نشد.</value>
+  </data>
+  <data name="ex_recivetype_not_found" xml:space="preserve">
+    <value>نوع دریافت مشخص نشده است.</value>
+  </data>
+  <data name="ex_no_owner_num" xml:space="preserve">
+    <value>شماره تکراری است.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="ex_duplicate_code" xml:space="preserve">
+    <value>کد وارد شده تکراری است.</value>
+  </data>
+  <data name="ex_duplicate_name" xml:space="preserve">
+    <value>نام وارد شده تکراری است.</value>
+  </data>
+  <data name="ex_invalid_code_length" xml:space="preserve">
+    <value>طول کد نادرست است.</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="ex_commodity_type_is_mandatory" xml:space="preserve">
+    <value>نوع کالا را مشخص نمایید.</value>
+  </data>
+  <data name="ex_moein_no_correct_data" xml:space="preserve">
+    <value>تمامی مقادیر الزامی میباشد</value>
+  </data>
+  <data name="SOTaxForm" xml:space="preserve">
+    <value>تعیین ضرایب مالیات</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>انبار</value>
+  </data>
+  <data name="ex_all_item_mandatory" xml:space="preserve">
+    <value>تمامی مقادیر الزامی میباشد</value>
+  </data>
+  <data name="ex_cinventorymax_is_mandatory" xml:space="preserve">
+    <value>حداکثر سفارش اجباری است.</value>
+  </data>
+  <data name="ex_cordermax_is_mandatory" xml:space="preserve">
+    <value>سقف فروش اجباری است.</value>
+  </data>
+  <data name="ex_cordermin_is_mandatory" xml:space="preserve">
+    <value>حداقل سفارش اجباری است.</value>
+  </data>
+  <data name="ex_corderpoint_is_mandatory" xml:space="preserve">
+    <value>نقطه سفارش اجباری است.</value>
+  </data>
+  <data name="ex_count_is_not_valid" xml:space="preserve">
+    <value>تعداد نادرست است.</value>
+  </data>
+  <data name="ex_cpointcritical_is_mandatory" xml:space="preserve">
+    <value>نقطه بحرانی وارد نشده است.</value>
+  </data>
+  <data name="ex_dupliatedname" xml:space="preserve">
+    <value>عنوان تکراری است.</value>
+  </data>
+  <data name="ex_goruh_not_found" xml:space="preserve">
+    <value>گروه تفصیلی تعیین نشده است.</value>
+  </data>
+  <data name="ex_empty_num" xml:space="preserve">
+    <value>تعداد وارد نشده است.</value>
+  </data>
+  <data name="ex_empty_serial" xml:space="preserve">
+    <value>سریال وارد نشده است.</value>
+  </data>
+  <data name="ex_invalid_num" xml:space="preserve">
+    <value>تعداد نادرست است.</value>
+  </data>
+  <data name="ex_dupliacted_serial" xml:space="preserve">
+    <value>برای حساب مورد نظر چکی با سریال وارد شده وجود دارد.</value>
+  </data>
+  <data name="ex_invalid_moein_creditor" xml:space="preserve">
+    <value>معین بستانکار تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_moein_debtor" xml:space="preserve">
+    <value>معین بدهکار تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_name" xml:space="preserve">
+    <value>نام شرکت تعیین نشده است.</value>
+  </data>
+  <data name="ex_kol_not_found" xml:space="preserve">
+    <value>کل پیدا نشد.</value>
+  </data>
+  <data name="ex_dupliacted_year" xml:space="preserve">
+    <value>سال قبلا برای این گروه ثبت شده میباشد</value>
+  </data>
+  <data name="ex_invalid_salemali" xml:space="preserve">
+    <value>مقدار سال وارد شده معتبر نمیباشد</value>
+  </data>
+  <data name="ex_no_corporartion" xml:space="preserve">
+    <value>شرکت انتخاب نشده است.</value>
+  </data>
+  <data name="ex_no_salemali" xml:space="preserve">
+    <value>سال مالی را وارد نمایید</value>
+  </data>
+  <data name="ex_invalid_bankbranchcode" xml:space="preserve">
+    <value>کد شعبه تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_bankname" xml:space="preserve">
+    <value>نام بانک تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_cheque_num" xml:space="preserve">
+    <value>شماره چک تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_reciver" xml:space="preserve">
+    <value>کد دریافت کننده تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_recive_place" xml:space="preserve">
+    <value>محل دریافت تعیین نشده است.</value>
+  </data>
+  <data name="ex_invalid_revice_type" xml:space="preserve">
+    <value>نوع دریافت تعیین نشده است.</value>
+  </data>
+  <data name="ex_enter_cheque_date" xml:space="preserve">
+    <value>تاریخ سررسید را وارد نمایید.</value>
+  </data>
+  <data name="ex_enter_cheque_number" xml:space="preserve">
+    <value>شماره چک را وارد نمایید.</value>
+  </data>
+  <data name="ex_enter_fund" xml:space="preserve">
+    <value>صندوق انتخاب نشده است.</value>
+  </data>
+  <data name="ex_invalid_cheque_price" xml:space="preserve">
+    <value>مبلغ چک را وارد نمایید.</value>
+  </data>
+  <data name="ex_invalid_record_status" xml:space="preserve">
+    <value>وضعیت رکورد انتخابی نادرست است.</value>
+  </data>
+  <data name="Asset" xml:space="preserve">
+    <value>اموال</value>
+  </data>
+  <data name="AssetGood" xml:space="preserve">
+    <value>کالای اموال</value>
+  </data>
+  <data name="MoeinSd" xml:space="preserve">
+    <value>ساختار معین</value>
+  </data>
+  <data name="PersonSd" xml:space="preserve">
+    <value>ساختار پرسنل</value>
+  </data>
+  <data name="ex_amortizationmethod_not_selected" xml:space="preserve">
+    <value>روش استهلاک تعیین نشده است.</value>
+  </data>
+  <data name="ex_assetgood_not_found" xml:space="preserve">
+    <value>کالای اموال پیدا نشد.</value>
+  </data>
+  <data name="ex_duplicated_main_group_name" xml:space="preserve">
+    <value>نام گروه اصلی تکراری است.</value>
+  </data>
+  <data name="ex_duplicated_subsidiary_group_name" xml:space="preserve">
+    <value>نام گروه فرعی تکراری است.</value>
+  </data>
+  <data name="ex_empty_amortizationrate" xml:space="preserve">
+    <value>نرخ استهلاک تعیین نشده است.</value>
+  </data>
+  <data name="ex_empty_assetnumber" xml:space="preserve">
+    <value>شماره اموال تعیین نشده است.</value>
+  </data>
+  <data name="ex_empty_assetno" xml:space="preserve">
+    <value>شماره دارایی تعیین نشده است.</value>
+  </data>
+  <data name="ex_empty_decay" xml:space="preserve">
+    <value>ارزش اسقاط تعیین نشده است.</value>
+  </data>
+  <data name="ex_empty_price" xml:space="preserve">
+    <value>ارزش ريالی تعیین نشده است.</value>
+  </data>
+  <data name="ex_no_main_group_code" xml:space="preserve">
+    <value>کد گروه اصلی وارد نشده است.</value>
+  </data>
+  <data name="ex_no_main_group_title" xml:space="preserve">
+    <value>عنوان گروه اصلی وارد نشده است.</value>
+  </data>
+  <data name="ex_no_subsidiary_group_code" xml:space="preserve">
+    <value>کد گروه فرعی وارد نشده است.</value>
+  </data>
+  <data name="ex_no_subsidiary_group_title" xml:space="preserve">
+    <value>عنوان گروه فرعی وارد نشده است.</value>
+  </data>
+  <data name="ex_person_not_found" xml:space="preserve">
+    <value>پرسنل پیدا نشد.</value>
+  </data>
+  <data name="ex_subsidiarygroup_exists" xml:space="preserve">
+    <value>کد گروه فرعی تکراری است.</value>
+  </data>
+  <data name="RegisterAssetGoodGroup" xml:space="preserve">
+    <value>ثبت گروه کالای اموال</value>
+  </data>
+  <data name="AssetGoodGroup" xml:space="preserve">
+    <value>گروه های کالای اموال</value>
+  </data>
+  <data name="ex_empty_accumulative_amortization" xml:space="preserve">
+    <value>استهلاک انباشته تعیین نشده است.</value>
+  </data>
+  <data name="ex_subsidiarygroup_not_found" xml:space="preserve">
+    <value>برای کد وارد شده گروه فرعی پیدا نشد.</value>
+  </data>
+  <data name="AssetEstablishment" xml:space="preserve">
+    <value>اموال استقرار</value>
+  </data>
+  <data name="ex_duplicated_subsidiary_group_code" xml:space="preserve">
+    <value>کد وارد شده تکراری است.</value>
+  </data>
+  <data name="HasChild" xml:space="preserve">
+    <value>آیتم انتخاب شده دارای زیر مجموعه میباشد</value>
+  </data>
+  <data name="MinRequementValue" xml:space="preserve">
+    <value>طول نمیتواند کمتر از حد تعیین شده باشد</value>
+  </data>
+  <data name="DoubleCode" xml:space="preserve">
+    <value>کد کل تکراری است</value>
+  </data>
+  <data name="nullCode" xml:space="preserve">
+    <value>لطفا کد را به درستی وارد کنید</value>
+  </data>
+  <data name="nullName" xml:space="preserve">
+    <value>لطفا عنوان را به درستی وارد کنید</value>
+  </data>
+</root>

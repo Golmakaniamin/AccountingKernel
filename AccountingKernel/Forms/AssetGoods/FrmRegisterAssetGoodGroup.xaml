@@ -1,0 +1,17 @@
+﻿<Window x:Class="AccountingKernel.Forms.AssetGoods.FrmRegisterAssetGoodGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="320" Width="240" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}"
+        Title="ثبت گروه کالای اموال">
+    <Grid >
+        <Label Content="کد گروه اصلی" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="15,67,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtMainGroupCode" Style="{StaticResource TextBoxStyle}" Margin="90,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PreviewTextInput="txtMainGroupCode_PreviewTextInput" LostFocus="txtMainGroupCode_LostFocus" HorizontalAlignment="Left" Width="140"/>
+        <Label Content="گروه اصلی" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="15,107,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtMainGroupTitle" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="90,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <Label Content="کد گروه فرعی" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="15,147,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtSubsidiaryGroupCode" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="90,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" LostFocus="txtSubsidiaryGroupCode_LostFocus" PreviewTextInput="txtSubsidiaryGroupCode_PreviewTextInput"/>
+        <Label Content="گروه فرعی" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="15,187,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtSubsidiaryGroupTitle" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="90,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,275,10,10" Click="btnRegister_Click"/>
+    </Grid>
+</Window>

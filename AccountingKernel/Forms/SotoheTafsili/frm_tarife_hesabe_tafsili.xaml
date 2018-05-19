@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" x:Class="AccountingKernel.Forms.SotoheTafsili.frm_tarife_hesabe_tafsili"
+        Title="frm_tarife_hesabe_tafsili" Height="480" Width="640" Loaded="Window_Loaded_1" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="گروه تفصیلی " Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="81,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_grouh_tafsili"  HorizontalAlignment="Left" Height="35" Margin="181,143,0,0" VerticalAlignment="Top" Width="140" PreviewTextInput="txt_grouh_tafsili_PreviewTextInput" LostFocus="txt_grouh_tafsili_LostFocus"/>
+        <Label Content=" عنوان لاتین گروه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="326,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_grouh_code"  HorizontalAlignment="Left" Height="35" Margin="181,183,0,0" VerticalAlignment="Top" Width="140" PreviewTextInput="txt_grouh_code_PreviewTextInput" />
+        <Label Content="کد گروه" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="81,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_grouh_eng_name"  HorizontalAlignment="Left" Height="35" Margin="426,143,0,0" VerticalAlignment="Top" Width="140" PreviewTextInput="txt_grouh_eng_name_PreviewTextInput" />
+        <Label Content="نام تفصیل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="326,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_onvane_hesab1" HorizontalAlignment="Left" Height="35" Margin="426,183,0,0" VerticalAlignment="Top" Width="140" LostFocus="txt_onvane_hesab1_LostFocus" PreviewTextInput="txt_onvane_hesab1_PreviewTextInput"/>
+        <Label Content="عنوان لاتین تفصیل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="81,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_hesab_code" HorizontalAlignment="Left" Height="35" Margin="426,223,0,0" VerticalAlignment="Top" Width="140" PreviewTextInput="txt_hesab_code_PreviewTextInput"/>
+        <Label Content="کد تفصیل " Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="326,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.037,-0.167" Width="95"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox x:Name="txt_hesab_eng_name" HorizontalAlignment="Left" Height="35" Margin="181,223,0,0" VerticalAlignment="Top" Width="140" PreviewTextInput="txt_hesab_eng_name_PreviewTextInput"/>
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,435,10,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.44,0.55"/>
+    </Grid>
+</Window>

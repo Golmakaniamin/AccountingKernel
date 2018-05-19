@@ -1,0 +1,13 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AccountingKernel.Forms.Sandogh.Frm_Register_Sandogh"
+        Title="frm_sandogh" Height="240" Width="320" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="نام" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Margin="10,51,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="txtName" Style="{StaticResource TextBoxStyle}" Margin="95,51,56,0" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="txtName_PreviewTextInput"/>
+        <Label Content="مبلغ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left"  Margin="10,91,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="numPrice" Style="{StaticResource TextBoxStyle}" Margin="95,91,56,114" TextChanged="numPrice_TextChanged" PreviewTextInput="numPrice_PreviewTextInput" />
+        <Button Content="تایید" Style="{StaticResource ButtonStyleRD}" Margin="10,195,10,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+    </Grid>
+</Window>

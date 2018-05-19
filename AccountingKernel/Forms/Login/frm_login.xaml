@@ -1,0 +1,16 @@
+﻿<Window x:Class="AccountingKernel.Forms.Login.frm_login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_login" Height="300" Width="600">
+    <Grid >
+        <Label Content="نام کاربری " HorizontalAlignment="Left" Margin="372,93,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="کلمه عبور" HorizontalAlignment="Left" Margin="372,144,0,0" VerticalAlignment="Top" Width="76"/>
+        <TextBox x:Name="txt_userName" HorizontalAlignment="Left" Height="23" Margin="164,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <TextBox x:Name="txt_userName_Copy" HorizontalAlignment="Left" Height="23" Margin="164,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <ComboBox HorizontalAlignment="Left" Margin="164,29,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label Content="نوع شرکت " HorizontalAlignment="Left" Margin="372,27,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button x:Name="btn_login" Content="ورود" HorizontalAlignment="Left" Margin="319,212,0,0" VerticalAlignment="Top" Width="101" Height="30" Click="btn_login_Click"/>
+        <Button x:Name="btn_exit" Content="خروج" HorizontalAlignment="Left" Margin="197,212,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+
+    </Grid>
+</Window>

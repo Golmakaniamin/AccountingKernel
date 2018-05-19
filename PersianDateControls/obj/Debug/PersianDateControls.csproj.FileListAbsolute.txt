@@ -1,0 +1,15 @@
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\PersianDateControls.dll
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\PersianDateControls.pdb
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls.csprojResolveAssemblyReference.cache
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianCalendar.baml
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianCalendar.g.cs
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDatePicker.g.cs
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls_MarkupCompile.cache
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls_MarkupCompile.lref
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDatePicker.baml
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls.g.resources
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\Arash.PersianDateControls.Resource.resources
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls.csproj.GenerateResource.Cache
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls.dll
+D:\AccountingKernel\AccountingKernel\PersianDateControls\obj\Debug\PersianDateControls.pdb

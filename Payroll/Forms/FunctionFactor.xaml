@@ -1,0 +1,27 @@
+﻿<Window x:Class="AccountingKernel.Forms.FunctionFactor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FunctionFactor" Height="630" Width="800" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="نام" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="204,46,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="مقدار" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="374,46,0,0" VerticalAlignment="Top" Width="40"/>
+        <TextBox Name="txtName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="249,46,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtQuantity" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="419,46,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="btnSubmit" Style="{StaticResource ButtonStyleRD}" Content="تعریف"  VerticalAlignment="Top" Margin="10,104,10,0" Click="btnSubmit_Click"/>
+        <DataGrid x:Name="grdFunction" CanUserAddRows="False"  VerticalAlignment="Top" Height="403" AutoGenerateColumns="False" Margin="10,142,10,0">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="عملیات">
+                        <MenuItem Header="حذف" x:Name="grdDelete" Click="grdDelete_Click"/>
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path= ID}"/>
+                <DataGridTextColumn Header="نام" IsReadOnly="True" Binding="{Binding Path=PrWFDescription}" />
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True" Binding="{Binding Path=PrWFContent}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnCommit" Style="{StaticResource ButtonStyleRD}" Content="به روز رسانی" VerticalAlignment="Top" Margin="10,555,10,0" Click="btnCommit_Click" />
+    </Grid>
+</Window>

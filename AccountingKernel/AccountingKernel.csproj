@@ -1,0 +1,1191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B1080D9-080C-422A-B30F-4ABF73E7E9D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccountingKernel</RootNamespace>
+    <AssemblyName>AccountingKernel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug_AccountingKernel\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>\\192.168.160.1\d\Needs\dll\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>\\192.168.160.1\d\Needs\dll\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel1">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.160.1\d\dll\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2010.1\Bin\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2010.1\Bin\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2010.1\Bin\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Helper, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Wpf, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2010.1\Bin\Stimulsoft.Report.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="stimulsoft.report.wpfdesign, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>\\192.168.160.1\d\Needs\dll\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Behaviours\BorderlessWindowBehavior.cs" />
+    <Compile Include="Behaviours\importFromExcel.xaml.cs">
+      <DependentUpon>importFromExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Variable\check_for_tab_names.cs" />
+    <Compile Include="Forms\AssetGoods\BoxinItemsConverter.cs" />
+    <Compile Include="Class\Report\CreateExcelFile.cs" />
+    <Compile Include="Class\stuff\get_code_for_current_moien.cs" />
+    <Compile Include="Class\UI\AutoCompleteEntry.cs" />
+    <Compile Include="Class\UI\AutoCompleteTextBox.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\UI\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\UI\TextHandeler.cs" />
+    <Compile Include="Class\Variable\Variables.cs" />
+    <Compile Include="ExcelImpExp\ExportToExcel.cs" />
+    <Compile Include="ExcelImpExp\Variables.cs" />
+    <Compile Include="Forms\AssetGoods\FrmAssetGoodGroup.xaml.cs">
+      <DependentUpon>FrmAssetGoodGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssetGoods\FrmRegisterAssetGoodGroup.xaml.cs">
+      <DependentUpon>FrmRegisterAssetGoodGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssetGoods\FrmAssetGoods.xaml.cs">
+      <DependentUpon>FrmAssetGoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssetGoods\FrmRegisterAssetGoods.xaml.cs">
+      <DependentUpon>FrmRegisterAssetGoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssetGoods\Model.cs" />
+    <Compile Include="Forms\Asset\FrmAssetEstablishment.xaml.cs">
+      <DependentUpon>FrmAssetEstablishment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FrmRegisterAssetEstablishment.xaml.cs">
+      <DependentUpon>FrmRegisterAssetEstablishment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FrmRegisterAsset.xaml.cs">
+      <DependentUpon>FrmRegisterAsset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FrmAsset.xaml.cs">
+      <DependentUpon>FrmAsset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\FrmChequeDecleration.xaml.cs">
+      <DependentUpon>FrmChequeDecleration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\FrmBaseInfo.xaml.cs">
+      <DependentUpon>FrmBaseInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\FrmRegisterBaseInfo.xaml.cs">
+      <DependentUpon>FrmRegisterBaseInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\frm_list_bank.xaml.cs">
+      <DependentUpon>frm_list_bank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\frm_tarife_bank.xaml.cs">
+      <DependentUpon>frm_tarife_bank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\baseInfo\pass_data.cs" />
+    <Compile Include="Forms\Base\BaseWindow.xaml.cs">
+      <DependentUpon>BaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\Order\FrmOrder.xaml.cs">
+      <DependentUpon>FrmOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\Order\frmOrderManagment.xaml.cs">
+      <DependentUpon>frmOrderManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\PreSaleInvoice\FrmBillOperative.xaml.cs">
+      <DependentUpon>FrmBillOperative.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\PreSaleInvoice\FrmPreSaleInvoice.xaml.cs">
+      <DependentUpon>FrmPreSaleInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\PreSaleInvoice\FrmPreSaleInvoiceManagement.xaml.cs">
+      <DependentUpon>FrmPreSaleInvoiceManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\PurchaseInvoice\frmPurchaseInvoice.xaml.cs">
+      <DependentUpon>frmPurchaseInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\PurchaseInvoice\frmPurchaseInvoiceManagement.xaml.cs">
+      <DependentUpon>frmPurchaseInvoiceManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReportTheTotalPurchase\Frm_ReportTheTotalPurchasev.xaml.cs">
+      <DependentUpon>Frm_ReportTheTotalPurchasev.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReportTheTotalPurchase\Frm_ReportLimpidBuyByGoogies.xaml.cs">
+      <DependentUpon>Frm_ReportLimpidBuyByGoogies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReturnOfBuying\FrmReturnOfBuying.xaml.cs">
+      <DependentUpon>FrmReturnOfBuying.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReturnOfBuying\FrmReturnOfBuyingManagment.xaml.cs">
+      <DependentUpon>FrmReturnOfBuyingManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReturnOfSaleReceipt\rmReturnOfSaleReceipt.xaml.cs">
+      <DependentUpon>rmReturnOfSaleReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReturnOfSale\FrmReturnOfSale.xaml.cs">
+      <DependentUpon>FrmReturnOfSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\ReturnOfSale\FrmReturnOfSaleManagment.xaml.cs">
+      <DependentUpon>FrmReturnOfSaleManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\SaleInvoice\FrmSaleInvoice.xaml.cs">
+      <DependentUpon>FrmSaleInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\SaleInvoice\FrmSaleInvoiceManagement.xaml.cs">
+      <DependentUpon>FrmSaleInvoiceManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\WarehouseReceipts\FrmReceiptManagment.xaml.cs">
+      <DependentUpon>FrmReceiptManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\WarehouseReceipts\FrmReceiptOrder.xaml.cs">
+      <DependentUpon>FrmReceiptOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\CompanyStructureDefine.xaml.cs">
+      <DependentUpon>CompanyStructureDefine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\frmCoRegister.xaml.cs">
+      <DependentUpon>frmCoRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\frmEditGroups.xaml.cs">
+      <DependentUpon>frmEditGroups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\frmCompanies.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmCompanies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\frmRegister.xaml.cs">
+      <DependentUpon>frmRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Company\frmRegisterCompanies.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmRegisterCompanies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\Document.xaml.cs">
+      <DependentUpon>Document.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\frmB.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\frmDocument.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\frm_modAsnad.xaml.cs">
+      <DependentUpon>frm_modAsnad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\MoeinTafsilChoose.xaml.cs">
+      <DependentUpon>MoeinTafsilChoose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\FrmPriceList.xaml.cs">
+      <DependentUpon>FrmPriceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\FrmShow.xaml.cs">
+      <DependentUpon>FrmShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\Groups\BoxinItemsConverter.cs" />
+    <Compile Include="Forms\Goodies\Groups\FrmRegisterGoodiesGroups.xaml.cs">
+      <DependentUpon>FrmRegisterGoodiesGroups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\Groups\FrmUnitCount.xaml.cs">
+      <DependentUpon>FrmUnitCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\Groups\ItemsWrapper.cs" />
+    <Compile Include="Forms\Goodies\Groups\Model.cs" />
+    <Compile Include="Forms\Goodies\FrmGoods.xaml.cs">
+      <DependentUpon>FrmGoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\FrmRegisterGoods.xaml.cs">
+      <DependentUpon>FrmRegisterGoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Goodies\Groups\FrmGoodiesGroups.xaml.cs">
+      <DependentUpon>FrmGoodiesGroups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interface\frmSaveInterface.xaml.cs">
+      <DependentUpon>frmSaveInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interface\frmInterfaces.xaml.cs">
+      <DependentUpon>frmInterfaces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\Frm_ShowCheques.xaml.cs">
+      <DependentUpon>Frm_ShowCheques.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\Frm_ShowBanks.xaml.cs">
+      <DependentUpon>Frm_ShowBanks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\Frm_ShowFunds.xaml.cs">
+      <DependentUpon>Frm_ShowFunds.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_cheque_edit.xaml.cs">
+      <DependentUpon>frm_cheque_edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_entekhabe_bank.xaml.cs">
+      <DependentUpon>frm_entekhabe_bank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_get_bank_get_cheque.xaml.cs">
+      <DependentUpon>frm_get_bank_get_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_get_code_bank.xaml.cs">
+      <DependentUpon>frm_get_code_bank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_get_code_cheque.xaml.cs">
+      <DependentUpon>frm_get_code_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_get_shomare_hesab.xaml.cs">
+      <DependentUpon>frm_get_shomare_hesab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_list_cheque.xaml.cs">
+      <DependentUpon>frm_list_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_list_daryaft.xaml.cs">
+      <DependentUpon>frm_list_daryaft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_list_pardakht.xaml.cs">
+      <DependentUpon>frm_list_pardakht.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_tankhah.xaml.cs">
+      <DependentUpon>frm_tankhah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_tarife_cheque.xaml.cs">
+      <DependentUpon>frm_tarife_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_tarife_daryaft.xaml.cs">
+      <DependentUpon>frm_tarife_daryaft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_tarife_pardakht.xaml.cs">
+      <DependentUpon>frm_tarife_pardakht.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_vosol_cheque.xaml.cs">
+      <DependentUpon>frm_vosol_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\pass_data.cs" />
+    <Compile Include="Forms\Login\AbouteBox.xaml.cs">
+      <DependentUpon>AbouteBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\FrmLogin.xaml.cs">
+      <DependentUpon>FrmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MbaseInfo\BaseInfo.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>BaseInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\dlg_moienAdd.xaml.cs">
+      <DependentUpon>dlg_moienAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\dlg_moienEdit.xaml.cs">
+      <DependentUpon>dlg_moienEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\frm_mCodeMoien.xaml.cs">
+      <DependentUpon>frm_mCodeMoien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\MoeinAdd.xaml.cs">
+      <DependentUpon>MoeinAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\MoeinGroup.xaml.cs">
+      <DependentUpon>MoeinGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\MoeinSearch.xaml.cs">
+      <DependentUpon>MoeinSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\MoeinStructureDefine.xaml.cs">
+      <DependentUpon>MoeinStructureDefine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MmoienCode\MoeinStructureDefineChild.xaml.cs">
+      <DependentUpon>MoeinStructureDefineChild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MSanad\frm_modiriatFactorhayeKharid.xaml.cs">
+      <DependentUpon>frm_modiriatFactorhayeKharid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operatives\frmOperative.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmOperative.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operatives\frmOperativeMangement.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>frmOperativeMangement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_grouh.xaml.cs">
+      <DependentUpon>frm_grouh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_namayesheSaleMaly.xaml.cs">
+      <DependentUpon>frm_namayesheSaleMaly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_namyesheMah.xaml.cs">
+      <DependentUpon>frm_namyesheMah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_saleMaly.xaml.cs">
+      <DependentUpon>frm_saleMaly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_tarifeGrouh.xaml.cs">
+      <DependentUpon>frm_tarifeGrouh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\frm_tarifeSaleMaly.xaml.cs">
+      <DependentUpon>frm_tarifeSaleMaly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\saleMaly\pass_data.cs" />
+    <Compile Include="Forms\Sandogh\Frm_Register_Sandogh.xaml.cs">
+      <DependentUpon>Frm_Register_Sandogh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sandogh\frm_sandogh.xaml.cs">
+      <DependentUpon>frm_sandogh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sandogh\frm_tarifeSandogh.xaml.cs">
+      <DependentUpon>frm_tarifeSandogh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frm_tarife_toole_code.xaml.cs">
+      <DependentUpon>frm_tarife_toole_code.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Tax\FrmRegisterSOTax.xaml.cs">
+      <DependentUpon>FrmRegisterSOTax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Tax\FrmSOTax.xaml.cs">
+      <DependentUpon>FrmSOTax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\fehreste_grouhe_tafsili.xaml.cs">
+      <DependentUpon>fehreste_grouhe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\frmManageTafsiliGroup.xaml.cs">
+      <DependentUpon>frmManageTafsiliGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\frm_fehreste_grouhe_tafsili.xaml.cs">
+      <DependentUpon>frm_fehreste_grouhe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\frm_modiriate_hesabe_tafsili.xaml.cs">
+      <DependentUpon>frm_modiriate_hesabe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\frm_taien_sotohe_tafsili.xaml.cs">
+      <DependentUpon>frm_taien_sotohe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\frm_tarife_hesabe_tafsili.xaml.cs">
+      <DependentUpon>frm_tarife_hesabe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\ManageTafsiliGroup.xaml.cs">
+      <DependentUpon>ManageTafsiliGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\TaienSotoheTafsili.xaml.cs">
+      <DependentUpon>TaienSotoheTafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SotoheTafsili\Tarife_hesabe_tafsili.xaml.cs">
+      <DependentUpon>Tarife_hesabe_tafsili.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tankhah\frm_add_tankhah.xaml.cs">
+      <DependentUpon>frm_add_tankhah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_amaliateCheque.xaml.cs">
+      <DependentUpon>frm_amaliateCheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazaneDari\frm_cheque.xaml.cs">
+      <DependentUpon>frm_cheque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tankhah\frm_editTankhah.xaml.cs">
+      <DependentUpon>frm_editTankhah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tankhah\frm_entekhabe_personnel_.xaml.cs">
+      <DependentUpon>frm_entekhabe_personnel_.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tankhah\frm_listTankhah.xaml.cs">
+      <DependentUpon>frm_listTankhah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tankhah\pass_data.cs" />
+    <Compile Include="Forms\Trm\frm_trm_sabt.xaml.cs">
+      <DependentUpon>frm_trm_sabt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\ftm_trm.xaml.cs">
+      <DependentUpon>ftm_trm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\frm_getp.xaml.cs">
+      <DependentUpon>frm_getp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\frm_personnele.xaml.cs">
+      <DependentUpon>frm_personnele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\frm_tarifePersonnele.xaml.cs">
+      <DependentUpon>frm_tarifePersonnele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\frm_tarifeUser.xaml.cs">
+      <DependentUpon>frm_tarifeUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\frm_user.xaml.cs">
+      <DependentUpon>frm_user.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trm\user_personel\pass_data.cs" />
+    <Compile Include="Forms\AssetGoods\ItemsWrapper.cs" />
+    <Compile Include="ImportFromExcel\AccountingKernelEntities.cs" />
+    <Compile Include="ImportFromExcel\frm_excel.xaml.cs">
+      <DependentUpon>frm_excel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFromExcel\frm_MessageLog.xaml.cs">
+      <DependentUpon>frm_MessageLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFromExcel\ImportFromExcelSG.cs" />
+    <Compile Include="Localize.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localize.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_report.xaml.cs">
+      <DependentUpon>frm_report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Style.xaml.cs">
+      <DependentUpon>Style.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserTabControl\CloseableHeader.cs" />
+    <Compile Include="UserTabControl\CloseableHeader.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>CloseableHeader.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Behaviours\importFromExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\UI\AutoCompleteTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\UI\NavigationBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Class\UI\NavigationResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\AssetGoods\FrmAssetGoodGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\AssetGoods\FrmRegisterAssetGoodGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\AssetGoods\FrmAssetGoods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\AssetGoods\FrmRegisterAssetGoods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Asset\FrmAssetEstablishment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Asset\FrmRegisterAssetEstablishment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Asset\FrmRegisterAsset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Asset\FrmAsset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\baseInfo\FrmChequeDecleration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\baseInfo\FrmBaseInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\baseInfo\FrmRegisterBaseInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\baseInfo\frm_list_bank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\baseInfo\frm_tarife_bank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Base\BaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Bills\Order\FrmOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\Order\frmOrderManagment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\PreSaleInvoice\FrmBillOperative.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\PreSaleInvoice\FrmPreSaleInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\PreSaleInvoice\FrmPreSaleInvoiceManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\PurchaseInvoice\frmPurchaseInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\PurchaseInvoice\frmPurchaseInvoiceManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\ReportTheTotalPurchase\Frm_ReportTheTotalPurchasev.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Bills\ReportTheTotalPurchase\Frm_ReportLimpidBuyByGoogies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Bills\ReturnOfBuying\FrmReturnOfBuying.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\ReturnOfBuying\FrmReturnOfBuyingManagment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\ReturnOfSaleReceipt\rmReturnOfSaleReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\ReturnOfSale\FrmReturnOfSale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\ReturnOfSale\FrmReturnOfSaleManagment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\SaleInvoice\FrmSaleInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\SaleInvoice\FrmSaleInvoiceManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\WarehouseReceipts\FrmReceiptManagment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Bills\WarehouseReceipts\FrmReceiptOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Company\CompanyStructureDefine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Company\frmCoRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Company\frmEditGroups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Company\frmCompanies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Company\frmRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Company\frmRegisterCompanies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Document\Document.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Document\frmB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Document\frmDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Document\frm_modAsnad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Document\MoeinTafsilChoose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Goodies\FrmPriceList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\FrmShow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\Groups\FrmRegisterGoodiesGroups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\Groups\FrmUnitCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\FrmGoods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\FrmRegisterGoods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Goodies\Groups\FrmGoodiesGroups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Interface\frmSaveInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Interface\frmInterfaces.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\KazaneDari\Frm_ShowCheques.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\KazaneDari\Frm_ShowBanks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\KazaneDari\Frm_ShowFunds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_cheque_edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_entekhabe_bank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_get_bank_get_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_get_code_bank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_get_code_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_get_shomare_hesab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_list_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_list_daryaft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_list_pardakht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_tankhah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_tarife_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_tarife_daryaft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_tarife_pardakht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_vosol_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Login\AbouteBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Login\FrmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MbaseInfo\BaseInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MmoienCode\dlg_moienAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MmoienCode\dlg_moienEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MmoienCode\frm_mCodeMoien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MmoienCode\MoeinAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MmoienCode\MoeinGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MmoienCode\MoeinSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MmoienCode\MoeinStructureDefine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MmoienCode\MoeinStructureDefineChild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MSanad\frm_modiriatFactorhayeKharid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Operatives\frmOperative.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Operatives\frmOperativeMangement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_grouh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_namayesheSaleMaly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_namyesheMah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_saleMaly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_tarifeGrouh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\saleMaly\frm_tarifeSaleMaly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Sandogh\Frm_Register_Sandogh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Sandogh\frm_sandogh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Sandogh\frm_tarifeSandogh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\frm_tarife_toole_code.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\Tax\FrmRegisterSOTax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\Tax\FrmSOTax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\fehreste_grouhe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\frmManageTafsiliGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\frm_fehreste_grouhe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\frm_modiriate_hesabe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\frm_taien_sotohe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\frm_tarife_hesabe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\ManageTafsiliGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\TaienSotoheTafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SotoheTafsili\Tarife_hesabe_tafsili.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\tankhah\frm_add_tankhah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_amaliateCheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\KazaneDari\frm_cheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\tankhah\frm_editTankhah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\tankhah\frm_entekhabe_personnel_.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\tankhah\frm_listTankhah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\frm_trm_sabt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\ftm_trm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\user_personel\frm_getp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\user_personel\frm_personnele.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\user_personel\frm_tarifePersonnele.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\user_personel\frm_tarifeUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Trm\user_personel\frm_user.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportFromExcel\frm_excel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportFromExcel\frm_MessageLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\Codes\codes.cs" />
+    <Compile Include="Class\UI\ClosableTab.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Report\frm_report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ButtonStealth1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ButtonStyleRD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DataGridHeaderMe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabControlOutLook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeButton1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ThemeTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserTabControl\CloseableHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Localize.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Fakes Include="Fakes\Microsoft.Office.Interop.Excel.fakes" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Class\Code\" />
+    <Folder Include="Class\GenericTypes\" />
+    <Folder Include="impFromExcellSubG\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccountingKernelNeedsClass\AccountingKernelNeedsClass.csproj">
+      <Project>{b3e5e50d-1d26-4078-afde-dc6172bcb6a5}</Project>
+      <Name>AccountingKernelNeedsClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{c1769eff-3526-494e-a85b-07ea4f28791b}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{d60cc66f-afe3-4c80-a2c5-b7c2c0531044}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{608c2c02-04d2-4e2b-aed8-aad3752eeafc}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Payroll\Payroll.csproj">
+      <Project>{88eda92c-7e1a-4850-b39d-c30bcb365da9}</Project>
+      <Name>Payroll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersianDateControls\PersianDateControls.csproj">
+      <Project>{a6a7f195-e07c-44b4-9209-2340b3254ff4}</Project>
+      <Name>PersianDateControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersianDate\PersianDate.csproj">
+      <Project>{084915ea-c554-48bc-ab16-f38be56f1a77}</Project>
+      <Name>PersianDate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\icon\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\icon\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\icon\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\icon\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\icon\print.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="AccountingKernel.Forms.KazaneDari.frm_list_cheque"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_list_cheque" Style="{DynamicResource WindowStyle}" Height="600" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Loaded="Window_Loaded_1">
+    <Grid>
+        <Label Content="جستجو" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="txt_search" Style="{StaticResource TextBoxStyle}" Height="35" Margin="65,10,213,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txt_search_TextChanged"/>
+        <Button x:Name="BtnPrint" ToolTip="چاپ" Height="35"  Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnPrint_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Print.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnExel" ToolTip="اکسل" Height="35"  Margin="0,10,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnExel_Click" BorderBrush="#FF7A7878" Foreground="Black" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Excel.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnDel" ToolTip="حذف" Height="35"  Margin="0,10,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnDel_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/delete.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEdit" ToolTip="ویرایش" Height="35" Margin="0,10,130,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnEdit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnNew" ToolTip="جدید" Height="35"  Margin="0,10,170,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnNew_Click" Foreground="Black" BorderBrush="#FF7E7E7E" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/New.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="grid_cheque" Style="{StaticResource DataGridStyle}" Margin="10,50,10,64" Initialized="grid_cheque_Initialized" AutoGenerateColumns="False" SelectionChanged="grid_cheque_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=CNO}"  Header="شماره چک" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path=CAccountnumber}" Header="شماره حساب" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path=CPrice}" Header="مبلغ" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path=CDescription}" Header="بابت" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path=CDate}" Header="تاریخ" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path=CName}" Header="نام صاحب چک" IsReadOnly="False"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="mnu_reg" Header="جدید" Click="mnu_reg_Click_1"/>
+                    <MenuItem Name="mnu_edit" Header="ویرایش" Click="mnu_edit_Click_1"/>
+                    <MenuItem Name="mnu_remove" Header="حذف" Click="mnu_rem_Click_1"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <Button Content="گزارش گیری" HorizontalAlignment="Left" Margin="654,50,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.5,0.5" Height="43" x:Name="btn_Geteport" Click="btn_Geteport_Click"/>
+
+    </Grid>
+</Window>

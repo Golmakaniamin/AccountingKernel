@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1769EFF-3526-494E-A85B-07EA4F28791B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccountingKernel</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug_AccountingKernel\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Data\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingArticleBusiness.cs" />
+    <Compile Include="AccountingDocumentBusiness.cs" />
+    <Compile Include="AccountingMoeinBusiness.cs" />
+    <Compile Include="AccountingMoeinTafsilLevelsBusiness.cs" />
+    <Compile Include="AccountingMoeinTafsilRelationBussiness.cs" />
+    <Compile Include="AccountingTafsilLevel.cs" />
+    <Compile Include="AccountingTafsilLevelDetails.cs" />
+    <Compile Include="BaseBusiness.cs" />
+    <Compile Include="BaseInfoBusiness.cs" />
+    <Compile Include="Business.cs" />
+    <Compile Include="Class\MoeinReport.cs" />
+    <Compile Include="Class\MoeinReportBase.cs" />
+    <Compile Include="Class\SearchTemplate.cs" />
+    <Compile Include="Class\Variable\PayrollContarctSentences.cs" />
+    <Compile Include="CodeTitleBusiness.cs" />
+    <Compile Include="ComBusiness.cs" />
+    <Compile Include="CompanyBusiness.cs" />
+    <Compile Include="CompanyDetailBusiness.cs" />
+    <Compile Include="AccountingMoeinDetailBusiness.cs" />
+    <Compile Include="AccountingTafsilArticleBusiness.cs" />
+    <Compile Include="ChequeBusiness.cs" />
+    <Compile Include="AccountingInterfaceBusiness.cs" />
+    <Compile Include="AssetBusiness.cs" />
+    <Compile Include="AssetGoodsBusiness.cs" />
+    <Compile Include="CompanyStructureDefineBusiness.cs" />
+    <Compile Include="GetMoeinCodesBusiness.cs" />
+    <Compile Include="GoodyPriceListBusiness.cs" />
+    <Compile Include="GoodyConvertCountingUnitBusiness.cs" />
+    <Compile Include="GoodiesBusiness.cs" />
+    <Compile Include="GoodiesGroupsBusiness.cs" />
+    <Compile Include="CorporationBusiness.cs" />
+    <Compile Include="FinancialMainYearBusiness.cs" />
+    <Compile Include="FinancialyearBusiness.cs" />
+    <Compile Include="LoanInsuranceBusiness.cs" />
+    <Compile Include="LoanTaxBusiness.cs" />
+    <Compile Include="MoeinStructureDefineBusiness.cs" />
+    <Compile Include="PayrollLoanBusiness.cs" />
+    <Compile Include="PayrollLoanDetailBusiness.cs" />
+    <Compile Include="PayrollContractBusiness.cs" />
+    <Compile Include="PayrollInsuranceCodeBusiness.cs" />
+    <Compile Include="PayrollMPJBusiness.cs" />
+    <Compile Include="PayrollPersonBusiness.cs" />
+    <Compile Include="PayrollPersonSentencesBusiness.cs" />
+    <Compile Include="PayrollPersonWorkDoneBusiness.cs" />
+    <Compile Include="PayrollSalaryFactorBusiness.cs" />
+    <Compile Include="PayrollWork.cs" />
+    <Compile Include="PayrollWorkDoneFactorsBussines.cs" />
+    <Compile Include="PersonStructureDefineBusiness.cs" />
+    <Compile Include="PersonStructureDefineChildBusiness.cs" />
+    <Compile Include="SOTaxBusiness.cs" />
+    <Compile Include="FundsBusiness.cs" />
+    <Compile Include="PayrollSentences.cs" />
+    <Compile Include="PayrollTaxCodeBusiness.cs" />
+    <Compile Include="TafsilStructureDefineBussiness.cs" />
+    <Compile Include="TransactionScope.cs" />
+    <Compile Include="TreasuryDetailBusiness.cs" />
+    <Compile Include="TreasuryBusiness.cs" />
+    <Compile Include="StroeSBusiness.cs" />
+    <Compile Include="Localize.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localize.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OperativeBusiness.cs" />
+    <Compile Include="PriceListBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreOperativeBusiness.cs" />
+    <Compile Include="StroeOrderBusiness.cs" />
+    <Compile Include="StroeOrderDetailBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localize.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{d60cc66f-afe3-4c80-a2c5-b7c2c0531044}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{608c2c02-04d2-4e2b-aed8-aad3752eeafc}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

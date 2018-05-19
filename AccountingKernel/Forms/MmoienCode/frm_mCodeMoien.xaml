@@ -1,0 +1,58 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WpfDesign="clr-namespace:Stimulsoft.Report.WpfDesign;assembly=Stimulsoft.Report.WpfDesign" x:Class="AccountingKernel.Forms.MmoienCode.frm_mCodeMoien"
+        Title="frm_mCodeMoien" Height="600" Style="{DynamicResource WindowStyle}" Width="800" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid>
+        <DataGrid x:Name="grd_moien" Margin="10" Style="{StaticResource DataGridStyle}" SelectionChanged="grd_moien_SelectionChanged" AutoGenerateColumns="False" AlternatingRowBackground="AliceBlue">
+            <DataGrid.Columns>
+                 <DataGridTextColumn Binding="{Binding Path=Id}" Header="کد" IsReadOnly="False" Visibility="Hidden"/> 
+                <DataGridTextColumn Binding="{Binding MIdGroup}" Header="نام گروه" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding MIdAll}" Header="نام کل" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding MName}" Header="معین" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding MIdMoein}" Header="کد معین" IsReadOnly="False"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="mnu_reg" Header="جدید" Click="mnu_reg_Click_1"/>
+                    <MenuItem x:Name="mnu_edit" Header="ویرایش" Click="mnu_edit_Click_1"/>
+                    <MenuItem x:Name="mnu_remove" Header="حذف" Click="mnu_rem_Click_1"/>
+                    <MenuItem x:Name="mnu_more" Header="سطوح تفصیلی" >
+                        <MenuItem x:Name="mnu_modiriate_hesabe_tafsili_" Header="تعیین سطوح تقصیلی" Click="mnu_taien_sotohe_tafsili"/>
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander IsExpanded="True">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding MIdGroup}" FontWeight="DemiBold"/>
+                                                    <TextBlock Text=" a  "/>
+                                                    <TextBlock FontWeight="DemiBold" Text="{Binding ItemCount}" />
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <DataGridRowsPresenter />
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

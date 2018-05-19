@@ -1,0 +1,13 @@
+﻿<Window x:Class="AccountingKernel.Forms.saleMaly.frm_tarifeSaleMaly"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_tarifeSaleMaly" Height="240" Width="320" Loaded="Window_Loaded_1" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        
+        <Button Content="ثبت" Style="{StaticResource ButtonStyleRD}" Margin="10,191,10,10" Click="Button_Click_1"/>
+        <TextBox x:Name="txtCorporation" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="62,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Label Content="شرکت" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="txt_saleMaly" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Margin="62,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Label Content="سال مالی" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="47"/>
+    </Grid>
+</Window>

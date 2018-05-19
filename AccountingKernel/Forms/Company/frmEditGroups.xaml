@@ -1,0 +1,16 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AccountingKernel.Forms.Company.frmEditGroups"
+        Title="Document" Height="240" Width="320"
+
+Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <!--<Grid>
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" Margin="40,58,0,0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.62,0.543" Content="نام"/>
+        <TextBox x:Name="txtName" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Height="35" Margin="82,58,0,0" VerticalAlignment="Top" Width="197" RenderTransformOrigin="0.62,0.543" PreviewTextInput="txtName_PreviewTextInput"/>
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" Margin="40,112,0,0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.62,0.543" Content="کد"/>
+        <Button x:Name="btnRegister" Style="{StaticResource ButtonStyleRD}" Margin="10,195,10,6" RenderTransformOrigin="0.62,0.543" Content="ثبت" Click="btnRegister_Click"/>
+        <TextBox x:Name="txtCode" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft"  HorizontalAlignment="Left" Margin="82,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" PreviewTextInput="txtCode_PreviewTextInput"/>
+    </Grid>-->
+
+</Window>

@@ -1,0 +1,54 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ToolBox="clr-namespace:Stimulsoft.Report.Wpf.XamlImages.ToolBox;assembly=Stimulsoft.Report.Wpf" x:Class="AccountingKernel.Forms.baseInfo.frm_list_bank"
+        Title="frm_list_bank" Height="600" Width="800" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Initialized="Window_Initialized_1">
+    <Grid>
+        <Label Content="جستجو" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="66" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="txtSearch" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" Margin="81,10,210,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1"/>
+
+        <Button x:Name="BtnPrint" ToolTip="چاپ" Height="35"  Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnPrint_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Print.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnExel" ToolTip="اکسل" Height="35"  Margin="0,10,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnExel_Click" BorderBrush="#FF7A7878" Foreground="Black" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Excel.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnDel" ToolTip="حذف" Height="35"  Margin="0,10,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnDel_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/delete.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEdit" ToolTip="ویرایش" Height="35" Margin="0,10,130,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnEdit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnNew" ToolTip="جدید" Height="35"  Margin="0,10,170,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Click="BtnNew_Click" Foreground="Black" BorderBrush="#FF7E7E7E" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/New.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="grid_listeBank" Margin="10,50,10,10"  SelectionChanged="grid_listeBank_SelectionChanged" InitializingNewItem="grid_listeBank_InitializingNewItem" AddingNewItem="grid_listeBank_AddingNewItem" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}" IsReadOnly="False" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding FName}" Header="نام صاحب حساب" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding FBank}" Header="بانک" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Fbranch}" Header="شعبه" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding FAddress}" Header="نشانی" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Fprice, StringFormat=N0}" Header="موجودی" IsReadOnly="False"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="mnu_reg" Header="جدید" Click="mnu_reg_Click_1"/>
+                    <MenuItem x:Name="mnu_edit" Header="ویرایش" Click="mnu_edit_Click_1"/>
+                    <MenuItem x:Name="mnu_remove" Header="حذف" Click="mnu_rem_Click_1"/>
+                    <MenuItem x:Name="mnu_cheque" Header="تعریف چک" Click="mnu_cheque_Click_1"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>

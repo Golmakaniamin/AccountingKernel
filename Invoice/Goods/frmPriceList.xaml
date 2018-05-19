@@ -1,0 +1,24 @@
+﻿<Window x:Class="AccountingKernel.Forms.Goods.frmPriceList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document" Height="768" Width="1024" WindowStartupLocation="CenterScreen" FontFamily="B Nazanin" FontSize="14" FontWeight="Bold" FlowDirection="RightToLeft">
+    <Grid>
+        <Label x:Name="lblHeaderCommodityCode" HorizontalAlignment="Left" Height="46" Margin="776,10,0,0" VerticalAlignment="Top" Width="119" Content="کد کالا"/>
+        <Label x:Name="lblHeaderCommodityCodeValue" HorizontalAlignment="Left" Height="46" Margin="657,10,0,0" VerticalAlignment="Top" Width="119"/>
+        <Label x:Name="lblHeaderCommodityTitle" HorizontalAlignment="Left" Height="46" Margin="485,10,0,0" VerticalAlignment="Top" Width="119" Content="عنوان کالا"/>
+        <Label x:Name="lblHeaderCommodityTitleValue" HorizontalAlignment="Left" Height="46" Margin="343,10,0,0" VerticalAlignment="Top" Width="119" Content=""/>
+        <Label x:Name="lblCustomertype" HorizontalAlignment="Left" Height="46" Margin="749,75,0,0" VerticalAlignment="Top" Width="119" Content="نوع مشتری"/>
+        <ComboBox x:Name="cmbCType" HorizontalAlignment="Left" Height="35" Margin="594,75,0,0" VerticalAlignment="Top" Width="100"
+                           DisplayMemberPath="AssignName" SelectedValuePath="Id"   />
+        <Label x:Name="lblPrice" HorizontalAlignment="Left" Height="46" Margin="749,154,0,0" VerticalAlignment="Top" Width="66" Content="قیمت"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="46" Margin="594,154,0,0" VerticalAlignment="Top" Width="119" TextChanged="txtPrice_TextChanged" />
+        <Button x:Name="BtnSave" Content="ذخیره" HorizontalAlignment="Left" Height="34" Margin="574,226,0,0" VerticalAlignment="Top" Width="241" Click="BtnSave_Click"/>
+        <DataGrid x:Name="grdPriceLists" HorizontalAlignment="Right" Margin="0,265,9.6,0" VerticalAlignment="Top" Height="465" Width="998" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Path=Id}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="عنوان واحد" IsReadOnly="True" Binding="{Binding Path=Explain}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="مبلغ" IsReadOnly="True"  Binding="{Binding Path=PLPrice }" Width="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

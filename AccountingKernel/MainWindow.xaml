@@ -1,0 +1,266 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="AccountingKernel.MainWindow"
+        Title="1.2.2.001"
+        x:Name="MainWin" Height="768" Width="1024" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen" WindowState="Maximized" FontFamily="B Mitra" FontSize="14" FontWeight="Bold" Loaded="MainWin_Loaded" Background="#FF9A9A9A" >
+    <Grid>
+
+        <Custom:Ribbon Margin="0,0,-0.4,0" VerticalAlignment="Top" SelectionChanged="Ribbon_SelectionChanged_1" Height="146" Background="#FF9A9A9A" Grid.ColumnSpan="2">
+            <Custom:RibbonTab Header="اطلاعات پایه" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageMainContent11" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عناوین اصلی" Click="btn_manageMainContent_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageMainContent_1" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ساختار کد های معین" Click="btn_manageMainContent_1_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_moienStuctureDefine" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف ساختار معین" Click="btn_moienStuctureDefine_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup>
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_moienCodeManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کدهای معین" Click="btn_moienCodeManagement_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_moienCodeDefine" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف کد معین" Click="btn_moienCodeDefine_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>                        
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_111111" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="حسابهای تفصیل" Click="btn_hesab_tafsili_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_000000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف حساب تفصیلی" Click="btn_tarife_hesabe_tafsili_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageInterfaces" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف رابط های مالی" Click="btn_manageInterfaces_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_00000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="بانک" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_11111" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف حساب بانکی"  Click="btn_manageBank_1_Click_1"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_22222" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="نام بانک" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="انبار"  Click="btnRepository_click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_GoodsManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کالا" Click="btn_GoodsManagement_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_OperativeManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عوامل فاکتور" Click="btn_OperativeManagement_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_0000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ساختار پرسنل" Click="btn_0000_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_PersonManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف ساختار پرسنل"  Click="btn_PersonManagement_Click"/>
+                        <!--<Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Management" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عوامل فاکتور" Click="btn_OperativeManagement_Click" />-->
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Personel" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="پرسنل" Click="click_personnel" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Personel_1" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف پرسنل" Click="btn_Personel_1_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_CompaniesManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="طرف حساب" Click="btn_CompaniesManagement_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_tarifeSandogh" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف صندوق" Click="btn_tarifeSandogh_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_GoodiesManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کالا جدید" Click="btn_GoodiesManagement_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_GoodiesGroupManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="گروه کالا جدید" Click="btn_GoodiesGroupManagement_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+            </Custom:RibbonTab>
+            <Custom:RibbonTab Header="تدارکات" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_SaleInvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست فاکتور خرید" Click="btn_SaleInvoiceManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_ReturnOfBuyingBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست فاکتور برگشت از خرید" Click="btn_ReturnOfBuyingBillManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterSaleInvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت فاکتور خرید" Click="btn_RegisterSaleInvoiceBillManagement_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterReturnOfBuyingBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت فاکتور برگشت از خرید" Click="btn_RegisterReturnOfBuyingBillManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_ReportTheTotalPurchase" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="گزارش سرجمع خرید" Click="btn_ReportTheTotalPurchasev_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_ReportTheBuyGoodies" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="گزارش خالص خرید بر اساس کالا" Click="btn_report"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="فروش" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_PreInvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست پیش فاکتور" Click="btn_PreInvoiceManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_InvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست فاکتور فروش" Click="btn_InvoiceBillManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_ReturnOfSaleManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست برگشت از فروش" Click="btn_ReturnOfSaleManagement_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterPreInvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت پیش فاکتور" Click="btn_RegisterPreInvoiceManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterInvoiceBillManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت فاکتور فروش" Click="btn_RegisterInvoiceBillManagement_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterReturnOfSaleManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت برگشت از فروش" Click="btn_RegisterReturnOfSaleManagement_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="انبار" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btnOrder" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست حواله" Click="btn_OrderManagmentClick"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btnReceipt" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست رسید" Click="btn_ReceiptMangementClick"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btnRegisterOrder" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت حواله" Click="btn_RegisterOrderManagmentClick"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btnRegisterReceipt" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ثبت رسید" Click="btn_RegisterReceiptMangementClick"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+            </Custom:RibbonTab>
+
+
+            <Custom:RibbonTab Header="حسابداری" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0004" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="سند حسابداری" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_DocumentManagement" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="صدور سند" Click="btn_documentCode_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0005" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="فرم اسناد" Click="btn_formAsnad_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="خزانه داری" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0006" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف چک" Click="_tarife_cheq_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0010" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="دستور دریافت" Click="_tarife_daryaft_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0011" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="دستور پرداخت" Click="_tarife_pardakht_Click_1" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_00" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="لیست تنخواه" Click="btn_manageBank_00_Click_1" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="خرج چک" Click="btn_manageBank_000_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_001" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="وصول چک" Click="btn_manageBank_001_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_002" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="ابطال چک" Click="btn_manageBank_002_Click_1" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_0000" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="برگشت چک" Click="btn_manageBank_0000_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_0011" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="استرداد چک" Click="btn_manageBank_0011_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_0022" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="برگشت چک خرج شده" Click="btn_manageBank_0022_Click_1" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_manageBank_0033" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="راس گیری"  />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="حقوق و دستمزد" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="MenuPayrollSentencesSubmit" Click="MenuPayrollSentencesSubmit_Click" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عوامل حکم" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_DefinitionOfDeath" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف عوامل حکم" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_PersonalProvisions" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="احکام پرسنل" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_DefinedMandate" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف حکم" Click="btn_DefinedMandate_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_FactorsWorked" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عوامل کارکرد"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_DefinitionOfWork" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف عوامل کارکرد" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_WorkedMonthly" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کارکرد ماهانه"  />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_CommissionAgents" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="عوامل حقوق" Click="btn_CommissionAgents_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_DefinitionOfFees" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف عوامل حقوق" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_CalculateTheFees" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="محاسبه حقوق"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Advance" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="مساعده" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Loan" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="وام" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RewardAndPanalties" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="پاداش و جرایم" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" >
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RedundancyPayAndEid" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="پرداخت عیدی و سنوات"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_LeaveRedeemed" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="بازخرید مرخصی" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="اموال" Height="88" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_RegisterAssetGoodGroup" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="گروه های کالای اموال" Click="btn_AssetGoodGroup_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_AssestGoods" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کالای اموال"  Click="btn_AssestGoods_Click"/>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_Assest" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="اموال" Click="btn_Assest_Click"/>
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup>
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_AssestEstablishment" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="اموال استقرار" Click="btn_AssestEstablishment_Click"/>
+                    </StackPanel>
+
+                </Custom:RibbonGroup>
+            </Custom:RibbonTab>
+
+            <Custom:RibbonTab Header="تنظیمات" Height="89" VerticalAlignment="Top" Margin="0,0,-4,-1">
+                <Custom:RibbonGroup Height="88" Margin="0,3,0,-3" VerticalAlignment="Top" Width="215">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0009" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف طول کد" Click="tarife_toole_code_Click_1" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0099" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="گروه" Click="grouh_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_0100" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف گروه" Click="tarife_grouh_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_009" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="سال مالی" Click="sale_maly_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="_099" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف سال مالی" Click="tarife_saleMaly_Click" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="soTax" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف ضرایب مالیات" Click="soTax_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Height="88" Margin="0" VerticalAlignment="Top" Width="150">
+                    <StackPanel>
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_karbar_1" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="کاربر" Click="click_user" />
+                        <Custom:RibbonButton FontFamily="B Mitra" FontSize="14"  x:Name="btn_tarifeKarbar" Content="ffffffff" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="143" Label="تعریف کاربر" Click="btn_tarifeKarbar_Click" />
+                    </StackPanel>
+                </Custom:RibbonGroup>
+
+            </Custom:RibbonTab>
+        </Custom:Ribbon>
+        <TabControl Margin="0,135,-0.4,0" x:Name="mainTab" SelectionChanged="mainTab_SelectionChanged" Background="#FFF5FFDA" >
+        </TabControl>
+    </Grid>
+</Window>

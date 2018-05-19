@@ -1,0 +1,24 @@
+﻿<Window x:Class="AccountingKernel.Forms.Bills.PreSaleInvoice.FrmBillOperative"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600" Width="800" Style="{DynamicResource WindowStyle}"  WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Grid >
+        <Label Content="عوامل پیش فاکتور" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="334,35,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="شماره " Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="430,89,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Height="35" VerticalAlignment="Top" Width="100" Margin="535,89,0,0" x:Name="lblBillNum"/>
+        <Label Content="تاریخ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="220,89,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Height="35" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Width="100" Margin="325,89,0,0" x:Name="lblDate" />
+        <Label Content="نام مشتری" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="10,89,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <Label HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Width="100" Margin="115,89,0,0" x:Name="lblCompany"/>
+        <DataGrid x:Name="DataGrid" Margin="10,143,10,50" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Id}"/>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding IsAllocated}" Visibility="Hidden"/>
+                <DataGridComboBoxColumn Header="نام عامل" x:Name="cmbOperative"  DisplayMemberPath="{Binding OperativeName}" SelectedValueBinding="{Binding OperativeId}"/>
+                <DataGridTextColumn Header="مبلغ"  Binding="{Binding Price}" />
+                <DataGridTextColumn Header="درصد"  Binding="{Binding Percent}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="ثبت" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnRegister_Click" Style="{StaticResource ButtonStyleRD}"/>
+    </Grid>
+</Window>

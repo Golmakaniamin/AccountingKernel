@@ -1,0 +1,73 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" xmlns:WPFAutoCompleteTextbox="clr-namespace:WPFAutoCompleteTextbox" 
+        x:Class="AccountingKernel.Forms.Bills.PreSaleInvoice.FrmPreSaleInvoice" 
+        Height="768" Width="1024" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Closing="Window_Closing">
+    <Grid >
+        <Label HorizontalAlignment="Left" Margin="454,10,0,0" VerticalAlignment="Top" Width="115" x:Name="lblHeader"/>
+        <Label Content="نام مشتری" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="10,44,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <WPFAutoCompleteTextbox:AutoCompleteTextBox HorizontalAlignment="Left" Margin="89,44,0,0" VerticalAlignment="Top" Width="115" x:Name="txtCompany" Height="35" LostFocus="txtCompany_LostFocus"/>
+        <Label Content="تاریخ " Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="302,44,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <PersianDateControls:PersianDatePicker x:Name="dtpIssueDate" HorizontalAlignment="Left" Margin="410,43,0,0" VerticalAlignment="Top" Width="162" Height="35" LostFocus="dtpIssueDate_LostFocus"/>
+        <Label Content="شماره" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Width="115" Margin="627,37,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox  HorizontalAlignment="Left" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" VerticalAlignment="Top" Width="115" Margin="747,36,0,0" x:Name="txtBillNum" PreviewTextInput="txtBillNum_PreviewTextInput" />
+        <Label Content="تعداد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="10,84,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="89,84,0,0" x:Name="txtCount" PreviewTextInput="txtCount_PreviewTextInput" TextChanged="txtCount_TextChanged"/>
+        <Button Content="..." Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="524,83,0,0" VerticalAlignment="Top" Width="48" x:Name="btnSelectCommodity" Click="btnSelectCommodity_Click"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle}" Width="109" Margin="410,83,0,0" x:Name="txtCommodityCode" IsReadOnly="True"/>
+        <Label Content="انتخاب واحد شمارش" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="117" Margin="627,77,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <ComboBox HorizontalAlignment="Left" Height="35" Margin="749,76,0,0" VerticalAlignment="Top" Width="115" x:Name="cmbUnitCount" DisplayMemberPath="AssignName" SelectedValuePath="Id" SelectionChanged="cmbUnitCount_SelectionChanged"/>
+        <Label Content="ملاحظات" HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" Width="78" Margin="10,167,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Style="{StaticResource TextBoxStyle}" VerticalAlignment="Top" Width="475" Margin="93,167,0,0" x:Name="txtBillDescription"/>
+        <Label Content="درصد تخفیف" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="103" Margin="302,124,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" VerticalAlignment="Top" Width="159" Margin="410,127,0,0" x:Name="txtDicountPrice"
+                                                MaxLength="2" PreviewTextInput="txtDicountPrice_PreviewTextInput"/>
+        <Label Content="قیمت واحد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="117" Margin="627,117,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" FlowDirection="RightToLeft" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle}" Width="115" Margin="749,116,0,0" x:Name="txtUnitPrice" PreviewTextInput="txtUnitPrice_PreviewTextInput" TextChanged="txtUnitPrice_TextChanged"/>
+        <Button Content="ثبت کالا" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Height="35" Margin="890,160,0,0" VerticalAlignment="Top" Width="124" x:Name="btnRegisterCommodity" Click="btnRegisterCommodity_Click"/>
+
+        <DataGrid x:Name="DataGrid" Margin="10,207,10,246" SelectedCellsChanged="DataGrid_SelectedCellsChanged" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="">
+                        <MenuItem Header="عوامل موثر" PreviewMouseDown ="MenuItem_EffectiveOperative"/>
+                        <MenuItem Header="عوامل غیر موثر" PreviewMouseDown ="MenuItem_InEffectiveOperative"/>
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="شناسه" IsReadOnly="True" Visibility="Hidden" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="درصد تخفیف" IsReadOnly="True" Binding="{Binding DiscountPrice}" />
+                <DataGridTextColumn Header="واحد" IsReadOnly="True"  Binding="{Binding Unit}" />
+                <DataGridTextColumn Header="تعداد" IsReadOnly="True"  Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="نام کالا" IsReadOnly="True"  Binding="{Binding CommodityName}" />
+                <DataGridTextColumn Header="کد کالا" IsReadOnly="True"  Binding="{Binding CommodityCode}" />
+                <DataGridTextColumn Header="فی" IsReadOnly="True"  Binding="{Binding UnitPrice}" />
+                <DataGridTextColumn Header="مجموع قیمت" IsReadOnly="True"  Binding="{Binding PriceSum}" />
+                <DataGridTextColumn Header="مجموع عوامل موثر" IsReadOnly="True"  Binding="{Binding EffectiveSum}" />
+                <DataGridTextColumn Header="جمع کل" IsReadOnly="True"  Binding="{Binding TotalPrice}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="عوارض ارزش افزوده" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="109" Margin="41,541,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="155,541,0,0" x:Name="txtTotalMunicipalTax" MaxLength="2"
+                                               LostFocus="Tax_LostFocus" KeyDown="txtTotalMunicipalTax_KeyDown" TextChanged="txtTotalMunicipalTax_TextChanged" PreviewTextInput="txtTotalMunicipalTax_PreviewTextInput" />
+        <Label Content="مالیات بر ارزش افزوده" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="127" Margin="424,541,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="557,541,0,0" x:Name="txtTotalTax" MaxLength="2"
+                                              LostFocus="Tax_LostFocus" TextChanged="txtTotalTax_TextChanged" PreviewTextInput="txtTotalTax_PreviewTextInput"  />
+        <Label Content="تخفیف کل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="71" Margin="818,541,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="894,541,0,0" x:Name="txtTotalDiscount" MaxLength="2"
+                                               LostFocus="Tax_LostFocus" TextChanged="txtTotalDiscount_TextChanged" PreviewTextInput="txtTotalDiscount_PreviewTextInput" />
+        <Label Content="مجموع کل فاکتور" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="109" Margin="41,581,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="155,581,0,0" x:Name="txtTotalFactorPrice" IsEnabled="False" TextChanged="txtTotalFactorPrice_TextChanged" PreviewTextInput="txtTotalFactorPrice_PreviewTextInput"/>
+        <Label Content="مجموع عوامل موثر" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="128" Margin="423,581,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="556,581,0,0" x:Name="txtEffectiveSum" IsEnabled="False" TextChanged="txtEffectiveSum_TextChanged" PreviewTextInput="txtEffectiveSum_PreviewTextInput"/>
+
+        <Label Content="قیمت کل" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="71" Margin="818,581,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="115" Margin="894,581,0,0" x:Name="txtTotalPrice" IsEnabled="False" PreviewTextInput="txtTotalPrice_PreviewTextInput" TextChanged="txtTotalPrice_TextChanged"/>
+        <Label Content="ملاحظات" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="52" Margin="10,676,0,0" RenderTransformOrigin="0.989,2.496"/>
+        <TextBox HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle}" Width="942" Margin="67,676,0,0" x:Name="txtStoreDescription" PreviewTextInput="txtStoreDescription_PreviewTextInput"/>
+        <Button Content="ثبت" Height="42" Style="{StaticResource ButtonStyleRD}" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="btnRegister_Click"/>
+        <Label Content="انتخاب کالا" HorizontalAlignment="Left" Margin="302,84,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Width="103"/>
+    </Grid>
+</Window>

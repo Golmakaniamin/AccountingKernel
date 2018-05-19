@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="AccountingKernel.Forms.Bills.ReportTheTotalPurchase.ReportLimpidBuyByGoogies"
+        Title="ReportLimpidBuyByGoogies" Height="768" Width="1024" Style="{DynamicResource WindowStyle}" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="نام انبار" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="29,70,0,0" VerticalAlignment="Top" Width="39"/>
+        <ComboBox x:Name="cmbStoreS" HorizontalAlignment="Left" Margin="75,71,0,0" Height="35" VerticalAlignment="Top" Width="120" DisplayMemberPath="AssignName" SelectedValuePath="Id" SelectionChanged="cmbStoreS_SelectionChanged"/>
+        <Label Content="در تاریخ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="304,70,0,0" VerticalAlignment="Top" Width="47"/>
+
+        <PersianDateControls:PersianDatePicker x:Name="PDate" HorizontalAlignment="Left" Height="35" Margin="358,70,0,0" VerticalAlignment="Top" SelectedDateChanged="PDate_SelectedDateChanged"/>
+        <Button Content="چاپ گزارش" Style="{StaticResource ButtonStyleRD}" HorizontalAlignment="Left" Margin="494,69,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <DataGrid x:Name="Grd" Margin="10,123,10,0" VerticalAlignment="Top" Height="534" AutoGenerateColumns="False">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="کد کالا" IsReadOnly="True"  Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="نام کالا" IsReadOnly="True"  Binding="{Binding Kala }"/>
+                <DataGridTextColumn Header="واحد شمارش" IsReadOnly="True"  Binding="{Binding}"/>
+                <DataGridTextColumn Header="تعداد" IsReadOnly="True"  Binding="{Binding Amount}"/>
+                <DataGridTextColumn Header="مبلغ کل" IsReadOnly="True"  Binding="{Binding Sum_Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="مجموع تعداد" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="180,689,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="SumTxT" HorizontalAlignment="Left" IsEnabled="False" Style="{StaticResource TextBoxStyle}" Margin="267,689,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="جمع مبلغ" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="532,688,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="SumPrice" IsEnabled="False" HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle}" Margin="614,688,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

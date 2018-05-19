@@ -1,0 +1,4 @@
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\PersianDate.dll
+D:\AccountingKernel\AccountingKernel\Debug_AccountingKernel\PersianDate.pdb
+D:\AccountingKernel\AccountingKernel\PersianDate\obj\Debug\PersianDate.dll
+D:\AccountingKernel\AccountingKernel\PersianDate\obj\Debug\PersianDate.pdb

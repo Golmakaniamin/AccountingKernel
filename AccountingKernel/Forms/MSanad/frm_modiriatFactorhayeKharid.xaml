@@ -1,0 +1,47 @@
+﻿<Window x:Class="AccountingKernel.Forms.MSanad.frm_modiriatFactorhayeKharid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frm_modiriatFactorhayeKharid" Height="600" Width="800" Style="{DynamicResource WindowStyle}" FlowDirection="RightToLeft">
+    <Grid>
+        <TextBox Style="{StaticResource TextBoxStyle}" Margin="65,10,214,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="جستجو " Style="{StaticResource LabelStyle}" Margin="10,10,740,0" VerticalAlignment="Top" FlowDirection="RightToLeft"/>
+        <Button x:Name="BtnPrint" ToolTip="چاپ" Height="35"  Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Print.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnExel" ToolTip="اکسل" Height="35"  Margin="0,10,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" BorderBrush="#FF7A7878" Foreground="Black" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Excel.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnDel" ToolTip="حذف" Height="35"  Margin="0,10,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/delete.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEdit" ToolTip="ویرایش" Height="35" Margin="0,10,130,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/Edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnNew" ToolTip="جدید" Height="35"  Margin="0,10,170,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35" Foreground="Black" BorderBrush="#FF7E7E7E" >
+            <Button.Background>
+                <ImageBrush ImageSource="/AccountingKernel;component/Themes/icon/New.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="grd_" Margin="10,50,10,10">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="mnu_reg" Header="جدید" Click="mnu_reg_Click_1"/>
+                    <MenuItem Name="mnu_edit" Header="ویرایش" Click="mnu_edit_Click_1"/>
+                    <MenuItem Name="mnu_remove" Header="حذف" Click="mnu_rem_Click_1"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+        </DataGrid>
+                  
+                 
+
+    </Grid>
+</Window>

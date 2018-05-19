@@ -1,0 +1,18 @@
+﻿<Window x:Class="AccountingKernel.Forms.KazaneDari.Frm_ShowCheques"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" 
+        Title="انتخاب چک" Height="600" Width="800" FlowDirection="RightToLeft" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="grdCheques" Margin="10,10,10,0" AutoGenerateColumns="False" MouseDoubleClick="grdCheques_MouseDoubleClick" FlowDirection="RightToLeft" Style="{StaticResource DataGridStyle}" Height="539" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Hidden"  Binding="{Binding ID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="نام"  Binding="{Binding FName}"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="شماره حساب"  Binding="{Binding FAccountnumber}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="سریال"  Binding="{Binding CNO}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSelect" Content="ثبت" Style="{StaticResource ButtonStyleRD}" VerticalAlignment="Top" Click="btnSelect_Click" Margin="10,554,10,0"/>
+
+    </Grid>
+</Window>
